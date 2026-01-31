@@ -1,26 +1,555 @@
 @import "tailwindcss";
 
+/* =========================
+   Brand Theme Tokens
+========================= */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary - Updated to orange/green palette */
+  --color-primary: #ea580c;        /* Orange 600 */
+  --color-primary-hover: #c2410c;  /* Orange 700 */
+  --color-primary-light: #fed7aa;  /* Orange 200 */
+  
+  /* Secondary - Green accent */
+  --color-secondary: #16a34a;      /* Green 600 */
+  --color-secondary-hover: #15803d;/* Green 700 */
+  --color-secondary-light: #bbf7d0;/* Green 200 */
+
+  /* Accent (success / suggestions) */
+  --color-accent: #16a34a;         /* Green 600 */
+  --color-accent-light: #dcfce7;   /* Green 100 */
+
+  /* Text */
+  --color-text-heading: #0f172a;   /* Slate 900 */
+  --color-text-body: #334155;      /* Slate 700 */
+  --color-text-muted: #64748b;     /* Slate 500 */
+
+  /* UI Surfaces */
+  --color-bg-app: #fafaf9;         /* Warm off-white */
+  --color-bg-card: #ffffff;
+  --color-bg-input: #ffffff;
+
+  /* Borders */
+  --color-border: #e2e8f0;         /* Slate 200 */
+  --color-border-hover: #cbd5e1;   /* Slate 300 */
+
+  /* Focus Ring */
+  --color-focus: #ea580c;          /* Orange 600 */
+  
+  /* Gradient stops */
+  --gradient-start: #fb923c;       /* Orange 400 */
+  --gradient-end: #22c55e;         /* Green 500 */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* =========================
+   Base App Styling
+========================= */
+
+html,
+body {
+  background-color: var(--color-bg-app);
+  color: var(--color-text-body);
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Better font rendering */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================
+   Reusable UI Utilities
+========================= */
+
+.btn-primary {
+  @apply px-4 py-2 rounded-lg text-white font-medium transition-all duration-300;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #f97316 100%);
+  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.25);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--color-primary-hover) 0%, #ea580c 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(234, 88, 12, 0.35);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.3);
+}
+
+.btn-secondary {
+  @apply px-4 py-2 rounded-lg font-medium transition-all duration-300;
+  background-color: var(--color-bg-card);
+  color: var(--color-text-heading);
+  border: 2px solid var(--color-border);
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: #fafafa;
+  border-color: var(--color-border-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.input-base {
+  @apply w-full rounded-lg p-3 text-lg transition-all duration-200;
+  background-color: var(--color-bg-input);
+  border: 2px solid var(--color-border);
+}
+
+.input-base:hover {
+  border-color: var(--color-border-hover);
+}
+
+.input-base:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.1);
+  border-color: var(--color-focus);
+}
+
+/* =========================
+   Card Components
+========================= */
+
+.card {
+  @apply bg-white rounded-2xl border transition-all duration-300;
+  border-color: var(--color-border);
+}
+
+.card:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.card-gradient-orange {
+  background: linear-gradient(135deg, #fff7ed 0%, #ffffff 100%);
+  border: 2px solid #fed7aa;
+}
+
+.card-gradient-green {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+  border: 2px solid #bbf7d0;
+}
+
+.card-gradient-blue {
+  background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+  border: 2px solid #bfdbfe;
+}
+
+/* =========================
+   Suggestion Bar + Skeleton
+========================= */
+
+.suggestion-bar {
+  @apply mt-2 flex gap-2 flex-wrap items-center;
+  min-height: 40px;
+}
+
+.skeleton-chip {
+  @apply px-3 py-1 rounded-lg border;
+  width: 72px;
+  height: 28px;
+  background: linear-gradient(
+    90deg,
+    #f1f5f9 25%,
+    #f8fafc 37%,
+    #f1f5f9 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.4s ease infinite;
+  border-color: var(--color-border);
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.suggestion-chip {
+  @apply px-3 py-1 rounded-lg border transition-all duration-200 cursor-pointer font-medium;
+  background-color: var(--color-accent-light);
+  color: var(--color-accent);
+  border-color: #86efac;
+}
+
+.suggestion-chip:hover {
+  background-color: var(--color-secondary-light);
+  border-color: var(--color-secondary);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(22, 163, 74, 0.15);
+}
+
+.suggestion-chip.selected {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
+}
+
+/* =========================
+   Animations
+========================= */
+
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-slide-in {
+  animation: fadeSlideIn 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(234, 88, 12, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(234, 88, 12, 0.4);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* =========================
+   Text Effects
+========================= */
+
+.hero-glow {
+  text-shadow: 0 8px 40px rgba(234, 88, 12, 0.15);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-orange {
+  background: linear-gradient(135deg, #ea580c, #f97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-green {
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* =========================
+   Background Effects
+========================= */
+
+.bg-gradient-radial-orange {
+  background: radial-gradient(circle at top right, rgba(251, 146, 60, 0.15), transparent 60%);
+}
+
+.bg-gradient-radial-green {
+  background: radial-gradient(circle at bottom left, rgba(34, 197, 94, 0.15), transparent 60%);
+}
+
+.bg-mesh {
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(251, 146, 60, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(34, 197, 94, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(251, 146, 60, 0.08) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(34, 197, 94, 0.08) 0px, transparent 50%);
+}
+
+/* =========================
+   Interactive States
+========================= */
+
+.hover-lift {
+  @apply transition-all duration-300;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.hover-scale {
+  @apply transition-transform duration-300;
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+/* =========================
+   Details/Accordion Styling
+========================= */
+
+details summary {
+  @apply transition-all duration-200;
+  list-style: none;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details[open] summary {
+  border-bottom: 1px solid var(--color-border);
+}
+
+details[open] {
+  @apply shadow-lg;
+}
+
+/* =========================
+   Icon Utilities
+========================= */
+
+.icon-box {
+  @apply flex items-center justify-center rounded-lg transition-all duration-300;
+}
+
+.icon-box-orange {
+  @apply bg-orange-100;
+  color: var(--color-primary);
+}
+
+.icon-box-green {
+  @apply bg-green-100;
+  color: var(--color-secondary);
+}
+
+.icon-box-blue {
+  @apply bg-blue-100 text-blue-600;
+}
+
+.icon-box-purple {
+  @apply bg-purple-100 text-purple-600;
+}
+
+.icon-box-pink {
+  @apply bg-pink-100 text-pink-600;
+}
+
+.icon-box-yellow {
+  @apply bg-yellow-100 text-yellow-600;
+}
+
+/* =========================
+   Badge & Pills
+========================= */
+
+.badge {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+}
+
+.badge-primary {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.badge-success {
+  background-color: var(--color-accent-light);
+  color: var(--color-accent);
+}
+
+.badge-gradient {
+  background: linear-gradient(135deg, #fed7aa, #bbf7d0);
+  color: var(--color-text-heading);
+  border: 1px solid #fdba74;
+}
+
+/* =========================
+   Loading States
+========================= */
+
+.loading-spinner {
+  @apply inline-block w-6 h-6 border-3 rounded-full;
+  border-color: var(--color-primary) transparent var(--color-primary) transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* =========================
+   Responsive Utilities
+========================= */
+
+@media (max-width: 768px) {
+  .hero-glow {
+    text-shadow: 0 4px 20px rgba(234, 88, 12, 0.15);
+  }
+  
+  .card:hover {
+    transform: none;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* =========================
+   Print Styles
+========================= */
+
+@media print {
+  .bg-gradient-radial-orange,
+  .bg-gradient-radial-green,
+  .bg-mesh {
+    background: none !important;
+  }
+  
+  .card {
+    box-shadow: none !important;
+    border: 1px solid #000 !important;
+  }
+}
+
+/* =========================
+   Accessibility
+========================= */
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .btn-primary {
+    border: 2px solid currentColor;
+  }
+  
+  .card {
+    border-width: 2px;
+  }
+}
+
+/* =========================
+   Custom Scrollbar
+========================= */
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--color-primary), var(--color-secondary));
+  border-radius: 6px;
+  border: 2px solid #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--color-primary-hover), var(--color-secondary-hover));
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) #f1f5f9;
+}
+
+/* =========================
+   Selection Styling
+========================= */
+
+::selection {
+  background-color: var(--color-primary-light);
+  color: var(--color-text-heading);
+}
+
+::-moz-selection {
+  background-color: var(--color-primary-light);
+  color: var(--color-text-heading);
+}
+
+.kbd {
+  padding: 2px 6px;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-card);
+  font-family: var(--font-geist-mono);
+  font-size: 12px;
+  color: var(--color-text-heading);
 }

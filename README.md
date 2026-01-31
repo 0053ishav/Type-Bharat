@@ -1,36 +1,197 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TypeBharat
 
-## Getting Started
+TypeBharat is a privacy-first English → Indian language typing tool.
 
-First, run the development server:
+It allows users to type naturally in English and instantly convert text into Indian scripts using phonetic transliteration.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Currently supported:
+- Panjabi (Gurmukhi)
+- Hindi (Devanagari)
+
+More languages coming soon.
+
+
+
+## 🚀 Features
+
+### 🔤 Real-time Transliteration
+Type English words and convert them instantly into:
+- Panjabi (Gurmukhi)
+- Hindi (Devanagari)
+
+Press space to accept the best suggestion.
+
+
+
+### 🧠 Smart Suggestions
+Ambiguous words show multiple phonetic suggestions.
+Users can click to select the correct one.
+
+
+### 📋 Session Board
+- Save converted sentences
+- Drag & reorder
+- Edit inline
+- Copy individual lines
+- Copy all
+- Persisted via localStorage
+
+
+
+### 📥 Paste & Convert
+Paste full paragraphs written in English and convert them instantly.
+
+
+
+### ⌨ Keyboard Shortcuts
+
+| Shortcut | Action |
+|----------|--------|
+| Space | Convert current word |
+| Ctrl/Cmd + C | Copy clean text |
+| Ctrl/Cmd + X | Cut clean text |
+| Ctrl/Cmd + Enter | Add to Session Board |
+
+
+### 📚 Learn Mode
+Each language includes a structured learning page:
+- Script explanation
+- Vowels
+- Consonants
+- Secondary letters
+- Numerals
+- Clear examples
+
+Routes:
+- `/learn/panjabi`
+- `/learn/hindi`
+
+
+
+### 🔐 Privacy First
+- No login
+- No user accounts
+- No server-side storage of text
+- Everything runs in-browser
+- Session Board stored locally
+
+
+
+## 🏗 Tech Stack
+
+- Next.js 16 (App Router)
+- TypeScript
+- Tailwind CSS
+- Google HTTP Transliterate API
+- JSON-LD structured data (FAQ schema)
+- SEO optimized metadata per language
+
+
+## 📂 Project Structure
+
+```
+app/
+├── panjabi-typing/
+├── hindi-typing/
+├── learn/
+│ ├── page.tsx
+│ ├── panjabi/
+│ └── hindi/
+├── not-found.tsx
+
+components/
+├── TypingTool.tsx
+├── SessionBoard.tsx
+├── PanjabiLetters.tsx
+├── HindiLetters.tsx
+├── FAQ.tsx
+├── Navbar.tsx
+└── Footer.tsx
+
+data/
+├── panjabiLetters.ts
+├── hindiLetters.ts
+└── faq.ts
+
+lib/
+├── googleHttpTransliterate.ts
+└── faqSchema.ts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📈 SEO Strategy
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Dedicated page per language
+- Dedicated learning page per language
+- JSON-LD FAQ schema injection
+- Canonical URLs
+- Sitemap
+- Clean semantic structure
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🗺 Roadmap
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Planned improvements:
 
-## Deploy on Vercel
+- Debounce + suggestion caching
+- Tamil support
+- Bengali support
+- Gujarati support
+- Dark mode toggle
+- Export to .txt / .doc
+- Progressive Web App
+- Offline mode (dictionary caching)
+- Analytics (privacy-safe)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🧠 Product Vision
+
+TypeBharat aims to become:
+
+> The simplest way to write Indian languages online without learning keyboard layouts.
+
+Long-term:
+- Multi-language expansion
+- Script education hub
+- Mobile-first experience
+- API layer for embedding
+
+
+## 🛠 Development
+
+Install dependencies:
+
+npm install
+
+
+Run locally:
+
+npm run dev
+
+
+Build production:
+
+npm run build
+
+
+## 🤝 Contributing
+
+Contributions are welcome.
+
+You can help by:
+- Improving phonetic mappings
+- Adding new languages
+- Improving UI/UX
+- Enhancing accessibility
+- Improving SEO structure
+
+
+## 📜 License
+
+MIT License
+
+
+## 🔗 Live Site
+
+https://typebharat.com
