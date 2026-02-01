@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Learn how to type Indian languages using English letters. Beginner-friendly guides for Panjabi (Gurmukhi), Hindi (Devanagari), and more languages coming soon.",
   alternates: {
-    canonical: "https://typebharat.com/learn",
+    canonical: "https://type-bharat.vercel.app/learn",
   },
 };
 

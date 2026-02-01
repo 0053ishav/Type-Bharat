@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Hindi Typing Tool — TypeBharat",
     description:
       "Type in English and write in Hindi instantly. Free Hindi (Devanagari) typing tool with real-time conversion.",
-    url: "https://typebharat.com/hindi-typing",
+    url: "https://type-bharat.vercel.app/hindi-typing",
     siteName: "TypeBharat",
     locale: "hi_IN",
     type: "website",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
       "English to Hindi typing made easy. Free, fast, and privacy-first.",
   },
   alternates: {
-    canonical: "https://typebharat.com/hindi-typing",
+    canonical: "https://type-bharat.vercel.app/hindi-typing",
   },
 };
 

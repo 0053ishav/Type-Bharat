@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,7 +20,7 @@ const geistMono = Geist_Mono({
 ========================= */
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://typebharat.com"),
+  metadataBase: new URL("https://type-bharat.vercel.app"),
 
   title: {
     default: "TypeBharat — English to Indian Language Typing Tool",
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
     title: "TypeBharat — English to Indian Language Typing Tool",
     description:
       "Type in English and write in Indian languages instantly. Free, fast, and privacy-first typing tool for Panjabi, Hindi, and more.",
-    url: "https://typebharat.com",
+    url: "https://type-bharat.vercel.app",
     siteName: "TypeBharat",
     locale: "en_IN",
     type: "website",
@@ -84,6 +85,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+      <Analytics />
       </body>
     </html>
   );
