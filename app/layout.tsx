@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   authors: [{ name: "TypeBharat" }],
   creator: "TypeBharat",
   verification: {
-    google: 'TUbt1anKPUjx9gmzXkff7PM6CK2bygFPSn0,'
+    google: 'TenoyS5nmTIbgNrZ9uIRxNNCTbOgohZebisrGPFdRLM',
   },
 
   openGraph: {
