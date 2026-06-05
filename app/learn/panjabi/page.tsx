@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description:
     "Learn how to type Panjabi using English letters. Understand Panjabi language, Gurmukhi script, alphabets, vowels, consonants, and numerals with examples.",
   alternates: {
-    canonical: "https://type-bharat.vercel.app/learn-panjabi-typing",
+    canonical: "https://typebharat.ishav.space/learn-panjabi-typing",
   },
 };
 

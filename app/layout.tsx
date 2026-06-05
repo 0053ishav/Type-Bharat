@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 ========================= */
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://type-bharat.vercel.app"),
+  metadataBase: new URL("https://typebharat.ishav.space"),
 
   title: {
     default: "TypeBharat — English to Indian Language Typing Tool",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: "TypeBharat — English to Indian Language Typing Tool",
     description:
       "Type in English and write in Indian languages instantly. Free, fast, and privacy-first typing tool for Panjabi, Hindi, and more.",
-    url: "https://type-bharat.vercel.app",
+    url: "https://typebharat.ishav.space",
     siteName: "TypeBharat",
     locale: "en_IN",
     type: "website",

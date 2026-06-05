@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://type-bharat.vercel.app/sitemap.xml",
+    sitemap: "https://typebharat.ishav.space/sitemap.xml",
   };
 }

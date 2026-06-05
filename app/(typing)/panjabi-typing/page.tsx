@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Panjabi Typing Tool — TypeBharat",
     description:
       "Type in English and write in Panjabi instantly. Free Panjabi (Gurmukhi) typing tool with real-time suggestions.",
-    url: "https://type-bharat.vercel.app/panjabi-typing",
+    url: "https://typebharat.ishav.space/panjabi-typing",
     siteName: "TypeBharat",
     locale: "pa_IN",
     type: "website",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
       "English to Panjabi typing made simple. Free, fast, and privacy-first.",
   },
   alternates: {
-    canonical: "https://type-bharat.vercel.app/panjabi-typing",
+    canonical: "https://typebharat.ishav.space/panjabi-typing",
   },
 };
 

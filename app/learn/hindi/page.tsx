@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description:
     "Learn how to type Hindi using English letters. Understand the Hindi language, Devanagari script, alphabets, vowels, consonants, and numerals with examples.",
   alternates: {
-    canonical: "https://type-bharat.vercel.app/learn/hindi",
+    canonical: "https://typebharat.ishav.space/learn/hindi",
   },
 };
 

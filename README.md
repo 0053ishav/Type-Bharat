@@ -194,4 +194,4 @@ MIT License
 
 ## 🔗 Live Site
 
-https://type-bharat.vercel.app
+https://typebharat.ishav.space
