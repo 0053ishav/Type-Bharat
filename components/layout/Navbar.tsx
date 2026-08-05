@@ -10,6 +10,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const isLearn = pathname.startsWith("/learn");
+  const isTyping = pathname.startsWith("/typing");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 4);
@@ -41,8 +42,9 @@ export default function Navbar() {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-6 text-sm">
           {/* Intent switch */}
-          <NavLink href="/" active={!isLearn}>Typing</NavLink>
-          <NavLink href="/learn" active={isLearn}>Learn</NavLink>
+          <NavLink href="/" active={!isLearn && !isTyping}>Home</NavLink>
+          <NavLink href="/typing" active={!isLearn && isTyping}>Typing</NavLink>
+          <NavLink href="/learn" active={isLearn && !isTyping}>Learn</NavLink>
 
           <div className="h-5 w-px bg-(--color-border)" />
 
@@ -54,8 +56,8 @@ export default function Navbar() {
             </>
           ) : (
             <>
-              <NavLink href="/panjabi-typing">Panjabi</NavLink>
-              <NavLink href="/hindi-typing">Hindi</NavLink>
+              <NavLink href="/typing/panjabi">Panjabi</NavLink>
+              <NavLink href="/typing/hindi">Hindi</NavLink>
             </>
           )}
 
@@ -80,7 +82,7 @@ export default function Navbar() {
           <div className="px-6 py-4 space-y-4 text-sm">
             {/* Intent */}
             <div className="flex gap-3">
-              <MobileLink href="/" onClick={() => setMobileOpen(false)}>
+              <MobileLink href="/typing" onClick={() => setMobileOpen(false)}>
                 Typing
               </MobileLink>
               <MobileLink href="/learn" onClick={() => setMobileOpen(false)}>
@@ -102,10 +104,10 @@ export default function Navbar() {
               </>
             ) : (
               <>
-                <MobileLink href="/panjabi-typing" onClick={() => setMobileOpen(false)}>
+                <MobileLink href="/typing/panjabi" onClick={() => setMobileOpen(false)}>
                   Panjabi Typing
                 </MobileLink>
-                <MobileLink href="/hindi-typing" onClick={() => setMobileOpen(false)}>
+                <MobileLink href="/typing/hindi" onClick={() => setMobileOpen(false)}>
                   Hindi Typing
                 </MobileLink>
               </>

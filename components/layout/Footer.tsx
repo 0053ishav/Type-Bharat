@@ -35,12 +35,12 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/panjabi-typing" className="hover:underline">
+                <Link href="/typing/panjabi" className="hover:underline">
                   Panjabi Typing
                 </Link>
               </li>
               <li>
-                <Link href="/hindi-typing" className="hover:underline">
+                <Link href="/typing/hindi" className="hover:underline">
                   Hindi Typing
                 </Link>
               </li>

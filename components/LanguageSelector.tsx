@@ -16,7 +16,7 @@ export default function LanguageSelector() {
           <p className="text-sm text-[--color-text-muted] mb-4">
             Type in English → Write in ਪੰਜਾਬੀ
           </p>
-          <Link href="/panjabi-typing" className="btn-primary">
+          <Link href="/typing/panjabi" className="btn-primary">
             Start Panjabi Typing →
           </Link>
         </div>
@@ -29,7 +29,7 @@ export default function LanguageSelector() {
           <p className="text-sm text-[--color-text-muted] mb-4">
             Type in English → Write in हिन्दी
           </p>
-          <Link href="/hindi-typing" className="btn-primary">
+          <Link href="/typing/hindi" className="btn-primary">
             Start Hindi Typing →
           </Link>
         </div>

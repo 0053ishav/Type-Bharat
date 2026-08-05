@@ -1,4 +1,4 @@
-import { FAQItem } from "@/data/faq";
+import { FAQItem } from "@/types/faq";
 
 export function generateFAQSchema(faqs: FAQItem[]) {
   return {

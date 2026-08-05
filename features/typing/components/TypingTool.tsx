@@ -1,22 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { fetchSuggestions } from "@/lib/googleHttpTransliterate";
+import { fetchSuggestions } from "@/lib/transliteration/googleHttpTransliterate";
 import SessionBoard from "./SessionBoard";
+import { Language } from "@/types/language";
+import AlphabetGrid from "@/components/ui/AlphabetGrid";
 
-export default function TypingTool({
-  langCode,
-  title,
-  subtitle,
-  LettersComponent,
-}: {
-  langCode: string;
-  title: string;
-  subtitle: string;
-  LettersComponent?: React.ComponentType<{
-    onInsert: (char: string) => void;
-  }>;
-}) {
+export default function TypingTool({ language }: { language: Language }) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const [text, setText] = useState("");
@@ -25,7 +15,7 @@ export default function TypingTool({
   const [boardLines, setBoardLines] = useState<string[]>([]);
   const [suggestions, setSuggestions] = useState<string[]>([]);
 
-  const STORAGE_KEY = `typebharat-session-board-${langCode}`;
+  const STORAGE_KEY = `typebharat-session-board-${language.transliteration.languageCode}`;
 
   /* ------------------------------------
      Load board from localStorage
@@ -58,7 +48,7 @@ export default function TypingTool({
     setText("");
     setCurrentWord("");
     setSuggestions([]);
-  }, [langCode]);
+  }, [language.transliteration.languageCode]);
 
   useEffect(() => {
     textareaRef.current?.focus();
@@ -121,7 +111,11 @@ export default function TypingTool({
 
     setLoading(true);
     try {
-      const suggs = await fetchSuggestions(lastWord, langCode, 5);
+      const suggs = await fetchSuggestions(
+        lastWord,
+        language.transliteration.languageCode,
+        5,
+      );
       setSuggestions(suggs);
     } catch {
       setSuggestions([]);
@@ -173,7 +167,11 @@ export default function TypingTool({
 
       for (const word of words) {
         try {
-          const s = await fetchSuggestions(word, langCode, 1);
+          const s = await fetchSuggestions(
+            word,
+            language.transliteration.languageCode,
+            1,
+          );
           results.push(s[0] || word);
         } catch {
           results.push(word);
@@ -205,7 +203,11 @@ export default function TypingTool({
 
       for (const word of words) {
         try {
-          const s = await fetchSuggestions(word, langCode, 1);
+          const s = await fetchSuggestions(
+            word,
+            language.transliteration.languageCode,
+            1,
+          );
           results.push(s[0] || word);
         } catch {
           results.push(word);
@@ -286,9 +288,11 @@ export default function TypingTool({
   return (
     <div className="max-w-3xl mx-auto p-6">
       <h1 className="text-3xl font-bold mb-2 text-[--color-text-heading]">
-        {title}
+        {language.typing.title}
       </h1>
-      <p className="mb-4 text-[--color-text-body]">{subtitle}</p>
+      <p className="mb-4 text-[--color-text-body]">
+        {language.typing.subtitle}
+      </p>
       <div className="card p-6">
         <textarea
           ref={textareaRef}
@@ -340,6 +344,9 @@ export default function TypingTool({
               <kbd className="font-mono">Space</kbd> → convert word
             </li>
             <li>
+              <kbd className="font-mono">Tab</kbd> → select word
+            </li>
+            <li>
               <kbd className="font-mono">Ctrl/Cmd + C</kbd> → copy
             </li>
             <li>
@@ -362,11 +369,9 @@ export default function TypingTool({
         onReorder={handleReorder}
       />
 
-      {LettersComponent && (
-        <div className="mt-24">
-          <LettersComponent onInsert={insertChar} />
-        </div>
-      )}
+      <div className="mt-24">
+        <AlphabetGrid language={language} onInsert={insertChar} />{" "}
+      </div>
     </div>
   );
 }

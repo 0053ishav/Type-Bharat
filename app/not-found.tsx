@@ -11,12 +11,12 @@ export default function NotFound() {
 
         {/* Message */}
         <h1 className="text-2xl md:text-3xl font-bold text-(--color-text-heading) mb-4">
-          This page doesn’t exist
+          This page doesn&apos;t exist
         </h1>
 
         <p className="text-lg text-(--color-text-body) mb-8">
-          The page you’re looking for might have been moved, renamed,
-          or never existed. But don’t worry — you can still type in Indian
+          The page you&apos;re looking for might have been moved, renamed,
+          or never existed. But don&apos;t worry — you can still type in Indian
           languages instantly.
         </p>
 
@@ -26,7 +26,7 @@ export default function NotFound() {
             Go to Home
           </Link>
 
-          <Link href="/panjabi-typing" className="btn-secondary px-8 py-3">
+          <Link href="/typing/panjabi" className="btn-secondary px-8 py-3">
             Start Typing in Panjabi
           </Link>
         </div>
@@ -35,7 +35,7 @@ export default function NotFound() {
         <div className="mt-8 text-sm text-(--color-text-muted)">
           Or try:
           <div className="flex justify-center gap-4 mt-2">
-            <Link href="/hindi-typing" className="hover:underline">
+            <Link href="/typing/hindi" className="hover:underline">
               Hindi Typing
             </Link>
             <Link href="/learn/panjabi" className="hover:underline">

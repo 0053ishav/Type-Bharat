@@ -1,7 +1,7 @@
 import LanguageTagline from "@/components/LanguageTagline";
 import LanguageSelector from "@/components/LanguageSelector";
-import FAQ from "@/components/FAQ";
-import { COMMON_FAQ } from "@/data/faq";
+import FAQ from "@/components/common/FAQ";
+import { COMMON_FAQ } from "@/data/common/faq";
 
 
 import {
@@ -97,10 +97,10 @@ export default function Home() {
           </p>
 
           <div className="mt-12 flex flex-col sm:flex-row justify-center gap-4">
-            <a href="/panjabi-typing" className="btn-primary text-lg px-10 py-4">
+            <a href="/typing/panjabi" className="btn-primary text-lg px-10 py-4">
               Start typing in Panjabi →
             </a>
-            <a href="/hindi-typing" className="btn-secondary text-lg px-10 py-4">
+            <a href="/typing/hindi" className="btn-secondary text-lg px-10 py-4">
               Try Hindi
             </a>
           </div>
@@ -486,10 +486,10 @@ export default function Home() {
               No sign-up. No friction. Just type.
             </p>
             <div className="flex justify-center gap-4">
-              <a href="/panjabi-typing" className="btn-primary text-lg px-10 py-4">
+              <a href="/typing/panjabi" className="btn-primary text-lg px-10 py-4">
                 Panjabi
               </a>
-              <a href="/hindi-typing" className="btn-secondary text-lg px-10 py-4">
+              <a href="/typing/hindi" className="btn-secondary text-lg px-10 py-4">
                 Hindi
               </a>
             </div>

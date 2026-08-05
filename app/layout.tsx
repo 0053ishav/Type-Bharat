@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 import { Analytics } from "@vercel/analytics/next"
+import { GLOBAL_KEYWORDS } from "@/lib/seo/keywords";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,16 +31,7 @@ export const metadata: Metadata = {
   description:
     "TypeBharat is a free English to Indian language typing tool. Type in English and instantly write in Panjabi, Hindi, and more Indian languages. No login. No tracking.",
 
-  keywords: [
-    "English to Hindi typing",
-    "English to Panjabi typing",
-    "Indian language typing tool",
-    "phonetic typing",
-    "transliteration tool",
-    "Hindi typing online",
-    "Panjabi typing online",
-    "TypeBharat",
-  ],
+  keywords: GLOBAL_KEYWORDS,
 
   authors: [{ name: "TypeBharat" }],
   creator: "TypeBharat",
@@ -50,7 +42,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "TypeBharat — English to Indian Language Typing Tool",
     description:
-      "Type in English and write in Indian languages instantly. Free, fast, and privacy-first typing tool for Panjabi, Hindi, and more.",
+      "Type in English and write in Indian languages instantly. Free, fast, and privacy-first typing tool for Panjabi (Also known as Punjabi), Hindi, and more.",
     url: "https://typebharat.ishav.space",
     siteName: "TypeBharat",
     locale: "en_IN",

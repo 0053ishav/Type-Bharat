@@ -1,4 +1,4 @@
-import { FAQItem } from "@/data/faq";
+import { FAQItem } from "@/types/faq";
 
 type FAQProps = {
   items: FAQItem[];
