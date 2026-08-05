@@ -5,6 +5,8 @@ import { fetchSuggestions } from "@/lib/transliteration/googleHttpTransliterate"
 import SessionBoard from "./SessionBoard";
 import { Language } from "@/types/language";
 import AlphabetGrid from "@/components/ui/AlphabetGrid";
+import { toast } from "sonner";
+import { copyToClipboard } from "@/lib/clipboard";
 
 export default function TypingTool({ language }: { language: Language }) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -78,7 +80,9 @@ export default function TypingTool({ language }: { language: Language }) {
 
       // Only printable characters
       if (e.key.length === 1) {
-        textarea.focus();
+        if (document.activeElement !== textarea) {
+          textarea.focus();
+        }
 
         // Move cursor to end
         const len = textarea.value.length;
@@ -128,30 +132,59 @@ export default function TypingTool({ language }: { language: Language }) {
 
   const handleInput = async (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const value = e.target.value;
+
     setText(value);
     await processInput(value);
+  };
+
+  const handleWordCompletion = () => {
+    if (!currentWord) return;
+    if (!suggestions.length) return;
+
+    insertSuggestion(suggestions[0]);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     // Space → accept first suggestion
     if (e.key === " " && currentWord && suggestions.length > 0) {
       e.preventDefault();
-      insertSuggestion(suggestions[0]);
+      handleWordCompletion();
+      return;
     }
     // 🔥 Ctrl/Cmd + Enter → Add to Session Board
     if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
       e.preventDefault();
       handleAddToBoard();
-      return;
+    }
+  };
+
+  const handleBeforeInput = (e: React.FormEvent<HTMLTextAreaElement>) => {
+    const nativeEvent = e.nativeEvent as InputEvent;
+    if (nativeEvent.data === " ") {
+      if (currentWord && suggestions.length) {
+        e.preventDefault();
+        handleWordCompletion();
+    }
     }
   };
 
   const insertSuggestion = (word: string) => {
-    setText((prev) => prev.replace(/(\S+)$/, word) + " ");
+    const next = text.replace(/(\S+)$/, word) + " ";
+
+    setText(next);
     setCurrentWord("");
     setSuggestions([]);
 
-    requestAnimationFrame(() => textareaRef.current?.focus());
+    requestAnimationFrame(() => {
+      const textarea = textareaRef.current;
+      if (!textarea) return;
+
+      const end = next.length;
+
+      if (document.activeElement === textarea) {
+        textarea.setSelectionRange(end, end);
+      }
+    });
   };
 
   const handlePaste = async (e: React.ClipboardEvent<HTMLTextAreaElement>) => {
@@ -179,12 +212,23 @@ export default function TypingTool({ language }: { language: Language }) {
       }
 
       const translated = results.join(" ") + " ";
-      setText((prev) => prev + translated);
+      const next = text + translated;
+
+      setText(next);
+      requestAnimationFrame(() => {
+        const textarea = textareaRef.current;
+        if (!textarea) return;
+
+        if (textarea && document.activeElement === textarea) {
+          textarea.setSelectionRange(next.length, next.length);
+        }
+        const end = next.length;
+        textarea.setSelectionRange(end, end);
+      });
       setSuggestions([]);
       setCurrentWord("");
     } finally {
       setLoading(false);
-      requestAnimationFrame(() => textareaRef.current?.focus());
     }
   };
 
@@ -214,27 +258,41 @@ export default function TypingTool({ language }: { language: Language }) {
         }
       }
 
-      setText((prev) => prev + results.join(" ") + " ");
+      const next = text + results.join(" ") + " ";
+
+      setText(next);
+
+      requestAnimationFrame(() => {
+        const textarea = textareaRef.current;
+
+        if (!textarea) return;
+
+        if (textarea && document.activeElement === textarea) {
+          textarea.setSelectionRange(next.length, next.length);
+        }
+        const end = next.length;
+        textarea.setSelectionRange(end, end);
+      });
       setSuggestions([]);
       setCurrentWord("");
     } finally {
       setLoading(false);
-      requestAnimationFrame(() => textareaRef.current?.focus());
     }
   };
 
   /* ---------------- letters click ---------------- */
 
   const insertChar = async (char: string) => {
-    setText((prev) => prev + char);
-    await processInput(text + char);
+    const next = text + char;
+
+    setText(next);
+    await processInput(next);
 
     requestAnimationFrame(() => {
-      textareaRef.current?.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      });
       textareaRef.current?.focus();
+
+      const end = next.length;
+      textareaRef.current?.setSelectionRange(end, end);
     });
   };
 
@@ -248,12 +306,61 @@ export default function TypingTool({ language }: { language: Language }) {
     setCurrentWord("");
   };
 
-  const handleMoveToEditor = (index: number) => {
-    const line = boardLines[index];
-    setBoardLines((prev) => prev.filter((_, i) => i !== index));
-    setText(line + " ");
+  const handleCopyText = async () => {
+    if (!text.trim()) return;
+
+    try {
+      await copyToClipboard(text);
+
+      toast.success("Copied to clipboard.");
+    } catch {
+      toast.error("Unable to copy text");
+    }
+  };
+
+  const handleClearText = () => {
+    if (!text.trim()) return;
+
+    const confirmed = window.confirm(
+      "Clear the current editor? This won't affect your Session Board.",
+    );
+
+    if (!confirmed) return;
+
+    setText("");
     setSuggestions([]);
     setCurrentWord("");
+
+    requestAnimationFrame(() => {
+      const textarea = textareaRef.current;
+
+      if (!textarea) return;
+
+      textarea.focus();
+      textarea.setSelectionRange(0, 0);
+    });
+
+    toast.success("🗑 Editor cleared.");
+  };
+
+  const handleMoveToEditor = (index: number) => {
+    const line = boardLines[index] + " ";
+
+    setBoardLines((prev) => prev.filter((_, i) => i !== index));
+
+    setText(line);
+    setSuggestions([]);
+    setCurrentWord("");
+
+    requestAnimationFrame(() => {
+      const textarea = textareaRef.current;
+      if (!textarea) return;
+
+      textarea.focus();
+
+      const end = line.length;
+      textarea.setSelectionRange(end, end);
+    });
   };
 
   const handleUpdateLine = (index: number, value: string) => {
@@ -302,8 +409,13 @@ export default function TypingTool({ language }: { language: Language }) {
           value={text}
           onChange={handleInput}
           onKeyDown={handleKeyDown}
+          onBeforeInput={handleBeforeInput}
           onPaste={handlePaste}
           onDrop={handleDrop}
+          autoComplete="off"
+          autoCorrect="off"
+          autoCapitalize="off"
+          spellCheck={false}
         />
 
         {/* Suggestions */}
@@ -317,7 +429,11 @@ export default function TypingTool({ language }: { language: Language }) {
             suggestions.map((s, i) => (
               <button
                 key={i}
-                onClick={() => insertSuggestion(s)}
+                type="button"
+                onPointerDown={(e) => {
+                  e.preventDefault();
+                  insertSuggestion(s);
+                }}
                 className="suggestion-chip"
               >
                 {s}
@@ -327,18 +443,64 @@ export default function TypingTool({ language }: { language: Language }) {
       </div>
 
       <div className="mt-4 grid md:grid-cols-[1fr_auto] gap-4 items-start">
-        {/* Actions */}
-        <div className="flex gap-3">
-          <button onClick={handleAddToBoard} className="btn-secondary">
-            Add to Board
+        {/* Desktop Actions */}
+        <div className="hidden sm:flex flex-wrap gap-3">
+          <button onClick={handleAddToBoard} className="btn-primary">
+            ➕ Add to Board
+          </button>
+
+          <button
+            onClick={handleCopyText}
+            className="btn-secondary"
+            disabled={!text.trim()}
+          >
+            📋 Copy
+          </button>
+
+          <button
+            onClick={handleClearText}
+            className="btn-secondary"
+            disabled={!text.trim()}
+          >
+            🗑 Clear
+          </button>
+        </div>
+
+        {/* Mobile Actions */}
+        <div className="flex sm:hidden gap-2">
+          <button
+            onClick={handleAddToBoard}
+            className="btn-primary flex-1"
+            aria-label="Add to Board"
+          >
+            ➕
+          </button>
+
+          <button
+            onClick={handleCopyText}
+            className="btn-secondary flex-1"
+            disabled={!text.trim()}
+            aria-label="Copy"
+          >
+            📋
+          </button>
+
+          <button
+            onClick={handleClearText}
+            className="btn-secondary flex-1"
+            disabled={!text.trim()}
+            aria-label="Clear"
+          >
+            🗑
           </button>
         </div>
 
         {/* Shortcuts */}
-        <div className="text-sm text-[--color-text-muted] bg-gray-50 border rounded-lg p-3">
+        <div className="hidden md:block text-sm text-[--color-text-muted] bg-gray-50 border rounded-lg p-3">
           <div className="font-semibold mb-2 text-[--color-text-heading]">
             Keyboard shortcuts
           </div>
+
           <ul className="space-y-1">
             <li>
               <kbd className="font-mono">Space</kbd> → convert word

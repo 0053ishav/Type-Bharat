@@ -5,6 +5,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Analytics } from "@vercel/analytics/next"
 import { GLOBAL_KEYWORDS } from "@/lib/seo/keywords";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -80,6 +81,12 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Toaster 
+          position="bottom-center"
+          richColors
+          closeButton
+          duration={2500}
+        />
       <Analytics />
       </body>
     </html>
