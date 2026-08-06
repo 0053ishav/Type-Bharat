@@ -532,7 +532,7 @@ export default function TypingTool({ language }: { language: Language }) {
       />
 
       <div className="mt-24">
-        <AlphabetGrid language={language} onInsert={insertChar} />{" "}
+        <AlphabetGrid language={language} interactive onInsert={insertChar} />{" "}
       </div>
     </div>
   );
