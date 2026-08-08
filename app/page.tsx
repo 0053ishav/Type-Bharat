@@ -12,6 +12,7 @@ import {
   UploadIcon,
   SparkIcon,
 } from "@/components/icons/FeatureIcons";
+import Link from "next/link";
 
 const features = [
   {
@@ -97,12 +98,12 @@ export default function Home() {
           </p>
 
           <div className="mt-12 flex flex-col sm:flex-row justify-center gap-4">
-            <a href="/typing/panjabi" className="btn-primary text-lg px-10 py-4">
+            <Link href="/typing/panjabi" className="btn-primary text-lg px-10 py-4">
               Start typing in Panjabi →
-            </a>
-            <a href="/typing/hindi" className="btn-secondary text-lg px-10 py-4">
+            </Link>
+            <Link href="/typing/hindi" className="btn-secondary text-lg px-10 py-4">
               Try Hindi
-            </a>
+            </Link>
           </div>
 
           <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm text-(--color-text-muted)">
@@ -486,12 +487,12 @@ export default function Home() {
               No sign-up. No friction. Just type.
             </p>
             <div className="flex justify-center gap-4">
-              <a href="/typing/panjabi" className="btn-primary text-lg px-10 py-4">
+              <Link href="/typing/panjabi" className="btn-primary text-lg px-10 py-4">
                 Panjabi
-              </a>
-              <a href="/typing/hindi" className="btn-secondary text-lg px-10 py-4">
+              </Link>
+              <Link href="/typing/hindi" className="btn-secondary text-lg px-10 py-4">
                 Hindi
-              </a>
+              </Link>
             </div>
           </div>
         </section>

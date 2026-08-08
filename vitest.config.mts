@@ -7,7 +7,7 @@ export default defineConfig({
 
   resolve: {
     alias: {
-      "@": fileURLToPath(new URL ("./", import.meta.url)),
+      "@": fileURLToPath(new URL("./", import.meta.url)),
     },
   },
 
@@ -16,10 +16,13 @@ export default defineConfig({
     environment: "jsdom",
     setupFiles: "./tests/setup.ts",
     include: [
-      "tests/**/*.test.{ts,tsx}",
+      "tests/**/*.test.ts",
+      "tests/**/*.test.tsx",
     ],
     css: true,
     clearMocks: true,
     restoreMocks: true,
+
+    pool: "threads",
   },
 });

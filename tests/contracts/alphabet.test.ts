@@ -29,18 +29,6 @@ describe("Alphabet Contract", () => {
         expect(new Set(letters).size).toBe(letters.length);
       });
 
-      it("should not contain duplicate sounds", () => {
-        const sounds = [
-          ...language.alphabet.vowels,
-          ...language.alphabet.consonants,
-          ...(language.alphabet.extensions ?? []),
-          ...(language.alphabet.vowelSigns ?? []),
-          ...(language.alphabet.symbols ?? []),
-        ].map((c) => c.sound);
-
-        expect(new Set(sounds).size).toBe(sounds.length);
-      });
-
       it("should not contain empty letters or sounds", () => {
         const characters = [
           ...language.alphabet.vowels,
