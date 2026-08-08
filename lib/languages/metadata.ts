@@ -13,13 +13,13 @@ export function createTypingMetadata(language: Language): Metadata {
       language.typing.seo.keywords),
 
     alternates: {
-      canonical: `${SITE_URL}/${language.slug}-typing`,
+      canonical: `${SITE_URL}/typing/${language.slug}`,
     },
 
     openGraph: {
       title: language.typing.seo.openGraph.title,
       description: language.typing.seo.openGraph.description,
-      url: `${SITE_URL}/${language.slug}-typing`,
+      url: `${SITE_URL}/typing/${language.slug}`,
 
       siteName: "TypeBharat",
 
@@ -59,7 +59,7 @@ export function createLearnMetadata(
       description: language.learn.seo.openGraph.description,
       url: `${SITE_URL}/learn/${language.slug}`,
       siteName: "TypeBharat",
-      locale: language.locale,
+      locale: language.learn.seo.openGraph.locale,
       type: "website",
     },
 
