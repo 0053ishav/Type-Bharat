@@ -1,0 +1,539 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { fetchSuggestions } from "@/lib/transliteration/googleHttpTransliterate";
+import SessionBoard from "./SessionBoard";
+import { Language } from "@/types/language";
+import AlphabetGrid from "@/components/ui/AlphabetGrid";
+import { toast } from "sonner";
+import { copyToClipboard } from "@/lib/clipboard";
+
+export default function TypingTool({ language }: { language: Language }) {
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  const [text, setText] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [currentWord, setCurrentWord] = useState("");
+  const [boardLines, setBoardLines] = useState<string[]>([]);
+  const [suggestions, setSuggestions] = useState<string[]>([]);
+
+  const STORAGE_KEY = `typebharat-session-board-${language.transliteration.languageCode}`;
+
+  /* ------------------------------------
+     Load board from localStorage
+  ------------------------------------ */
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        setBoardLines(JSON.parse(saved));
+      }
+    } catch (err) {
+      console.error("Failed to load session board:", err);
+    }
+  }, [STORAGE_KEY]);
+
+  /* ------------------------------------
+     Save board to localStorage
+  ------------------------------------ */
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(boardLines));
+    } catch (err) {
+      console.error("Failed to save session board:", err);
+    }
+  }, [boardLines, STORAGE_KEY]);
+
+  /* ---------------- lifecycle ---------------- */
+
+  useEffect(() => {
+    setText("");
+    setCurrentWord("");
+    setSuggestions([]);
+  }, [language.transliteration.languageCode]);
+
+  useEffect(() => {
+    textareaRef.current?.focus();
+  }, []);
+
+  useEffect(() => {
+    const handleGlobalKeyDown = (e: KeyboardEvent) => {
+      const textarea = textareaRef.current;
+      if (!textarea) return;
+
+      // Ignore shortcuts
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+
+      const active = document.activeElement as HTMLElement | null;
+
+      // Do not steal focus from interactive elements
+      if (
+        active &&
+        (active.tagName === "INPUT" ||
+          active.tagName === "TEXTAREA" ||
+          active.tagName === "SELECT" ||
+          active.tagName === "BUTTON" ||
+          active.isContentEditable)
+      ) {
+        return;
+      }
+
+      // Only printable characters
+      if (e.key.length === 1) {
+        if (document.activeElement !== textarea) {
+          textarea.focus();
+        }
+
+        // Move cursor to end
+        const len = textarea.value.length;
+        textarea.setSelectionRange(len, len);
+      }
+    };
+
+    window.addEventListener("keydown", handleGlobalKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleGlobalKeyDown);
+    };
+  }, []);
+
+  /* ---------------- helpers ---------------- */
+
+  const extractLastWord = (value: string) => {
+    const match = value.match(/(\S+)$/);
+    return match ? match[1] : "";
+  };
+
+  const processInput = async (value: string) => {
+    const lastWord = extractLastWord(value);
+    setCurrentWord(lastWord);
+
+    if (!lastWord) {
+      setSuggestions([]);
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const suggs = await fetchSuggestions(
+        lastWord,
+        language.transliteration.languageCode,
+        5,
+      );
+      setSuggestions(suggs);
+    } catch {
+      setSuggestions([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  /* ---------------- textarea events ---------------- */
+
+  const handleInput = async (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const value = e.target.value;
+
+    setText(value);
+    await processInput(value);
+  };
+
+  const handleWordCompletion = () => {
+    if (!currentWord) return;
+    if (!suggestions.length) return;
+
+    insertSuggestion(suggestions[0]);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    // Space → accept first suggestion
+    if (e.key === " " && currentWord && suggestions.length > 0) {
+      e.preventDefault();
+      handleWordCompletion();
+      return;
+    }
+    // 🔥 Ctrl/Cmd + Enter → Add to Session Board
+    if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
+      e.preventDefault();
+      handleAddToBoard();
+    }
+  };
+
+  const handleBeforeInput = (e: React.FormEvent<HTMLTextAreaElement>) => {
+    const nativeEvent = e.nativeEvent as InputEvent;
+    if (nativeEvent.data === " ") {
+      if (currentWord && suggestions.length) {
+        e.preventDefault();
+        handleWordCompletion();
+    }
+    }
+  };
+
+  const insertSuggestion = (word: string) => {
+    const next = text.replace(/(\S+)$/, word) + " ";
+
+    setText(next);
+    setCurrentWord("");
+    setSuggestions([]);
+
+    requestAnimationFrame(() => {
+      const textarea = textareaRef.current;
+      if (!textarea) return;
+
+      const end = next.length;
+
+      if (document.activeElement === textarea) {
+        textarea.setSelectionRange(end, end);
+      }
+    });
+  };
+
+  const handlePaste = async (e: React.ClipboardEvent<HTMLTextAreaElement>) => {
+    const pastedText = e.clipboardData.getData("text");
+    if (!pastedText.trim()) return;
+
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const words = pastedText.split(/\s+/).filter(Boolean);
+      const results: string[] = [];
+
+      for (const word of words) {
+        try {
+          const s = await fetchSuggestions(
+            word,
+            language.transliteration.languageCode,
+            1,
+          );
+          results.push(s[0] || word);
+        } catch {
+          results.push(word);
+        }
+      }
+
+      const translated = results.join(" ") + " ";
+      const next = text + translated;
+
+      setText(next);
+      requestAnimationFrame(() => {
+        const textarea = textareaRef.current;
+        if (!textarea) return;
+
+        if (textarea && document.activeElement === textarea) {
+          textarea.setSelectionRange(next.length, next.length);
+        }
+        const end = next.length;
+        textarea.setSelectionRange(end, end);
+      });
+      setSuggestions([]);
+      setCurrentWord("");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleDrop = async (e: React.DragEvent<HTMLTextAreaElement>) => {
+    e.preventDefault();
+    const droppedText =
+      e.dataTransfer.getData("text/plain") || e.dataTransfer.getData("text");
+
+    if (!droppedText.trim()) return;
+
+    setLoading(true);
+
+    try {
+      const words = droppedText.split(/\s+/).filter(Boolean);
+      const results: string[] = [];
+
+      for (const word of words) {
+        try {
+          const s = await fetchSuggestions(
+            word,
+            language.transliteration.languageCode,
+            1,
+          );
+          results.push(s[0] || word);
+        } catch {
+          results.push(word);
+        }
+      }
+
+      const next = text + results.join(" ") + " ";
+
+      setText(next);
+
+      requestAnimationFrame(() => {
+        const textarea = textareaRef.current;
+
+        if (!textarea) return;
+
+        if (textarea && document.activeElement === textarea) {
+          textarea.setSelectionRange(next.length, next.length);
+        }
+        const end = next.length;
+        textarea.setSelectionRange(end, end);
+      });
+      setSuggestions([]);
+      setCurrentWord("");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  /* ---------------- letters click ---------------- */
+
+  const insertChar = async (char: string) => {
+    const next = text + char;
+
+    setText(next);
+    await processInput(next);
+
+    requestAnimationFrame(() => {
+      textareaRef.current?.focus();
+
+      const end = next.length;
+      textareaRef.current?.setSelectionRange(end, end);
+    });
+  };
+
+  /* ---------------- board ---------------- */
+
+  const handleAddToBoard = () => {
+    if (!text.trim()) return;
+    setBoardLines((prev) => [...prev, text.trim()]);
+    setText("");
+    setSuggestions([]);
+    setCurrentWord("");
+  };
+
+  const handleCopyText = async () => {
+    if (!text.trim()) return;
+
+    try {
+      await copyToClipboard(text);
+
+      toast.success("Copied to clipboard.");
+    } catch {
+      toast.error("Unable to copy text");
+    }
+  };
+
+  const handleClearText = () => {
+    if (!text.trim()) return;
+
+    const confirmed = window.confirm(
+      "Clear the current editor? This won't affect your Session Board.",
+    );
+
+    if (!confirmed) return;
+
+    setText("");
+    setSuggestions([]);
+    setCurrentWord("");
+
+    requestAnimationFrame(() => {
+      const textarea = textareaRef.current;
+
+      if (!textarea) return;
+
+      textarea.focus();
+      textarea.setSelectionRange(0, 0);
+    });
+
+    toast.success("🗑 Editor cleared.");
+  };
+
+  const handleMoveToEditor = (index: number) => {
+    const line = boardLines[index] + " ";
+
+    setBoardLines((prev) => prev.filter((_, i) => i !== index));
+
+    setText(line);
+    setSuggestions([]);
+    setCurrentWord("");
+
+    requestAnimationFrame(() => {
+      const textarea = textareaRef.current;
+      if (!textarea) return;
+
+      textarea.focus();
+
+      const end = line.length;
+      textarea.setSelectionRange(end, end);
+    });
+  };
+
+  const handleUpdateLine = (index: number, value: string) => {
+    setBoardLines((prev) =>
+      prev.map((line, i) => (i === index ? value : line)),
+    );
+  };
+
+  const handleCopyLine = async (line: string) => {
+    await navigator.clipboard.writeText(line);
+  };
+
+  const handleDeleteLine = (index: number) => {
+    setBoardLines((prev) => prev.filter((_, i) => i !== index));
+  };
+
+  const handleCopyAll = async () => {
+    await navigator.clipboard.writeText(boardLines.join("\n"));
+  };
+
+  const handleReorder = (from: number, to: number) => {
+    setBoardLines((prev) => {
+      const copy = [...prev];
+      const [moved] = copy.splice(from, 1);
+      copy.splice(to, 0, moved);
+      return copy;
+    });
+  };
+
+  /* ---------------- render ---------------- */
+
+  return (
+    <div className="max-w-3xl mx-auto p-6">
+      <h1 className="text-3xl font-bold mb-2 text-[--color-text-heading]">
+        {language.typing.title}
+      </h1>
+      <p className="mb-4 text-[--color-text-body]">
+        {language.typing.subtitle}
+      </p>
+      <div className="card p-6">
+        <textarea
+          ref={textareaRef}
+          rows={9}
+          className="input-base"
+          placeholder="Type here in English..."
+          value={text}
+          onChange={handleInput}
+          onKeyDown={handleKeyDown}
+          onBeforeInput={handleBeforeInput}
+          onPaste={handlePaste}
+          onDrop={handleDrop}
+          autoComplete="off"
+          autoCorrect="off"
+          autoCapitalize="off"
+          spellCheck={false}
+        />
+
+        {/* Suggestions */}
+        <div className="suggestion-bar">
+          {loading &&
+            Array.from({ length: 3 }).map((_, i) => (
+              <div key={i} className="skeleton-chip" />
+            ))}
+
+          {!loading &&
+            suggestions.map((s, i) => (
+              <button
+                key={i}
+                type="button"
+                onPointerDown={(e) => {
+                  e.preventDefault();
+                  insertSuggestion(s);
+                }}
+                className="suggestion-chip"
+              >
+                {s}
+              </button>
+            ))}
+        </div>
+      </div>
+
+      <div className="mt-4 grid md:grid-cols-[1fr_auto] gap-4 items-start">
+        {/* Desktop Actions */}
+        <div className="hidden sm:flex flex-wrap gap-3">
+          <button onClick={handleAddToBoard} className="btn-primary">
+            ➕ Add to Board
+          </button>
+
+          <button
+            onClick={handleCopyText}
+            className="btn-secondary"
+            disabled={!text.trim()}
+          >
+            📋 Copy
+          </button>
+
+          <button
+            onClick={handleClearText}
+            className="btn-secondary"
+            disabled={!text.trim()}
+          >
+            🗑 Clear
+          </button>
+        </div>
+
+        {/* Mobile Actions */}
+        <div className="flex sm:hidden gap-2">
+          <button
+            onClick={handleAddToBoard}
+            className="btn-primary flex-1"
+            aria-label="Add to Board"
+          >
+            ➕
+          </button>
+
+          <button
+            onClick={handleCopyText}
+            className="btn-secondary flex-1"
+            disabled={!text.trim()}
+            aria-label="Copy"
+          >
+            📋
+          </button>
+
+          <button
+            onClick={handleClearText}
+            className="btn-secondary flex-1"
+            disabled={!text.trim()}
+            aria-label="Clear"
+          >
+            🗑
+          </button>
+        </div>
+
+        {/* Shortcuts */}
+        <div className="hidden md:block text-sm text-[--color-text-muted] bg-gray-50 border rounded-lg p-3">
+          <div className="font-semibold mb-2 text-[--color-text-heading]">
+            Keyboard shortcuts
+          </div>
+
+          <ul className="space-y-1">
+            <li>
+              <kbd className="font-mono">Space</kbd> → convert word
+            </li>
+            <li>
+              <kbd className="font-mono">Tab</kbd> → select word
+            </li>
+            <li>
+              <kbd className="font-mono">Ctrl/Cmd + C</kbd> → copy
+            </li>
+            <li>
+              <kbd className="font-mono">Ctrl/Cmd + X</kbd> → cut
+            </li>
+            <li>
+              <kbd className="font-mono">Ctrl/Cmd + Enter</kbd> → add to board
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <SessionBoard
+        lines={boardLines}
+        onUpdateLine={handleUpdateLine}
+        onMoveToEditor={handleMoveToEditor}
+        onCopyLine={handleCopyLine}
+        onDeleteLine={handleDeleteLine}
+        onCopyAll={handleCopyAll}
+        onReorder={handleReorder}
+      />
+
+      <div className="mt-24">
+        <AlphabetGrid language={language} interactive onInsert={insertChar} />{" "}
+      </div>
+    </div>
+  );
+}

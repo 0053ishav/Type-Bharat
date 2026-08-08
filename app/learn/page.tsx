@@ -45,7 +45,7 @@ export default function LearnIndexPage() {
               Learn Panjabi →
             </Link>
 
-            <Link href="/panjabi-typing" className="btn-primary">
+            <Link href="/typing/panjabi" className="btn-primary">
               Start Typing →
             </Link>
           </div>
@@ -68,7 +68,7 @@ export default function LearnIndexPage() {
               Learn Hindi →
             </Link>
 
-            <Link href="/hindi-typing" className="btn-primary">
+            <Link href="/typing/hindi" className="btn-primary">
               Start Typing →
             </Link>
           </div>
@@ -101,11 +101,11 @@ export default function LearnIndexPage() {
           </p>
 
           <div className="flex justify-center gap-4 flex-wrap">
-            <Link href="/panjabi-typing" className="btn-primary">
+            <Link href="/typing/panjabi" className="btn-primary">
               Panjabi Typing →
             </Link>
 
-            <Link href="/hindi-typing" className="btn-secondary">
+            <Link href="/typing/hindi" className="btn-secondary">
               Hindi Typing →
             </Link>
           </div>

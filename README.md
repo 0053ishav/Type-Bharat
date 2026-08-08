@@ -91,7 +91,7 @@ Routes:
 
 ```
 app/
-├── panjabi-typing/
+├── Panjabi-typing/
 ├── hindi-typing/
 ├── learn/
 │ ├── page.tsx
@@ -109,7 +109,7 @@ components/
 └── Footer.tsx
 
 data/
-├── panjabiLetters.ts
+├── PanjabiLetters.ts
 ├── hindiLetters.ts
 └── faq.ts
 

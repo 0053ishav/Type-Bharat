@@ -11,13 +11,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${baseUrl}/panjabi-typing`,
+      url: `${baseUrl}/typing/panjabi`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/hindi-typing`,
+      url: `${baseUrl}/typing/hindi`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
