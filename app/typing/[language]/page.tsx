@@ -3,9 +3,8 @@ import type { Metadata } from "next";
 
 import TypingPage from "@/features/typing/components/TypingPage";
 
-import { getLanguage } from "@/lib/languages/loader";
+import { getLanguage, getLanguages } from "@/lib/languages/loader";
 import { createTypingMetadata } from "@/lib/languages/metadata";
-import { languageRegistry } from "@/lib/languages/registry";
 
 type Props = {
   params: Promise<{
@@ -24,9 +23,9 @@ function resolveLanguage(slug: string) {
 }
 
 export async function generateStaticParams() {
-  return Object.keys(languageRegistry).map((slug) => ({
-    language: slug,
-  }));
+  return getLanguages().map((language) => ({
+      language: language.slug,
+    }));
 }
 
 export async function generateMetadata({
