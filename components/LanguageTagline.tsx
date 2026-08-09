@@ -7,6 +7,7 @@ const TAGLINES = [
   "अंग्रेज़ी में टाइप करें। अपनी भाषा में लिखें।",
   "English mein type karo. Apni bhasha mein likho.",
   "انگریزی میں ٹائپ کریں۔ اپنی زبان میں لکھیں۔",
+  "ઇંગલિશ મેઈન ટીપે કરો. આપણી ભાષા મેઈન લીખો ",
 ];
 
 export default function LanguageTagline() {

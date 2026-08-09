@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://typebharat.ishav.space"),
 
   title: {
-    default: "TypeBharat — English to Indian Language Typing Tool",
+    default: "TypeBharat - English to Indian Language Typing Tool",
     template: "%s | TypeBharat",
   },
 
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "TypeBharat — English to Indian Language Typing Tool",
+    title: "TypeBharat - English to Indian Language Typing Tool",
     description:
       "Type in English and write in Indian languages instantly. Free, fast, and privacy-first typing tool for Panjabi (Also known as Punjabi), Hindi, and more.",
     url: "https://typebharat.ishav.space",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "TypeBharat — English to Indian Language Typing Tool",
+    title: "TypeBharat - English to Indian Language Typing Tool",
     description:
       "Type in English and write in Indian languages instantly. No login. No tracking. Free forever.",
   },

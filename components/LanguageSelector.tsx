@@ -35,12 +35,25 @@ export default function LanguageSelector() {
         </div>
 
         {/* Gujarati */}
-        <div className="border rounded-lg p-6 bg-gray-50 opacity-70">
+        <div className="border rounded-lg p-6 bg-white">
           <h3 className="text-lg font-semibold mb-2">
             Gujarati Typing Tool
           </h3>
           <p className="text-sm text-[--color-text-muted] mb-4">
             Type in English → Write in ગુજરાતી
+          </p>
+          <Link href="/typing/gujarati" className="btn-primary">
+            Start Gujarati Typing →
+          </Link>
+        </div>
+
+        {/* Tamil */}
+        <div className="border rounded-lg p-6 bg-gray-50 opacity-70">
+          <h3 className="text-lg font-semibold mb-2">
+            Tamil Typing Tool
+          </h3>
+          <p className="text-sm text-[--color-text-muted] mb-4">
+            Type in English → Write in தமிழ்
           </p>
           <button
             disabled

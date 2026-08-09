@@ -53,16 +53,18 @@ export default function Navbar() {
             <>
               <NavLink href="/learn/panjabi">Panjabi</NavLink>
               <NavLink href="/learn/hindi">Hindi</NavLink>
+              <NavLink href="/learn/gujarati">Gujarati</NavLink>
             </>
           ) : (
             <>
               <NavLink href="/typing/panjabi">Panjabi</NavLink>
               <NavLink href="/typing/hindi">Hindi</NavLink>
+              <NavLink href="/typing/gujarati">Gujarati</NavLink>
             </>
           )}
 
           <span className="text-(--color-text-muted) cursor-not-allowed">
-            Gujarati
+            Tamil
           </span>
         </nav>
 
@@ -101,6 +103,9 @@ export default function Navbar() {
                 <MobileLink href="/learn/hindi" onClick={() => setMobileOpen(false)}>
                   Learn Hindi
                 </MobileLink>
+                <MobileLink href="/learn/gujarati" onClick={() => setMobileOpen(false)}>
+                  Learn Gujarati
+                </MobileLink>
               </>
             ) : (
               <>
@@ -110,12 +115,11 @@ export default function Navbar() {
                 <MobileLink href="/typing/hindi" onClick={() => setMobileOpen(false)}>
                   Hindi Typing
                 </MobileLink>
+                <MobileLink href="/typing/gujarati" onClick={() => setMobileOpen(false)}>
+                  Gujarati Typing
+                </MobileLink>
               </>
             )}
-
-            <div className="text-(--color-text-muted)">
-              Gujarati (coming soon)
-            </div>
           </div>
         </div>
       )}
