@@ -73,6 +73,29 @@ export default function LearnIndexPage() {
             </Link>
           </div>
         </div>
+
+        {/* Gujarati */}
+        <div className="card p-8 hover-lift">
+          <h2 className="text-2xl font-bold text-(--color-text-heading) mb-3">
+            Learn Gujarati Typing
+          </h2>
+
+          <p className="text-(--color-text-body) mb-6">
+            Learn how to type Gujarati using English letters. Explore the
+            vowels, consonants, matras, and phonetic typing
+            patterns step by step.
+          </p>
+
+          <div className="flex flex-wrap gap-4">
+            <Link href="/learn/gujarati" className="btn-secondary">
+              Learn Gujarati →
+            </Link>
+
+            <Link href="/typing/gujarati" className="btn-primary">
+              Start Typing →
+            </Link>
+          </div>
+        </div>
       </section>
 
       {/* COMING SOON */}
@@ -83,7 +106,7 @@ export default function LearnIndexPage() {
 
         <p className="text-(--color-text-muted) max-w-2xl mx-auto">
           We are expanding TypeBharat to support more Indian languages including
-          Tamil, Telugu, Bengali, Gujarati, Marathi, Kannada, and Malayalam.
+          Tamil, Telugu, Bengali, Marathi, Kannada, and Malayalam.
           Each language will include a full learning guide and typing tool.
         </p>
       </section>

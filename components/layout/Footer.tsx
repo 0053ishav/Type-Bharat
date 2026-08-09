@@ -19,7 +19,7 @@ export default function Footer() {
         </p>
 
         <p className="mt-3">
-          Supports Panjabi • Hindi • Gujarati (soon).
+          Supports Panjabi • Hindi • Gujarati.
           More Indian languages coming soon.
         </p>
 
@@ -44,8 +44,13 @@ export default function Footer() {
                   Hindi Typing
                 </Link>
               </li>
+              <li>
+                <Link href="/typing/gujarati" className="hover:underline">
+                  Gujarati Typing
+                </Link>
+              </li>
               <li className="opacity-60 cursor-not-allowed">
-                Gujarati (coming soon)
+                Tamil (coming soon)
               </li>
             </ul>
           </div>
@@ -58,12 +63,17 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link href="/learn/panjabi" className="hover:underline">
-                  Learn Panjabi Typing
+                  Panjabi
                 </Link>
               </li>
               <li>
                 <Link href="/learn/hindi" className="hover:underline">
-                  Learn Hindi Typing
+                  Hindi
+                </Link>
+              </li>
+              <li>
+                <Link href="/learn/gujarati" className="hover:underline">
+                  Gujarati
                 </Link>
               </li>
             </ul>

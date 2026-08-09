@@ -1,6 +1,7 @@
 const LANG_TO_ITC: Record<string, string> = {
   pa: "pa-t-i0-und",
   hi: "hi-t-i0-und",
+  gu: "gu-t-i0-und",
   ta: "ta-t-i0-und",
   te: "te-t-i0-und",
   bn: "bn-t-i0-und",

@@ -493,6 +493,9 @@ export default function Home() {
               <Link href="/typing/hindi" className="btn-secondary text-lg px-10 py-4">
                 Hindi
               </Link>
+              <Link href="/typing/gujarati" className="btn-secondary text-lg px-10 py-4">
+                Gujarati
+              </Link>
             </div>
           </div>
         </section>

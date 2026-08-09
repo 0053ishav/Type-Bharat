@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { getLanguages } from "@/lib/languages/loader";
 
 export const metadata: Metadata = {
   title: "Typing Tools – TypeBharat",
@@ -98,6 +99,7 @@ const features = [
 ];
 
 export default function TypingIndexPage() {
+  const languages = getLanguages();
   return (
     <main className="max-w-7xl mx-auto px-6 py-16 space-y-24">
       {/* Hero */}
@@ -142,7 +144,7 @@ export default function TypingIndexPage() {
         </div>
 
         <div className="card p-6 text-center">
-          <div className="text-4xl font-bold">2</div>
+          <div className="text-4xl font-bold">{languages.length}</div>
           <p className="text-sm text-(--color-text-muted)">
             Available Today
           </p>
