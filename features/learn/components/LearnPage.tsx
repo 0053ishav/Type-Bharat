@@ -37,7 +37,7 @@ export default function LearnPage({ language }: Props) {
 
         <div className="mt-8">
           <Link
-            href={`/${language.slug}-typing`}
+            href={`/typing/${language.slug}`}
             className="btn-primary text-lg px-8 py-4"
           >
             {language.learn.meta.cta}
@@ -94,7 +94,7 @@ export default function LearnPage({ language }: Props) {
           </p>
 
           <Link
-            href={`/${language.slug}-typing`}
+            href={`/typing/${language.slug}`}
             className="btn-primary text-lg px-10 py-4"
           >
             {language.learn.cta.button}

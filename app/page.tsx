@@ -1,8 +1,9 @@
+import Link from "next/link";
+
 import LanguageTagline from "@/components/LanguageTagline";
 import LanguageSelector from "@/components/LanguageSelector";
 import FAQ from "@/components/common/FAQ";
 import { COMMON_FAQ } from "@/data/common/faq";
-
 
 import {
   LightningIcon,
@@ -12,490 +13,615 @@ import {
   UploadIcon,
   SparkIcon,
 } from "@/components/icons/FeatureIcons";
-import Link from "next/link";
+
+import { getLanguages } from "@/lib/languages/loader";
 
 const features = [
   {
     color: "orange",
-    title: "Real-time conversion",
-    desc: "See words transform as you type. No waiting, no processing delays—instant feedback with every keystroke.",
+    title: "Instant conversion",
+    desc: "Words transform as you type. No submit button, no waiting.",
     icon: LightningIcon,
   },
   {
     color: "green",
     title: "Session board",
-    desc: "Collect and organize your favorite phrases during your session. Perfect for building lyrics sheets or reference documents.",
+    desc: "Save phrases and organize your writing while you work.",
     icon: DocumentIcon,
   },
   {
     color: "blue",
     title: "Works everywhere",
-    desc: "Desktop, mobile, or tablet—TypeBharat works seamlessly in any modern browser without installation.",
+    desc: "Use TypeBharat on desktop, tablet, or mobile.",
     icon: DeviceIcon,
   },
   {
     color: "purple",
-    title: "Easy copy-paste",
-    desc: "One click to copy your text. Use it anywhere—messaging apps, documents, social media, or presentations.",
+    title: "Copy anywhere",
+    desc: "Take your finished text to WhatsApp, documents, social media, and more.",
     icon: CopyIcon,
   },
   {
     color: "pink",
     title: "Paste & convert",
-    desc: "Already have text written? Paste entire paragraphs and convert them instantly with a single click.",
+    desc: "Convert existing text without typing it all again.",
     icon: UploadIcon,
   },
   {
     color: "yellow",
     title: "Smart suggestions",
-    desc: "Get intelligent word suggestions as you type to ensure accurate transliteration every time.",
+    desc: "Choose from suggestions as you type for faster, more accurate writing.",
     icon: SparkIcon,
   },
 ];
 
 const steps = [
   {
-    title: "Think of the word in your language",
-    desc: "Picture how the word sounds when you speak it naturally.",
+    number: "01",
+    title: "Type naturally",
+    description:
+      "Use your normal English keyboard and type words the way they sound.",
   },
   {
-    title: "Type it phonetically in English",
-    desc: "Write the word using English letters exactly as it sounds.",
+    number: "02",
+    title: "Press space",
+    description:
+      "TypeBharat recognizes the word and converts it into the native script.",
   },
   {
-    title: "Press the space bar",
-    desc: "Watch as your English text transforms into perfect native script.",
+    number: "03",
+    title: "Keep writing",
+    description:
+      "Continue typing naturally. Your sentence builds itself in your language.",
   },
 ];
 
+const useCases = [
+  {
+    icon: "💬",
+    title: "Messages",
+    description: "Chat naturally with family and friends.",
+  },
+  {
+    icon: "🎵",
+    title: "Lyrics",
+    description: "Write and preserve lyrics in their original script.",
+  },
+  {
+    icon: "📱",
+    title: "Social media",
+    description: "Create captions and posts in your language.",
+  },
+  {
+    icon: "✍️",
+    title: "Writing",
+    description: "Write notes, stories, poetry, and more.",
+  },
+  {
+    icon: "💼",
+    title: "Work",
+    description: "Create bilingual documents and communication.",
+  },
+  {
+    icon: "📚",
+    title: "Learning",
+    description: "Practice writing your native language.",
+  },
+];
 
-const SectionDivider = () => (
-  <div className="my-32 h-px bg-linear-to-r from-transparent via-gray-300 to-transparent" />
+const Section = ({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => <section className={`mt-32 md:mt-40 ${className}`}>{children}</section>;
+
+const SectionHeading = ({
+  eyebrow,
+  title,
+  description,
+}: {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+}) => (
+  <div className="max-w-3xl mb-12 md:mb-16">
+    {eyebrow && (
+      <p className="text-sm font-semibold uppercase tracking-[0.18em] text-(--color-text-muted)">
+        {eyebrow}
+      </p>
+    )}
+
+    <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-(--color-text-heading)">
+      {title}
+    </h2>
+
+    {description && (
+      <p className="mt-5 text-lg md:text-xl leading-relaxed text-(--color-text-muted)">
+        {description}
+      </p>
+    )}
+  </div>
 );
 
 export default function Home() {
+  const languages = getLanguages();
+
+  const typingLanguages = languages.filter(
+    (language) => language.capabilities.typing,
+  );
+
+  /*
+   * Homepage intentionally shows only a small selection.
+   * The complete language catalog lives on /typing.
+   */
+  const featuredLanguages = typingLanguages.slice(0, 3);
+
   return (
-    <div className="relative bg-mesh">
-      {/* Decorative gradients */}
-      <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-radial-orange" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-radial-green" />
+    <div className="relative overflow-hidden bg-mesh">
+      {/* =========================================================
+          BACKGROUND
+      ========================================================= */}
+
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute -top-32 -right-32 w-125 h-125 bg-gradient-radial-orange opacity-60" />
+        <div className="absolute -bottom-32 -left-32 w-125 h-125 bg-gradient-radial-green opacity-50" />
       </div>
 
-      <main className="relative max-w-6xl mx-auto px-6 py-14">
-        {/* HERO */}
-        <section className="text-center">
-          <LanguageTagline />
+      <main className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        {/* =========================================================
+            HERO
+        ========================================================= */}
 
-          <h1 className="mt-12 text-4xl md:text-5xl lg:text-6xl font-bold hero-glow text-(--color-text-heading)">
-            Type in English.{" "}
-            <span className="text-gradient">Write in your language.</span>
-          </h1>
+        <section className="pb-24 md:pb-32">
+          <div className="max-w-5xl mx-auto text-center">
+            <LanguageTagline />
 
-          <p className="mt-8 text-xl md:text-2xl max-w-3xl mx-auto text-(--color-text-body)">
-            The simplest way to type Indian languages. No keyboards. No learning
-            curve. Just type.
-          </p>
+            <h1 className="mt-8 text-5xl sm:text-6xl md:text-7xl lg:text-[5.25rem] leading-[1.02] font-bold tracking-[-0.04em] text-(--color-text-heading)">
+              Your language.
+              <br />
+              <span className="text-gradient">Your keyboard.</span>
+            </h1>
 
-          <div className="mt-12 flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/typing/panjabi" className="btn-primary text-lg px-10 py-4">
-              Start typing in Panjabi →
-            </Link>
-            <Link href="/typing/hindi" className="btn-secondary text-lg px-10 py-4">
-              Try Hindi
-            </Link>
-          </div>
-
-          <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm text-(--color-text-muted)">
-            <span className="badge badge-success">100% Free</span>
-            <span className="badge badge-success">No Login</span>
-            <span className="badge badge-success">Privacy-first</span>
-          </div>
-
-          <div className="mt-6">
-            <span className="badge badge-gradient">
-              Panjabi • Hindi • More coming soon
-            </span>
-          </div>
-        </section>
-        <LanguageSelector />
-        <SectionDivider />
-
-        {/* Live demo card */}
-        <section className="max-w-5xl mx-auto">
-          <div className="card hover-lift">
-            <div className="bg-linear-to-r from-orange-500 to-green-600 px-6 py-4 text-white font-medium">
-              See it in action
+            <div className="mt-10">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 bg-white/70 backdrop-blur-sm text-sm text-(--color-text-muted) shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                Free · No account required
+              </span>
             </div>
 
-            <div className="p-8 md:p-12 grid md:grid-cols-2 gap-8">
+            <p className="mt-8 max-w-2xl mx-auto text-lg md:text-xl lg:text-2xl leading-relaxed text-(--color-text-muted)">
+              Type Indian languages naturally using the English keyboard you
+              already know.
+            </p>
+
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+              {featuredLanguages[0] && (
+                <Link
+                  href={`/typing/${featuredLanguages[0].slug}`}
+                  className="btn-primary text-base md:text-lg px-9 py-4 min-w-52"
+                >
+                  Start typing →
+                </Link>
+              )}
+
+              <Link
+                href="/typing"
+                className="btn-secondary text-base md:text-lg px-9 py-4 min-w-52"
+              >
+                Explore languages
+              </Link>
+            </div>
+
+            <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-(--color-text-muted)">
+              <span>✓ Real-time</span>
+              <span>✓ Privacy-first</span>
+              <span>✓ No installation</span>
+              <span>✓ Works in your browser</span>
+            </div>
+          </div>
+        </section>
+
+        {/* =========================================================
+            LANGUAGE SELECTOR
+        ========================================================= */}
+
+        <section>
+          <div className="rounded-3xl border border-gray-200/80 bg-white/70 backdrop-blur-sm p-7 md:p-10 shadow-sm">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
               <div>
-                <p className="text-sm text-(--color-text-muted) mb-2">
-                  You type
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-(--color-text-muted)">
+                  Choose a language
                 </p>
-                <div className="input-base font-mono border-dashed">
-                  sat sri akaal
-                </div>
+
+                <h2 className="mt-2 text-2xl md:text-3xl font-bold tracking-tight text-(--color-text-heading)">
+                  Start writing in your language
+                </h2>
               </div>
 
-              <div>
-                <p className="text-sm text-(--color-text-muted) mb-2">
-                  You get
+              <Link
+                href="/typing"
+                className="text-sm font-semibold text-(--color-text-heading) hover:underline"
+              >
+                View all typing tools →
+              </Link>
+            </div>
+
+            <LanguageSelector />
+          </div>
+        </section>
+
+        {/* =========================================================
+            LIVE DEMO
+        ========================================================= */}
+
+        <Section>
+          <div className="text-center mb-12">
+            <span className="badge badge-gradient">See the difference</span>
+
+            <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-(--color-text-heading)">
+              Type the way you speak
+            </h2>
+          </div>
+
+          <div className="max-w-5xl mx-auto rounded-3xl border border-gray-200 bg-white shadow-xl shadow-gray-200/40 overflow-hidden">
+            <div className="px-6 py-4 border-b border-gray-100 flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="w-3 h-3 rounded-full bg-red-300" />
+                <span className="w-3 h-3 rounded-full bg-yellow-300" />
+                <span className="w-3 h-3 rounded-full bg-green-300" />
+              </div>
+
+              <span className="text-xs font-medium text-(--color-text-muted)">
+                TypeBharat
+              </span>
+            </div>
+
+            <div className="grid md:grid-cols-2">
+              <div className="p-8 md:p-12 border-b md:border-b-0 md:border-r border-gray-100">
+                <p className="text-xs font-semibold uppercase tracking-[0.15em] text-(--color-text-muted)">
+                  English input
                 </p>
-                <div className="card-gradient-orange p-4 text-3xl font-bold">
+
+                <div className="mt-5 text-2xl md:text-3xl font-mono text-(--color-text-heading)">
+                  sat sri akaal
+                  <span className="animate-pulse">|</span>
+                </div>
+
+                <p className="mt-8 text-sm text-(--color-text-muted)">
+                  Type naturally. No special keyboard required.
+                </p>
+              </div>
+
+              <div className="p-8 md:p-12 bg-linear-to-br from-orange-50 to-green-50">
+                <p className="text-xs font-semibold uppercase tracking-[0.15em] text-(--color-text-muted)">
+                  Native script
+                </p>
+
+                <div className="mt-5 text-4xl md:text-5xl font-bold text-(--color-text-heading)">
                   ਸਤ ਸ੍ਰੀ ਅਕਾਲ
                 </div>
+
+                <p className="mt-8 text-sm text-(--color-text-muted)">
+                  Press space and keep going.
+                </p>
               </div>
             </div>
-
-            <p className="pb-6 text-center text-sm text-(--color-text-muted)">
-              Press space after each word
-            </p>
           </div>
-        </section>
+        </Section>
 
-        <SectionDivider />
+        {/* =========================================================
+            HOW IT WORKS
+        ========================================================= */}
 
-        {/* How it works */}
-        <section className="mt-32">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-(--color-text-heading)">
-              Three steps to perfect typing
-            </h2>
-            <p className="mt-4 text-lg text-(--color-text-body)">
-              Start writing in seconds, no tutorials needed
-            </p>
-          </div>
+        <Section>
+          <SectionHeading
+            eyebrow="How it works"
+            title="Nothing complicated."
+            description="TypeBharat stays out of your way. You already know how to use a keyboard—we simply make it work for your language."
+          />
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="card hover-scale p-8">
-              <div className="icon-box icon-box-orange w-14 h-14 mb-6 text-2xl font-bold">
-                1
+          <div className="grid md:grid-cols-3 gap-px rounded-3xl overflow-hidden border border-gray-200 bg-gray-200">
+            {steps.map((step, index) => (
+              <div
+                key={step.number}
+                className="bg-white p-8 md:p-10 min-h-64 relative"
+              >
+                <span className="text-sm font-bold text-(--color-text-muted)">
+                  {step.number}
+                </span>
+
+                <div
+                  className={`mt-8 icon-box ${
+                    index === 0
+                      ? "icon-box-orange"
+                      : index === 1
+                        ? "icon-box-green"
+                        : "icon-box-blue"
+                  } w-12 h-12 text-lg font-bold`}
+                >
+                  {index + 1}
+                </div>
+
+                <h3 className="mt-6 text-xl font-bold text-(--color-text-heading)">
+                  {step.title}
+                </h3>
+
+                <p className="mt-3 text-(--color-text-muted) leading-relaxed">
+                  {step.description}
+                </p>
               </div>
-              <h3 className="text-xl font-bold mb-3">Type in English</h3>
-              <p className="text-(--color-text-muted) leading-relaxed">
-                Use your regular keyboard. Type words naturally using English
-                letters, just as you would pronounce them.
-              </p>
-            </div>
+            ))}
+          </div>
+        </Section>
 
-            <div className="card hover-scale p-8">
-              <div className="icon-box icon-box-green w-14 h-14 mb-6 text-2xl font-bold">
-                2
+        {/* =========================================================
+            USE CASES
+        ========================================================= */}
+
+        <Section>
+          <SectionHeading
+            eyebrow="Built for everyday writing"
+            title="Whatever you're writing, use your own language."
+          />
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {useCases.map((useCase) => (
+              <div
+                key={useCase.title}
+                className="group rounded-2xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-gray-200/50"
+              >
+                <div className="w-12 h-12 rounded-xl bg-gray-50 flex items-center justify-center text-2xl transition-transform duration-300 group-hover:scale-110">
+                  {useCase.icon}
+                </div>
+
+                <h3 className="mt-6 text-lg font-bold text-(--color-text-heading)">
+                  {useCase.title}
+                </h3>
+
+                <p className="mt-2 text-sm leading-relaxed text-(--color-text-muted)">
+                  {useCase.description}
+                </p>
               </div>
-              <h3 className="text-xl font-bold mb-3">Press space</h3>
-              <p className="text-(--color-text-muted) leading-relaxed">
-                Hit the space bar and watch the magic happen. Words instantly
-                transform into beautiful native script.
-              </p>
-            </div>
+            ))}
+          </div>
+        </Section>
 
-            <div className="card hover-scale p-8">
-              <div className="icon-box icon-box-blue w-14 h-14 mb-6 text-2xl font-bold">
-                3
+        {/* =========================================================
+    ABOUT
+========================================================= */}
+
+        <Section>
+          <div className="max-w-5xl mx-auto">
+            <div className="card-gradient-orange overflow-hidden rounded-3xl">
+              <div className="grid lg:grid-cols-[1.1fr_0.9fr]">
+                {/* Content */}
+                <div className="p-8 md:p-12 lg:p-14">
+                  <div className="badge badge-gradient">Why TypeBharat</div>
+
+                  <h2 className="mt-6 text-3xl md:text-4xl font-bold tracking-tight text-(--color-text-heading)">
+                    Your language shouldn&apos;t require
+                    <span className="text-gradient"> a new keyboard.</span>
+                  </h2>
+
+                  <div className="mt-7 space-y-5 text-lg leading-relaxed text-(--color-text-body)">
+                    <p>
+                      TypeBharat makes writing Indian languages as natural as
+                      speaking them. Instead of learning a complicated keyboard
+                      layout, simply type the words the way they sound using the
+                      English keyboard you already know.
+                    </p>
+
+                    <p>
+                      TypeBharat handles the transliteration and gives you the
+                      native script instantly — so you can focus on what you
+                      want to say, not how to type it.
+                    </p>
+                  </div>
+
+                  <div className="mt-9 flex flex-wrap gap-3">
+                    <span className="badge badge-success">No installation</span>
+
+                    <span className="badge badge-success">No account</span>
+
+                    <span className="badge badge-success">Browser based</span>
+
+                    <span className="badge badge-success">Privacy-first</span>
+                  </div>
+                </div>
+
+                {/* Visual side */}
+                <div className="relative border-t lg:border-t-0 lg:border-l border-orange-200/70 bg-white/60 p-8 md:p-12 flex items-center">
+                  <div className="w-full">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--color-text-muted)">
+                      The idea
+                    </p>
+
+                    <div className="mt-6 space-y-4">
+                      <div className="card p-5 hover-lift">
+                        <p className="text-xs font-semibold uppercase tracking-wider text-(--color-text-muted)">
+                          You type
+                        </p>
+
+                        <p className="mt-2 text-xl md:text-2xl font-mono font-semibold text-(--color-text-heading)">
+                          namaste duniya
+                        </p>
+                      </div>
+
+                      <div className="flex justify-center">
+                        <div className="icon-box icon-box-orange w-10 h-10 font-bold">
+                          ↓
+                        </div>
+                      </div>
+
+                      <div className="card-gradient-green p-5 rounded-2xl">
+                        <p className="text-xs font-semibold uppercase tracking-wider text-(--color-text-muted)">
+                          You get
+                        </p>
+
+                        <p className="mt-2 text-3xl md:text-4xl font-bold text-(--color-text-heading)">
+                          नमस्ते दुनिया
+                        </p>
+                      </div>
+                    </div>
+
+                    <p className="mt-6 text-sm text-center text-(--color-text-muted)">
+                      Same thought. Same pronunciation. Native script.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-bold mb-3">Copy & use</h3>
-              <p className="text-(--color-text-muted) leading-relaxed">
-                Copy your text anywhere—WhatsApp, social media, documents. Save
-                favorite phrases to your session board.
-              </p>
             </div>
           </div>
-        </section>
+        </Section>
 
-        <SectionDivider />
+        {/* =========================================================
+            FEATURES
+        ========================================================= */}
 
-        {/* Use Cases */}
-        <section className="mt-32 max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-(--color-text-heading)">
-              Perfect for every occasion
-            </h2>
-          </div>
+        <Section>
+          <SectionHeading
+            eyebrow="The typing experience"
+            title="Simple on the surface. Powerful underneath."
+            description="Everything you need for fast, comfortable typing without unnecessary complexity."
+          />
 
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="card card-gradient-orange p-6">
-              <div className="text-2xl mb-3">💬</div>
-              <h3 className="font-bold text-lg mb-2">Social Media Posts</h3>
-              <p className="text-sm text-(--color-text-muted)">
-                Write authentic captions, tweets, and status updates in your
-                mother tongue
-              </p>
-            </div>
-
-            <div className="card card-gradient-green p-6">
-              <div className="text-2xl mb-3">🎵</div>
-              <h3 className="font-bold text-lg mb-2">Song Lyrics</h3>
-              <p className="text-sm text-(--color-text-muted)">
-                Type lyrics accurately for your music collection, YouTube
-                videos, or personal archives
-              </p>
-            </div>
-
-            <div className="card card-gradient-blue p-6">
-              <div className="text-2xl mb-3">📱</div>
-              <h3 className="font-bold text-lg mb-2">WhatsApp Messages</h3>
-              <p className="text-sm text-(--color-text-muted)">
-                Chat with family and friends in your native language, making
-                conversations more personal
-              </p>
-            </div>
-
-            <div className="card p-6">
-              <div className="text-2xl mb-3">✍️</div>
-              <h3 className="font-bold text-lg mb-2">Creative Writing</h3>
-              <p className="text-sm text-(--color-text-muted)">
-                Compose poetry, stories, or personal journals in beautiful
-                native scripts
-              </p>
-            </div>
-
-            <div className="card p-6">
-              <div className="text-2xl mb-3">💼</div>
-              <h3 className="font-bold text-lg mb-2">Professional Work</h3>
-              <p className="text-sm text-(--color-text-muted)">
-                Create documents, presentations, and emails for bilingual work
-                environments
-              </p>
-            </div>
-
-            <div className="card p-6">
-              <div className="text-2xl mb-3">👨‍👩‍👧‍👦</div>
-              <h3 className="font-bold text-lg mb-2">Teaching Kids</h3>
-              <p className="text-sm text-(--color-text-muted)">
-                Help children learn to read and write their heritage language
-                with ease
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <SectionDivider />
-
-        {/* WHAT IS TYPEBHARAT */}
-        <section className="mt-32 max-w-4xl mx-auto"  id="about">
-          <h2 className="text-3xl font-bold mb-8 text-(--color-text-heading)">
-            What is TypeBharat?
-          </h2>
-
-          <div className="prose prose-lg max-w-none">
-            <p className="text-(--color-text-body) leading-relaxed text-lg">
-              TypeBharat is a free, browser-based typing tool designed to make
-              writing in Indian languages as natural as speaking. Instead of
-              memorizing complex keyboard layouts or installing special
-              software, you simply type the way words sound in English, and
-              TypeBharat instantly converts them into the correct script.
-            </p>
-
-            <p className="mt-6 text-(--color-text-body) leading-relaxed text-lg">
-              Whether you&apos;re reconnecting with your heritage, teaching your
-              children their mother tongue, or staying connected with loved ones
-              back home, TypeBharat removes the technical barriers to authentic
-              communication.
-            </p>
-
-            <div className="mt-8 card card-gradient-orange p-6 border-l-4 border-(--color-primary)">
-              <p className="font-medium text-(--color-text-body)">
-                <strong>Privacy first:</strong> Everything you type stays in
-                your browser. We don&apos;t store, track, or transmit your
-                content. What you write is yours alone.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <SectionDivider />
-
-        {/* KEY FEATURES */}
-        <section className="mt-32 max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-(--color-text-heading)">
-              Built for simplicity and speed
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-10">
             {features.map(({ color, title, desc, icon: Icon }) => (
-              <div key={title} className="flex gap-4">
-                <div className={`icon-box icon-box-${color} w-14 h-14 p-4`}>
+              <div key={title} className="flex gap-5">
+                <div
+                  className={`icon-box icon-box-${color} w-12 h-12 p-3 shrink-0`}
+                >
                   <Icon />
                 </div>
+
                 <div>
-                  <h3 className="font-bold text-lg mb-2">{title}</h3>
-                  <p className="text-(--color-text-muted)">{desc}</p>
+                  <h3 className="font-bold text-lg text-(--color-text-heading)">
+                    {title}
+                  </h3>
+
+                  <p className="mt-2 text-(--color-text-muted) leading-relaxed">
+                    {desc}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
-        </section>
+        </Section>
 
-        <SectionDivider />
+        {/* =========================================================
+            TRANSLITERATION
+        ========================================================= */}
 
-        {/* How to Type */}
-        <section className="mt-32 max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-(--color-text-heading)">
-            How to type Indian languages using English
-          </h2>
-
-          <div className="card p-8">
-            <p className="text-lg text-(--color-text-body) mb-6">
-              You don&apos;t need to learn a new keyboard layout or install
-              special fonts. The process is remarkably simple and intuitive:
-            </p>
-
-            <div className="space-y-6">
-              {steps.map((step, i) => (
-                <div key={i} className="flex gap-4">
-                  <div className="badge badge-primary w-8 h-8 flex items-center justify-center">
-                    {i + 1}
-                  </div>
-                  <div>
-                    <h4 className="font-bold mb-2">{step.title}</h4>
-                    <p className="text-(--color-text-muted)">{step.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-8 card-gradient-orange p-6 rounded-xl">
-              <h4 className="font-bold mb-3">💡 Example</h4>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <p className="text-sm text-(--color-text-muted) mb-2">Type</p>
-                  <div className="input-base font-mono">namaste duniya</div>
-                </div>
-                <div>
-                  <p className="text-sm text-(--color-text-muted) mb-2">Get</p>
-                  <div className="input-base text-2xl">नमस्ते दुनिया</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <SectionDivider />
-
-        {/* TRANSLITERATION VS TRANSLATION */}
-        <section className="mt-32 max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-(--color-text-heading)">
-            Understanding transliteration vs translation
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* Transliteration */}
-            <div className="card card-gradient-green p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="icon-box icon-box-green w-12 h-12">
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold">Transliteration</h3>
-              </div>
-
-              <p className="text-(--color-text-body) mb-4">
-                Converts the <strong>sound</strong> of words from one script to
-                another. The meaning and pronunciation stay exactly the same.
+        <Section>
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-(--color-text-muted)">
+                One important distinction
               </p>
 
-              <div className="card p-4">
-                <p className="text-sm font-semibold mb-2">Example</p>
-                <p className="font-mono text-sm mb-1">namaste</p>
-                <p className="text-2xl">नमस्ते</p>
-                <p className="text-xs text-(--color-text-muted) mt-2">
-                  Same word, different script
-                </p>
-              </div>
+              <h2 className="mt-3 text-3xl md:text-4xl font-bold tracking-tight text-(--color-text-heading)">
+                Transliteration ≠ translation
+              </h2>
             </div>
 
-            {/* Translation */}
-            <div className="card p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="icon-box w-12 h-12 bg-gray-200 text-gray-500">
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
+            <div className="grid md:grid-cols-2 gap-5">
+              <div className="rounded-2xl border border-green-200 bg-green-50/60 p-7">
+                <div className="flex items-center gap-3">
+                  <div className="icon-box icon-box-green w-11 h-11">✓</div>
+
+                  <h3 className="text-xl font-bold">Transliteration</h3>
                 </div>
-                <h3 className="text-xl font-bold">Translation</h3>
+
+                <p className="mt-5 text-(--color-text-body) leading-relaxed">
+                  Changes the writing system while preserving the word and its
+                  pronunciation.
+                </p>
+
+                <div className="mt-6 rounded-xl bg-white border border-green-100 p-5">
+                  <p className="font-mono">namaste</p>
+                  <p className="mt-2 text-3xl font-bold">नमस्ते</p>
+                  <p className="mt-2 text-xs text-(--color-text-muted)">
+                    Same word · different script
+                  </p>
+                </div>
               </div>
 
-              <p className="text-(--color-text-body) mb-4">
-                Converts the <strong>meaning</strong> of words from one language
-                to another. The words and sounds change completely.
+              <div className="rounded-2xl border border-gray-200 bg-white p-7">
+                <div className="flex items-center gap-3">
+                  <div className="icon-box w-11 h-11 bg-gray-100 text-gray-500">
+                    ×
+                  </div>
+
+                  <h3 className="text-xl font-bold">Translation</h3>
+                </div>
+
+                <p className="mt-5 text-(--color-text-body) leading-relaxed">
+                  Changes the language and therefore changes the words and their
+                  meaning.
+                </p>
+
+                <div className="mt-6 rounded-xl bg-gray-50 border border-gray-100 p-5">
+                  <p className="font-mono">hello</p>
+                  <p className="mt-2 text-3xl font-bold">नमस्ते</p>
+                  <p className="mt-2 text-xs text-(--color-text-muted)">
+                    Different word · translated meaning
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Section>
+
+        {/* =========================================================
+            FAQ
+        ========================================================= */}
+
+        <Section>
+          <div className="max-w-4xl mx-auto">
+            <FAQ items={COMMON_FAQ} />
+          </div>
+        </Section>
+
+        {/* =========================================================
+            FINAL CTA
+        ========================================================= */}
+
+        <section className="mt-32 md:mt-40 pb-24 md:pb-32">
+          <div className="relative overflow-hidden rounded-4xl bg-linear-to-br from-orange-500 via-orange-400 to-green-500 p-10 md:p-16 text-center">
+            <div className="absolute inset-0 bg-white/5" />
+
+            <div className="relative max-w-3xl mx-auto">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/80">
+                Start writing
               </p>
 
-              <div className="card p-4">
-                <p className="text-sm font-semibold mb-2">Example</p>
-                <p className="font-mono text-sm mb-1">hello</p>
-                <p className="text-2xl">नमस्ते</p>
-                <p className="text-xs text-(--color-text-muted) mt-2">
-                  Different words, same meaning
-                </p>
+              <h2 className="mt-4 text-4xl md:text-5xl font-bold text-white tracking-tight">
+                Your language is already in you.
+                <br />
+                Your keyboard should catch up.
+              </h2>
+
+              <p className="mt-6 text-lg text-white/85 max-w-2xl mx-auto">
+                Choose a language and start typing naturally in seconds.
+              </p>
+
+              <div className="mt-9 flex flex-col sm:flex-row justify-center gap-4">
+                <Link
+                  href="/typing"
+                  className="px-8 py-4 rounded-xl bg-white text-gray-900 font-semibold shadow-lg hover:shadow-xl transition-all"
+                >
+                  Explore typing tools →
+                </Link>
+
+                <Link
+                  href="/learn"
+                  className="px-8 py-4 rounded-xl border border-white/40 text-white font-semibold hover:bg-white/10 transition-all"
+                >
+                  Learn how it works
+                </Link>
               </div>
-            </div>
-          </div>
-
-          {/* Why it matters */}
-          <div className="mt-8 card card-gradient-blue p-6 border-l-4 border-blue-500">
-            <h4 className="font-bold mb-2 text-(--color-text-heading)">
-              Why this matters
-            </h4>
-            <p className="text-(--color-text-body)">
-              TypeBharat is a <strong>transliteration</strong> tool, which makes
-              it ideal for song lyrics, proper names, captions, and personal
-              messages where preserving exact pronunciation matters. You&apos;re
-              not translating thoughts — you&apos;re expressing them in their
-              authentic written form.
-            </p>
-          </div>
-        </section>
-
-        <SectionDivider />
-
-        {/* FAQ */}
-        <FAQ items={COMMON_FAQ} />
-
-        <SectionDivider />
-
-        {/* Final CTA */}
-        <section className="mt-32">
-          <div className="card-gradient-orange p-12 text-center rounded-3xl">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Start typing today
-            </h2>
-            <p className="text-lg mb-8 max-w-2xl mx-auto">
-              No sign-up. No friction. Just type.
-            </p>
-            <div className="flex justify-center gap-4">
-              <Link href="/typing/panjabi" className="btn-primary text-lg px-10 py-4">
-                Panjabi
-              </Link>
-              <Link href="/typing/hindi" className="btn-secondary text-lg px-10 py-4">
-                Hindi
-              </Link>
-              <Link href="/typing/gujarati" className="btn-secondary text-lg px-10 py-4">
-                Gujarati
-              </Link>
             </div>
           </div>
         </section>
