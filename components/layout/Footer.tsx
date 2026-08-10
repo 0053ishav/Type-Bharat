@@ -1,129 +1,194 @@
 import Link from "next/link";
 
+import { getLanguages } from "@/lib/languages/loader";
+
 export default function Footer() {
+  const languages = getLanguages();
+
+  const typingLanguages = languages.filter(
+    (language) => language.capabilities.typing,
+  );
+
+  const learnLanguages = languages.filter(
+    (language) => language.capabilities.learn,
+  );
+
   return (
-    <footer
-      id="about"
-      className="border-t border-(--color-border) mt-24 py-12 bg-(--color-bg-card) bg-mesh"
-    >
-      <div className="max-w-6xl mx-auto px-6 text-sm text-(--color-text-muted)">
-        {/* Existing content — unchanged */}
-        <div className="mb-4 text-gradient-orange text-lg font-bold">
-          TypeBharat
-        </div>
+    <footer className="relative mt-32 border-t border-(--color-border) bg-mesh overflow-hidden">
+      {/* Decorative background */}
+      <div className="pointer-events-none absolute -top-32 right-0 h-80 w-80 rounded-full bg-gradient-radial-orange opacity-70" />
+      <div className="pointer-events-none absolute -bottom-32 left-0 h-80 w-80 rounded-full bg-gradient-radial-green opacity-70" />
 
-        <p className="max-w-3xl">
-          English to Indian language typing tool.
-          Built for lyric writers, students, creators, and everyday users who
-          want to write naturally in their own language.
-        </p>
-
-        <p className="mt-3">
-          Supports Panjabi • Hindi • Gujarati.
-          More Indian languages coming soon.
-        </p>
-
-        <p className="mt-3 font-medium text-(--color-text-body)">
-          No login. No tracking. Free forever.
-        </p>
-
-        <div className="mt-12 grid gap-8 md:grid-cols-4 text-sm">
-          {/* Typing tools */}
+      <div className="relative max-w-7xl mx-auto px-6 pt-16 pb-8">
+        {/* Brand / positioning */}
+        <div className="grid lg:grid-cols-[1.5fr_1fr_1fr_1fr] gap-12">
           <div>
-            <h4 className="font-semibold text-(--color-text-heading) mb-3">
+            <Link href="/" className="inline-block">
+              <span className="text-2xl font-bold text-gradient">
+                TypeBharat
+              </span>
+            </Link>
+
+            <p className="mt-4 max-w-md text-base leading-relaxed text-(--color-text-body)">
+              Type in English. Write in your language.
+              <br />
+              A simple, fast, browser-based typing platform for Indian
+              languages.
+            </p>
+
+            <div className="mt-6 flex flex-wrap gap-2">
+              <span className="badge badge-success">Free</span>
+              <span className="badge badge-gradient">No Login</span>
+              <span className="badge badge-success">Privacy-first</span>
+            </div>
+          </div>
+
+          {/* Typing */}
+          <div>
+            <h3 className="font-semibold text-(--color-text-heading) mb-5">
               Typing Tools
-            </h4>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/typing/panjabi" className="hover:underline">
-                  Panjabi Typing
-                </Link>
-              </li>
-              <li>
-                <Link href="/typing/hindi" className="hover:underline">
-                  Hindi Typing
-                </Link>
-              </li>
-              <li>
-                <Link href="/typing/gujarati" className="hover:underline">
-                  Gujarati Typing
-                </Link>
-              </li>
-              <li className="opacity-60 cursor-not-allowed">
-                Tamil (coming soon)
-              </li>
+            </h3>
+
+            <ul className="space-y-3">
+              {typingLanguages.map((language) => (
+                <li key={language.id}>
+                  <Link
+                    href={`/typing/${language.slug}`}
+                    className="group inline-flex items-center gap-2 text-(--color-text-muted) transition-colors hover:text-(--color-primary)"
+                  >
+                    <span>{language.nativeName}</span>
+                    <span className="opacity-0 -translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-x-0">
+                      →
+                    </span>
+                  </Link>
+                </li>
+              ))}
             </ul>
+
+            <Link
+              href="/typing"
+              className="inline-block mt-5 text-sm font-medium text-(--color-primary) hover:underline"
+            >
+              Explore all typing tools →
+            </Link>
           </div>
 
           {/* Learn */}
           <div>
-            <h4 className="font-semibold text-(--color-text-heading) mb-3">
+            <h3 className="font-semibold text-(--color-text-heading) mb-5">
               Learn
-            </h4>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/learn/panjabi" className="hover:underline">
-                  Panjabi
-                </Link>
-              </li>
-              <li>
-                <Link href="/learn/hindi" className="hover:underline">
-                  Hindi
-                </Link>
-              </li>
-              <li>
-                <Link href="/learn/gujarati" className="hover:underline">
-                  Gujarati
-                </Link>
-              </li>
+            </h3>
+
+            <ul className="space-y-3">
+              {learnLanguages.map((language) => (
+                <li key={language.id}>
+                  <Link
+                    href={`/learn/${language.slug}`}
+                    className="group inline-flex items-center gap-2 text-(--color-text-muted) transition-colors hover:text-(--color-secondary)"
+                  >
+                    <span>{language.name} Typing</span>
+                    <span className="opacity-0 -translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-x-0">
+                      →
+                    </span>
+                  </Link>
+                </li>
+              ))}
             </ul>
+
+            <Link
+              href="/learn"
+              className="inline-block mt-5 text-sm font-medium text-(--color-secondary) hover:underline"
+            >
+              Explore learning guides →
+            </Link>
           </div>
 
           {/* Product */}
           <div>
-            <h4 className="font-semibold text-(--color-text-heading) mb-3">
-              Product
-            </h4>
-            <ul className="space-y-2">
+            <h3 className="font-semibold text-(--color-text-heading) mb-5">
+              TypeBharat
+            </h3>
+
+            <ul className="space-y-3 text-(--color-text-muted)">
               <li>
-                <Link href="/" className="hover:underline">
+                <Link href="/" className="hover:text-(--color-text-heading)">
                   Home
                 </Link>
               </li>
+
               <li>
-                <a href="#about" className="hover:underline">
-                  About TypeBharat
+                <Link
+                  href="/typing"
+                  className="hover:text-(--color-text-heading)"
+                >
+                  Typing Tools
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/learn"
+                  className="hover:text-(--color-text-heading)"
+                >
+                  Learn
+                </Link>
+              </li>
+
+              <li>
+                <a
+                  href="#about"
+                  className="hover:text-(--color-text-heading)"
+                >
+                  About
                 </a>
               </li>
-              <li className="opacity-60">
-                Offline support (planned)
-              </li>
-            </ul>
-          </div>
-
-          {/* Trust */}
-          <div>
-            <h4 className="font-semibold text-(--color-text-heading) mb-3">
-              Trust & Privacy
-            </h4>
-            <ul className="space-y-2">
-              <li>No user accounts</li>
-              <li>No analytics tracking</li>
-              <li>No data storage</li>
-              <li>Browser-only processing</li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-12 pt-6 border-t border-(--color-border) flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
-          <div>
-            © {new Date().getFullYear()} TypeBharat. All rights reserved.
-          </div>
+        {/* Language strip */}
+        <div className="mt-16 card-gradient-orange rounded-2xl p-6">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+            <div>
+              <p className="text-sm font-semibold text-(--color-text-heading)">
+                Growing with Indian languages
+              </p>
 
-          <div className="text-center md:text-right text-(--color-text-muted)">
-            Type in English. Write in your language.
+              <p className="mt-1 text-sm text-(--color-text-muted)">
+                More languages are being added to TypeBharat.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              {languages.map((language) => (
+                <Link
+                  key={language.id}
+                  href={`/typing/${language.slug}`}
+                  className="badge bg-white border border-(--color-border) hover:border-(--color-primary) hover:text-(--color-primary) transition-all"
+                >
+                  {language.nativeName}
+                </Link>
+              ))}
+            </div>
           </div>
+        </div>
+
+        {/* Bottom */}
+        <div className="mt-10 pt-6 border-t border-(--color-border) flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-(--color-text-muted)">
+          <p>
+            © {new Date().getFullYear()} TypeBharat. All rights reserved.
+          </p>
+
+          <p className="text-center">
+            Built for people who think in one language and type in another.
+          </p>
+
+          <p>
+            Type in English.
+            <span className="font-medium text-(--color-primary)">
+              Write in your language.
+            </span>
+          </p>
         </div>
       </div>
     </footer>

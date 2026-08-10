@@ -4,122 +4,352 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { getLanguages } from "@/lib/languages/loader";
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [languagesOpen, setLanguagesOpen] = useState(false);
+
   const pathname = usePathname();
+  const languages = getLanguages();
 
   const isLearn = pathname.startsWith("/learn");
   const isTyping = pathname.startsWith("/typing");
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 4);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 4);
+    };
+
     window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   return (
     <header
       className={`
         sticky top-0 z-50
-        bg-(--color-bg-card)
-        transition-shadow duration-300
-        ${scrolled ? "shadow-lg" : "shadow-none"}
+        bg-(--color-bg-card)/95 backdrop-blur-md
+        transition-all duration-300
         border-b border-(--color-border)
+        ${scrolled ? "shadow-lg" : "shadow-none"}
       `}
     >
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
+      <div className="max-w-7xl mx-auto px-6 py-3.5 flex items-center justify-between gap-6">
         {/* Brand */}
-        <Link href="/" className="flex flex-col leading-tight hover-scale">
-          <span className="text-xl font-bold text-gradient-orange">
+        <Link href="/" className="group flex flex-col leading-tight shrink-0">
+          <span className="text-xl font-bold text-gradient-orange transition-transform duration-300 group-hover:scale-[1.02]">
             TypeBharat
           </span>
-          <span className="text-xs text-(--color-text-muted)">
+
+          <span className="text-[11px] text-(--color-text-muted)">
             English → Indian languages
           </span>
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6 text-sm">
-          {/* Intent switch */}
-          <NavLink href="/" active={!isLearn && !isTyping}>Home</NavLink>
-          <NavLink href="/typing" active={!isLearn && isTyping}>Typing</NavLink>
-          <NavLink href="/learn" active={isLearn && !isTyping}>Learn</NavLink>
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-1 text-sm">
+          <NavLink href="/" active={!isLearn && !isTyping}>
+            Home
+          </NavLink>
 
-          <div className="h-5 w-px bg-(--color-border)" />
+          <NavLink href="/typing" active={isTyping}>
+            Typing
+          </NavLink>
 
-          {/* Language toggle */}
-          {isLearn ? (
-            <>
-              <NavLink href="/learn/panjabi">Panjabi</NavLink>
-              <NavLink href="/learn/hindi">Hindi</NavLink>
-              <NavLink href="/learn/gujarati">Gujarati</NavLink>
-            </>
-          ) : (
-            <>
-              <NavLink href="/typing/panjabi">Panjabi</NavLink>
-              <NavLink href="/typing/hindi">Hindi</NavLink>
-              <NavLink href="/typing/gujarati">Gujarati</NavLink>
-            </>
-          )}
+          <NavLink href="/learn" active={isLearn}>
+            Learn
+          </NavLink>
 
-          <span className="text-(--color-text-muted) cursor-not-allowed">
-            Tamil
-          </span>
+          <div className="h-6 w-px bg-(--color-border) mx-3" />
+
+          {/* Languages dropdown */}
+          <div className="relative">
+            <button
+              type="button"
+              onClick={() => setLanguagesOpen((open) => !open)}
+              className={`
+                inline-flex items-center gap-1.5
+                px-3 py-2 rounded-lg
+                font-medium
+                transition-all duration-200 cursor-pointer
+                ${
+                  languagesOpen
+                    ? "bg-orange-50 text-(--color-primary)"
+                    : "text-(--color-text-muted) hover:text-(--color-text-heading) hover:bg-gray-50"
+                }
+              `}
+              aria-expanded={languagesOpen}
+              aria-haspopup="menu"
+            >
+              Languages
+              <svg
+                className={`w-4 h-4 transition-transform duration-200 ${
+                  languagesOpen ? "rotate-180" : ""
+                }`}
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </button>
+
+            {languagesOpen && (
+              <>
+                <button
+                  type="button"
+                  aria-label="Close language menu"
+                  className="fixed inset-0 cursor-default"
+                  onClick={() => setLanguagesOpen(false)}
+                />
+
+                <div
+                  className="
+                    absolute right-0 top-full mt-3
+                    w-80
+                    rounded-2xl
+                    border border-(--color-border)
+                    bg-(--color-bg-card)
+                    shadow-2xl
+                    p-3
+                    animate-scale-in
+                  "
+                  role="menu"
+                >
+                  <div className="px-3 py-2 mb-1">
+                    <p className="font-semibold text-(--color-text-heading)">
+                      Indian Languages
+                    </p>
+
+                    <p className="text-xs text-(--color-text-muted) mt-1">
+                      Choose a language to start typing or learning.
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-1">
+                    {languages.map((language) => (
+                      <LanguageMenuItem key={language.id} language={language} />
+                    ))}
+                  </div>
+
+                  <div className="mt-3 pt-3 border-t border-(--color-border) grid grid-cols-2 gap-2">
+                    <Link
+                      href="/typing"
+                      className="btn-primary text-center text-sm"
+                      onClick={() => setLanguagesOpen(false)}
+                    >
+                      All Typing Tools
+                    </Link>
+
+                    <Link
+                      href="/learn"
+                      className="btn-secondary text-center text-sm"
+                      onClick={() => setLanguagesOpen(false)}
+                    >
+                      All Guides
+                    </Link>
+                  </div>
+                </div>
+              </>
+            )}
+          </div>
         </nav>
+
+        {/* Desktop CTA */}
+        <div className="hidden md:flex items-center">
+          <Link href="/typing" className="btn-primary text-sm">
+            Start Typing →
+          </Link>
+        </div>
 
         {/* Mobile toggle */}
         <button
-          onClick={() => setMobileOpen(!mobileOpen)}
+          type="button"
+          onClick={() => setMobileOpen((open) => !open)}
           className="md:hidden btn-secondary text-sm"
-          aria-label="Open menu"
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileOpen}
         >
-          Menu
+          {mobileOpen ? "Close" : "Menu"}
         </button>
       </div>
 
-      {/* Mobile panel */}
+      {/* Mobile Navigation */}
       {mobileOpen && (
         <div className="md:hidden border-t border-(--color-border) bg-(--color-bg-card) animate-slide-up">
-          <div className="px-6 py-4 space-y-4 text-sm">
-            {/* Intent */}
-            <div className="flex gap-3">
-              <MobileLink href="/typing" onClick={() => setMobileOpen(false)}>
+          <div className="max-w-7xl mx-auto px-6 py-5">
+            {/* Primary Navigation */}
+            <div className="grid grid-cols-3 gap-2">
+              <MobileNavLink
+                href="/"
+                active={!isLearn && !isTyping}
+                onClick={() => setMobileOpen(false)}
+              >
+                Home
+              </MobileNavLink>
+
+              <MobileNavLink
+                href="/typing"
+                active={isTyping}
+                onClick={() => setMobileOpen(false)}
+              >
                 Typing
-              </MobileLink>
-              <MobileLink href="/learn" onClick={() => setMobileOpen(false)}>
+              </MobileNavLink>
+
+              <MobileNavLink
+                href="/learn"
+                active={isLearn}
+                onClick={() => setMobileOpen(false)}
+              >
                 Learn
-              </MobileLink>
+              </MobileNavLink>
             </div>
 
-            <div className="border-t border-(--color-border)" />
+            <div className="my-5 h-px bg-(--color-border)" />
 
             {/* Languages */}
-            {isLearn ? (
-              <>
-                <MobileLink href="/learn/panjabi" onClick={() => setMobileOpen(false)}>
-                  Learn Panjabi
-                </MobileLink>
-                <MobileLink href="/learn/hindi" onClick={() => setMobileOpen(false)}>
-                  Learn Hindi
-                </MobileLink>
-                <MobileLink href="/learn/gujarati" onClick={() => setMobileOpen(false)}>
-                  Learn Gujarati
-                </MobileLink>
-              </>
-            ) : (
-              <>
-                <MobileLink href="/typing/panjabi" onClick={() => setMobileOpen(false)}>
-                  Panjabi Typing
-                </MobileLink>
-                <MobileLink href="/typing/hindi" onClick={() => setMobileOpen(false)}>
-                  Hindi Typing
-                </MobileLink>
-                <MobileLink href="/typing/gujarati" onClick={() => setMobileOpen(false)}>
-                  Gujarati Typing
-                </MobileLink>
-              </>
-            )}
+            <section>
+              <div className="flex items-end justify-between mb-4">
+                <div>
+                  <h2 className="text-base font-bold text-(--color-text-heading)">
+                    Choose a language
+                  </h2>
+
+                  <p className="text-xs text-(--color-text-muted) mt-1">
+                    Type or learn in your language
+                  </p>
+                </div>
+
+                <span className="text-xs text-(--color-text-muted)">
+                  {languages.length} languages
+                </span>
+              </div>
+
+              <div className="space-y-3">
+                {languages.map((language) => (
+                  <div
+                    key={language.id}
+                    className="
+                overflow-hidden
+                rounded-2xl
+                border border-(--color-border)
+                bg-(--color-bg-card)
+                shadow-sm
+                transition-all duration-200
+                hover:border-(--color-primary)
+              "
+                  >
+                    {/* Language */}
+                    <div className="flex items-center gap-3 px-4 py-4">
+                      <div
+                        className="
+                    flex h-11 w-11 shrink-0
+                    items-center justify-center
+                    rounded-xl
+                    bg-orange-50
+                    border border-orange-100
+                    text-xl
+                  "
+                      >
+                        {language.nativeName}
+                      </div>
+
+                      <div className="min-w-0 flex-1">
+                        <h3 className="font-semibold text-(--color-text-heading)">
+                          {language.name}
+                        </h3>
+
+                        <p className="text-xs text-(--color-text-muted) mt-0.5">
+                          {language.script}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Actions */}
+                    {(language.capabilities.typing ||
+                      language.capabilities.learn) && (
+                      <div className="grid grid-cols-2 gap-px bg-(--color-border)">
+                        {language.capabilities.typing ? (
+                          <Link
+                            href={`/typing/${language.slug}`}
+                            onClick={() => setMobileOpen(false)}
+                            className="
+                        flex items-center justify-center gap-2
+                        bg-(--color-bg-card)
+                        px-4 py-3
+                        text-sm font-semibold
+                        text-(--color-primary)
+                        transition
+                        hover:bg-orange-50
+                        active:bg-orange-100
+                      "
+                          >
+                            <span>⌨</span>
+                            <span>Type</span>
+                            <span className="text-xs">→</span>
+                          </Link>
+                        ) : (
+                          <div />
+                        )}
+
+                        {language.capabilities.learn ? (
+                          <Link
+                            href={`/learn/${language.slug}`}
+                            onClick={() => setMobileOpen(false)}
+                            className="
+                        flex items-center justify-center gap-2
+                        bg-(--color-bg-card)
+                        px-4 py-3
+                        text-sm font-semibold
+                        text-(--color-secondary)
+                        transition
+                        hover:bg-green-50
+                        active:bg-green-100
+                      "
+                          >
+                            <span>📖</span>
+                            <span>Learn</span>
+                            <span className="text-xs">→</span>
+                          </Link>
+                        ) : (
+                          <div />
+                        )}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* All Tools */}
+            <div className="mt-5 pt-5 border-t border-(--color-border)">
+              <Link
+                href="/typing"
+                onClick={() => setMobileOpen(false)}
+                className="
+            flex items-center justify-center
+            w-full
+            rounded-xl
+            px-4 py-3
+            text-sm font-semibold
+            border border-(--color-border)
+            text-(--color-text-heading)
+            hover:bg-gray-50
+            transition
+          "
+              >
+                View all typing tools →
+              </Link>
+            </div>
           </div>
         </div>
       )}
@@ -127,12 +357,14 @@ export default function Navbar() {
   );
 }
 
-/* ---------------- helpers ---------------- */
+/* =========================
+   Desktop Navigation Link
+========================= */
 
 function NavLink({
   href,
   children,
-  active,
+  active = false,
 }: {
   href: string;
   children: React.ReactNode;
@@ -142,32 +374,116 @@ function NavLink({
     <Link
       href={href}
       className={`
-        transition-colors
-        ${active
-          ? "text-(--color-primary) font-medium"
-          : "text-(--color-text-body) hover:text-(--color-primary)"
+        relative px-3 py-2 rounded-lg
+        font-medium
+        transition-all duration-200
+        ${
+          active
+            ? "text-(--color-primary) bg-orange-50"
+            : "text-(--color-text-muted) hover:text-(--color-text-heading) hover:bg-gray-50"
         }
       `}
     >
       {children}
+
+      {active && (
+        <span
+          className="
+            absolute left-1/2 -bottom-1
+            w-1 h-1
+            -translate-x-1/2
+            rounded-full
+            bg-(--color-primary)
+          "
+        />
+      )}
     </Link>
   );
 }
 
-function MobileLink({
+/* =========================
+   Language Menu Item
+========================= */
+
+function LanguageMenuItem({
+  language,
+}: {
+  language: ReturnType<typeof getLanguages>[number];
+}) {
+  return (
+    <div
+      className="
+        group rounded-xl p-2
+        transition-all duration-200
+        hover:bg-orange-50
+      "
+      role="none"
+    >
+      <div className="flex items-center gap-2 mb-1 px-1">
+        <span className="text-xl">{language.nativeName}</span>
+
+        <span className="text-sm font-medium text-(--color-text-heading)">
+          {language.name}
+        </span>
+      </div>
+
+      <div className="grid grid-cols-2 gap-1">
+        {language.capabilities.typing && (
+          <Link
+            href={`/typing/${language.slug}`}
+            className="rounded-lg px-2 py-1.5 text-xs text-(--color-text-muted) hover:bg-white hover:text-(--color-primary)"
+            role="menuitem"
+          >
+            Type
+          </Link>
+        )}
+
+        {language.capabilities.learn && (
+          <Link
+            href={`/learn/${language.slug}`}
+            className="rounded-lg px-2 py-1.5 text-xs text-(--color-text-muted) hover:bg-white hover:text-(--color-secondary)"
+            role="menuitem"
+          >
+            Learn
+          </Link>
+        )}
+      </div>
+    </div>
+  );
+}
+
+/* =========================
+   Mobile Navigation Link
+========================= */
+
+function MobileNavLink({
   href,
-  onClick,
   children,
+  active = false,
+  onClick,
 }: {
   href: string;
-  onClick: () => void;
   children: React.ReactNode;
+  active?: boolean;
+  onClick: () => void;
 }) {
   return (
     <Link
       href={href}
       onClick={onClick}
-      className="block text-lg font-medium text-(--color-text-heading) hover:text-(--color-primary)"
+      className={`
+        rounded-xl
+        px-3 py-3
+        text-center
+        font-medium
+        transition-all duration-200
+        cursor-pointer
+        ${
+          active
+            ? "bg-orange-50 text-(--color-primary)"
+            : "border border-(--color-border) text-(--color-text-muted) hover:bg-gray-50"
+        }
+      `}
     >
       {children}
     </Link>

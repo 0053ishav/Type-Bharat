@@ -1,68 +1,112 @@
 import Link from "next/link";
 
+import { getLanguages } from "@/lib/languages/loader";
+
 export default function LanguageSelector() {
+  const languages = getLanguages();
+
   return (
-    <div className="mt-16">
-      <h2 className="text-2xl font-semibold mb-6 text-[--color-text-heading]">
-        Choose your language
-      </h2>
+    <section className="mt-20">
+      {/* Header */}
+      <div className="text-center mb-10">
+        <span className="badge badge-gradient mb-4 inline-block">
+          🌐 Supported Languages
+        </span>
 
-      <div className="grid md:grid-cols-3 gap-6">
-        {/* Panjabi */}
-        <div className="border rounded-lg p-6 bg-white">
-          <h3 className="text-lg font-semibold mb-2">
-            Panjabi Typing Tool
-          </h3>
-          <p className="text-sm text-[--color-text-muted] mb-4">
-            Type in English → Write in ਪੰਜਾਬੀ
-          </p>
-          <Link href="/typing/panjabi" className="btn-primary">
-            Start Panjabi Typing →
-          </Link>
-        </div>
+        <h2 className="text-3xl md:text-4xl font-bold text-(--color-text-heading)">
+          Choose your language
+        </h2>
 
-        {/* Hindi */}
-        <div className="border rounded-lg p-6 bg-white">
-          <h3 className="text-lg font-semibold mb-2">
-            Hindi Typing Tool
-          </h3>
-          <p className="text-sm text-[--color-text-muted] mb-4">
-            Type in English → Write in हिन्दी
-          </p>
-          <Link href="/typing/hindi" className="btn-primary">
-            Start Hindi Typing →
-          </Link>
-        </div>
+        <p className="mt-4 text-lg text-(--color-text-muted) max-w-2xl mx-auto">
+          Pick a language and start typing instantly. Learn the script,
+          practice the alphabet, or jump straight into the typing tool.
+        </p>
+      </div>
 
-        {/* Gujarati */}
-        <div className="border rounded-lg p-6 bg-white">
-          <h3 className="text-lg font-semibold mb-2">
-            Gujarati Typing Tool
-          </h3>
-          <p className="text-sm text-[--color-text-muted] mb-4">
-            Type in English → Write in ગુજરાતી
-          </p>
-          <Link href="/typing/gujarati" className="btn-primary">
-            Start Gujarati Typing →
-          </Link>
-        </div>
-
-        {/* Tamil */}
-        <div className="border rounded-lg p-6 bg-gray-50 opacity-70">
-          <h3 className="text-lg font-semibold mb-2">
-            Tamil Typing Tool
-          </h3>
-          <p className="text-sm text-[--color-text-muted] mb-4">
-            Type in English → Write in தமிழ்
-          </p>
-          <button
-            disabled
-            className="px-4 py-2 rounded bg-gray-200 text-gray-500 cursor-not-allowed"
+      {/* Language Grid */}
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {languages.slice(0, 6).map((language) => (
+          <div
+            key={language.id}
+            className="card p-6 hover-lift group relative overflow-hidden"
           >
-            Coming Soon
-          </button>
+            {/* Decorative background */}
+            <div className="absolute -top-16 -right-16 w-32 h-32 rounded-full bg-gradient-radial-orange opacity-20 pointer-events-none" />
+
+            <div className="relative">
+              {/* Language identity */}
+              <div className="flex items-start justify-between gap-4 mb-5">
+                <div>
+                  <h3 className="text-xl font-bold text-(--color-text-heading)">
+                    {language.name}
+                  </h3>
+
+                  <p className="text-2xl mt-1">{language.nativeName}</p>
+                </div>
+
+                <span className="badge badge-success text-xs">
+                  Available
+                </span>
+              </div>
+
+              {/* Description */}
+              <p className="text-sm text-(--color-text-muted) leading-relaxed mb-6">
+                {language.typing.intro}
+              </p>
+
+              {/* Capabilities */}
+              <div className="flex flex-wrap gap-2 mb-6">
+                {language.capabilities.typing && (
+                  <span className="badge badge-gradient">
+                    ⌨️ Typing
+                  </span>
+                )}
+
+                {language.capabilities.learn && (
+                  <span className="badge badge-gradient">
+                    📖 Learn
+                  </span>
+                )}
+              </div>
+
+              {/* Actions */}
+              <div className="grid grid-cols-2 gap-3">
+                {language.capabilities.typing && (
+                  <Link
+                    href={`/typing/${language.slug}`}
+                    className="btn-primary text-center"
+                  >
+                    Start Typing →
+                  </Link>
+                )}
+
+                {language.capabilities.learn && (
+                  <Link
+                    href={`/learn/${language.slug}`}
+                    className="btn-secondary text-center"
+                  >
+                    Learn →
+                  </Link>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Expansion message */}
+      <div className="mt-10 text-center">
+        <div className="card-gradient-orange rounded-2xl p-6 max-w-3xl mx-auto">
+          <p className="text-lg font-semibold text-(--color-text-heading)">
+            More Indian languages are coming.
+          </p>
+
+          <p className="mt-2 text-sm text-(--color-text-muted)">
+            TypeBharat is expanding its language library so you can type,
+            learn, and explore more Indian scripts from one place.
+          </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
