@@ -47,6 +47,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/typing/marathi`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/learn`,
       lastModified: new Date(),
       changeFrequency: "weekly",
@@ -84,6 +90,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/learn/bengali`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/learn/marathi`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
