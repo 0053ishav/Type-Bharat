@@ -9,6 +9,7 @@ const LANG_TO_ITC: Record<string, string> = {
   kn: "kn-t-i0-und",
   ml: "ml-t-i0-und",
   or: "or-t-i0-und",
+  as: "as-t-i0-und",
 };
 
 export async function fetchSuggestions(

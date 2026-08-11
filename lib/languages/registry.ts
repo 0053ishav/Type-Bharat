@@ -1,3 +1,4 @@
+import { assamese } from "@/data/language/assamese/language";
 import { bengali } from "@/data/language/bengali/language";
 import { gujarati } from "@/data/language/gujarati/language";
 import { hindi } from "@/data/language/hindi/language";
@@ -20,4 +21,5 @@ export const languageRegistry = {
   kannada,
   malayalam,
   odia,
+  assamese,
 } as const;
