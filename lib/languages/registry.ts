@@ -1,3 +1,4 @@
+import { bengali } from "@/data/language/bengali/language";
 import { gujarati } from "@/data/language/gujarati/language";
 import { hindi } from "@/data/language/hindi/language";
 import { panjabi } from "@/data/language/panjabi/language";
@@ -10,4 +11,5 @@ export const languageRegistry = {
   gujarati,
   tamil,
   telugu,
+  bengali,
 } as const;
