@@ -404,6 +404,7 @@ export default function TypingTool({ language }: { language: Language }) {
         <textarea
           ref={textareaRef}
           rows={9}
+          dir={language.direction}
           className="input-base"
           placeholder="Type here in English..."
           value={text}
@@ -429,6 +430,7 @@ export default function TypingTool({ language }: { language: Language }) {
             suggestions.map((s, i) => (
               <button
                 key={i}
+                dir={language.direction}
                 type="button"
                 onPointerDown={(e) => {
                   e.preventDefault();
@@ -523,6 +525,7 @@ export default function TypingTool({ language }: { language: Language }) {
 
       <SessionBoard
         lines={boardLines}
+        direction={language.direction}
         onUpdateLine={handleUpdateLine}
         onMoveToEditor={handleMoveToEditor}
         onCopyLine={handleCopyLine}
