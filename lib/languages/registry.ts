@@ -9,6 +9,7 @@ import { odia } from "@/data/language/odia/language";
 import { panjabi } from "@/data/language/panjabi/language";
 import { tamil } from "@/data/language/tamil/language";
 import { telugu } from "@/data/language/telugu/language";
+import { urdu } from "@/data/language/urdu/language";
 
 export const languageRegistry = {
   hindi,
@@ -22,4 +23,5 @@ export const languageRegistry = {
   malayalam,
   odia,
   assamese,
+  urdu,
 } as const;
