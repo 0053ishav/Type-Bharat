@@ -31,6 +31,7 @@ export default function AlphabetGrid({
           {items.map(({ letter, sound }) => (
             <button
               key={letter}
+              dir={language.direction}
               disabled={!interactive}
               onClick={() => onInsert?.(letter)}
               className="card p-4 text-center hover-lift disabled:cursor-default"
@@ -88,6 +89,7 @@ export default function AlphabetGrid({
           {alphabet.numerals.map(({ latin, native }) => (
             <button
               key={latin}
+              dir={language.direction}
               disabled={!interactive}
               onClick={() => onInsert?.(native)}
               className="card p-4 text-center hover-lift disabled:cursor-default"

@@ -20,7 +20,7 @@ export default function TypingPage({
   const faqSchema = generateFAQSchema(language.faq);
 
   return (
-    <main>
+    <main dir={language.direction}>
       <div className="max-w-3xl mx-auto px-6 mt-6 flex justify-between text-sm">
         <Link
           href="/"

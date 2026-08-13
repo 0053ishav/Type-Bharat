@@ -1,9 +1,11 @@
 "use client";
 
+import { LanguageDirection } from "@/types/language";
 import { useState } from "react";
 
 export default function SessionBoard({
   lines,
+  direction,
   onUpdateLine,
   onMoveToEditor,
   onCopyLine,
@@ -12,6 +14,7 @@ export default function SessionBoard({
   onReorder,
 }: {
   lines: string[];
+  direction: LanguageDirection;
   onUpdateLine: (index: number, newLine: string) => void;
   onMoveToEditor: (index: number) => void;
   onCopyLine: (line: string) => void;
@@ -101,6 +104,7 @@ export default function SessionBoard({
               {editingIndex === i ? (
                 <>
                   <textarea
+                  dir={direction}
                     value={draft}
                     onChange={(e) => setDraft(e.target.value)}
                     rows={2}
@@ -118,7 +122,7 @@ export default function SessionBoard({
                   </div>
                 </>
               ) : (
-                <div className="text-[--color-text-body]">{line}</div>
+                <div dir={direction} className="text-[--color-text-body]">{line}</div>
               )}
             </div>
 
