@@ -16,7 +16,7 @@ export default function LearnPage({ language }: Props) {
   const faqSchema = generateFAQSchema(language.learn.faq);
 
   return (
-    <main dir={language.direction} className="max-w-5xl mx-auto px-6 py-16 space-y-20">
+    <main className="max-w-5xl mx-auto px-6 py-16 space-y-20">
       <Script
         id={`${language.slug}-learn-faq`}
         type="application/ld+json"
