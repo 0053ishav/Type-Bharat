@@ -11,6 +11,7 @@ const LANG_TO_ITC: Record<string, string> = {
   or: "or-t-i0-und",
   as: "as-t-i0-und",
   ur: "ur-t-i0-und",
+  sa: "sa-t-i0-und",
 };
 
 export async function fetchSuggestions(
