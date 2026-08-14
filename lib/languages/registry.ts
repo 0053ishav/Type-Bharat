@@ -5,6 +5,7 @@ import { hindi } from "@/data/language/hindi/language";
 import { kannada } from "@/data/language/kannada/language";
 import { malayalam } from "@/data/language/malayalam/language";
 import { marathi } from "@/data/language/marathi/language";
+import { nepali } from "@/data/language/nepali/language";
 import { odia } from "@/data/language/odia/language";
 import { panjabi } from "@/data/language/panjabi/language";
 import { sanskrit } from "@/data/language/sanskrit/language";
@@ -26,4 +27,5 @@ export const languageRegistry = {
   assamese,
   urdu,
   sanskrit,
+  nepali,
 } as const;
