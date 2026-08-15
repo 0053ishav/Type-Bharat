@@ -168,9 +168,9 @@ export default function LearnIndexPage() {
                 </div>
 
                 {/* Guide description */}
-                <p className="mt-6 text-(--color-text-body) leading-relaxed">
+                {/* <p className="mt-6 text-(--color-text-body) leading-relaxed">
                   {language.learn.meta.description}
-                </p>
+                </p> */}
 
                 {/* Topics */}
                 <div className="mt-5 flex flex-wrap gap-2">
