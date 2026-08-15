@@ -146,13 +146,13 @@ export default function TypingIndexPage() {
                 />
 
                 {/* Product description */}
-                <div className="mt-6">
+                {/* <div className="mt-6">
                   <p className="text-(--color-text-muted) leading-relaxed">
                     Type {language.name} naturally using English letters and
                     convert your input into {language.nativeName} in real
                     time.
                   </p>
-                </div>
+                </div> */}
 
                 {/* Capabilities */}
                 <div className="mt-5 flex flex-wrap gap-2">

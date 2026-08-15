@@ -108,13 +108,14 @@ export default function Navbar() {
                 <button
                   type="button"
                   aria-label="Close language menu"
-                  className="fixed inset-0 cursor-default"
+                  className="fixed inset-0 cursor-default z-40"
                   onClick={() => setLanguagesOpen(false)}
                 />
 
                 <div
                   className="
                     absolute right-0 top-full mt-3
+                    z-50
                     w-80
                     rounded-2xl
                     border border-(--color-border)
@@ -135,10 +136,17 @@ export default function Navbar() {
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-1">
-                    {languages.map((language) => (
-                      <LanguageMenuItem key={language.id} language={language} />
-                    ))}
+                  <div className="max-h-80 overflow-y-auto pr-1">
+                    <div className="grid grid-cols-2 gap-1">
+                      {languages.map((language) => (
+                        <LanguageMenuItem
+                          key={language.id}
+                          language={language}
+                          pathname={pathname}
+                          onSelect={() => setLanguagesOpen(false)}
+                        />
+                      ))}
+                    </div>
                   </div>
 
                   <div className="mt-3 pt-3 border-t border-(--color-border) grid grid-cols-2 gap-2">
@@ -186,72 +194,83 @@ export default function Navbar() {
       {/* Mobile Navigation */}
       {mobileOpen && (
         <div className="md:hidden border-t border-(--color-border) bg-(--color-bg-card) animate-slide-up">
-          <div className="max-w-7xl mx-auto px-6 py-5">
-            {/* Primary Navigation */}
-            <div className="grid grid-cols-3 gap-2">
-              <MobileNavLink
-                href="/"
-                active={!isLearn && !isTyping}
-                onClick={() => setMobileOpen(false)}
-              >
-                Home
-              </MobileNavLink>
+          <div className="max-h-[calc(100vh-72px)] overflow-y-auto">
+            <div className="max-w-7xl mx-auto px-6 py-5">
+              {/* Primary Navigation */}
+              <div className="grid grid-cols-3 gap-2">
+                <MobileNavLink
+                  href="/"
+                  active={!isLearn && !isTyping}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Home
+                </MobileNavLink>
 
-              <MobileNavLink
-                href="/typing"
-                active={isTyping}
-                onClick={() => setMobileOpen(false)}
-              >
-                Typing
-              </MobileNavLink>
+                <MobileNavLink
+                  href="/typing"
+                  active={isTyping}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Typing
+                </MobileNavLink>
 
-              <MobileNavLink
-                href="/learn"
-                active={isLearn}
-                onClick={() => setMobileOpen(false)}
-              >
-                Learn
-              </MobileNavLink>
-            </div>
-
-            <div className="my-5 h-px bg-(--color-border)" />
-
-            {/* Languages */}
-            <section>
-              <div className="flex items-end justify-between mb-4">
-                <div>
-                  <h2 className="text-base font-bold text-(--color-text-heading)">
-                    Choose a language
-                  </h2>
-
-                  <p className="text-xs text-(--color-text-muted) mt-1">
-                    Type or learn in your language
-                  </p>
-                </div>
-
-                <span className="text-xs text-(--color-text-muted)">
-                  {languages.length} languages
-                </span>
+                <MobileNavLink
+                  href="/learn"
+                  active={isLearn}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Learn
+                </MobileNavLink>
               </div>
 
-              <div className="space-y-3">
-                {languages.map((language) => (
-                  <div
-                    key={language.id}
-                    className="
-                overflow-hidden
-                rounded-2xl
-                border border-(--color-border)
-                bg-(--color-bg-card)
-                shadow-sm
-                transition-all duration-200
-                hover:border-(--color-primary)
-              "
-                  >
-                    {/* Language */}
-                    <div className="flex items-center gap-3 px-4 py-4">
+              <div className="my-5 h-px bg-(--color-border)" />
+
+              {/* Languages */}
+              <section>
+                <div className="flex items-end justify-between mb-4">
+                  <div>
+                    <h2 className="text-base font-bold text-(--color-text-heading)">
+                      Choose a language
+                    </h2>
+
+                    <p className="text-xs text-(--color-text-muted) mt-1">
+                      Type or learn in your language
+                    </p>
+                  </div>
+
+                  <span className="text-xs text-(--color-text-muted)">
+                    {languages.length} languages
+                  </span>
+                </div>
+
+                <div className="space-y-3 pr-1">
+                  {languages.map((language) => {
+                    const isCurrentLanguage =
+                      pathname === `/typing/${language.slug}` ||
+                      pathname === `/learn/${language.slug}`;
+
+                    return (
                       <div
-                        className="
+                        key={language.id}
+                        className={`
+          overflow-hidden
+          rounded-2xl
+          border
+          bg-(--color-bg-card)
+          shadow-sm
+          transition-all duration-200
+          ${
+            isCurrentLanguage
+              ? "border-(--color-primary) ring-1 ring-orange-200"
+              : "border-(--color-border) hover:border-(--color-primary)"
+          }
+        `}
+                      >
+                        {/* Language */}
+                        <div className="flex items-center gap-3 px-4 py-4">
+                          <div
+                            dir={language.direction}
+                            className="
                     flex h-11 w-11 shrink-0
                     items-center justify-center
                     rounded-xl
@@ -259,30 +278,30 @@ export default function Navbar() {
                     border border-orange-100
                     text-xl
                   "
-                      >
-                        {language.nativeName}
-                      </div>
+                          >
+                            {language.nativeName}
+                          </div>
 
-                      <div className="min-w-0 flex-1">
-                        <h3 className="font-semibold text-(--color-text-heading)">
-                          {language.name}
-                        </h3>
+                          <div className="min-w-0 flex-1">
+                            <h3 className="font-semibold text-(--color-text-heading)">
+                              {language.name}
+                            </h3>
 
-                        <p className="text-xs text-(--color-text-muted) mt-0.5">
-                          {language.script}
-                        </p>
-                      </div>
-                    </div>
+                            <p className="text-xs text-(--color-text-muted) mt-0.5">
+                              {language.script}
+                            </p>
+                          </div>
+                        </div>
 
-                    {/* Actions */}
-                    {(language.capabilities.typing ||
-                      language.capabilities.learn) && (
-                      <div className="grid grid-cols-2 gap-px bg-(--color-border)">
-                        {language.capabilities.typing ? (
-                          <Link
-                            href={`/typing/${language.slug}`}
-                            onClick={() => setMobileOpen(false)}
-                            className="
+                        {/* Actions */}
+                        {(language.capabilities.typing ||
+                          language.capabilities.learn) && (
+                          <div className="grid grid-cols-2 gap-px bg-(--color-border)">
+                            {language.capabilities.typing ? (
+                              <Link
+                                href={`/typing/${language.slug}`}
+                                onClick={() => setMobileOpen(false)}
+                                className="
                         flex items-center justify-center gap-2
                         bg-(--color-bg-card)
                         px-4 py-3
@@ -292,20 +311,20 @@ export default function Navbar() {
                         hover:bg-orange-50
                         active:bg-orange-100
                       "
-                          >
-                            <span>⌨</span>
-                            <span>Type</span>
-                            <span className="text-xs">→</span>
-                          </Link>
-                        ) : (
-                          <div />
-                        )}
+                              >
+                                <span>⌨</span>
+                                <span>Type</span>
+                                <span className="text-xs">→</span>
+                              </Link>
+                            ) : (
+                              <div />
+                            )}
 
-                        {language.capabilities.learn ? (
-                          <Link
-                            href={`/learn/${language.slug}`}
-                            onClick={() => setMobileOpen(false)}
-                            className="
+                            {language.capabilities.learn ? (
+                              <Link
+                                href={`/learn/${language.slug}`}
+                                onClick={() => setMobileOpen(false)}
+                                className="
                         flex items-center justify-center gap-2
                         bg-(--color-bg-card)
                         px-4 py-3
@@ -315,27 +334,28 @@ export default function Navbar() {
                         hover:bg-green-50
                         active:bg-green-100
                       "
-                          >
-                            <span>📖</span>
-                            <span>Learn</span>
-                            <span className="text-xs">→</span>
-                          </Link>
-                        ) : (
-                          <div />
+                              >
+                                <span>📖</span>
+                                <span>Learn</span>
+                                <span className="text-xs">→</span>
+                              </Link>
+                            ) : (
+                              <div />
+                            )}
+                          </div>
                         )}
                       </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </section>
+                    );
+                  })}
+                </div>
+              </section>
 
-            {/* All Tools */}
-            <div className="mt-5 pt-5 border-t border-(--color-border)">
-              <Link
-                href="/typing"
-                onClick={() => setMobileOpen(false)}
-                className="
+              {/* All Tools */}
+              <div className="mt-5 pt-5 border-t border-(--color-border)">
+                <Link
+                  href="/typing"
+                  onClick={() => setMobileOpen(false)}
+                  className="
             flex items-center justify-center
             w-full
             rounded-xl
@@ -346,9 +366,10 @@ export default function Navbar() {
             hover:bg-gray-50
             transition
           "
-              >
-                View all typing tools →
-              </Link>
+                >
+                  View all typing tools →
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -407,22 +428,36 @@ function NavLink({
 
 function LanguageMenuItem({
   language,
+  pathname,
+  onSelect,
 }: {
   language: ReturnType<typeof getLanguages>[number];
+  pathname: string;
+  onSelect: () => void;
 }) {
+  const isTyping = pathname === `/typing/${language.slug}`;
+  const isLearn = pathname === `/learn/${language.slug}`;
+  const isActive = isTyping || isLearn;
+
   return (
     <div
-      className="
+      className={`
         group rounded-xl p-2
         transition-all duration-200
-        hover:bg-orange-50
-      "
+        ${
+          isActive
+            ? "bg-orange-50 ring-1 ring-orange-200"
+            : "hover:bg-orange-50"
+        }
+      `}
       role="none"
     >
-      <div className="flex items-center gap-2 mb-1 px-1">
-        <span className="text-xl">{language.nativeName}</span>
+      <div className="flex items-center gap-2 mb-1 px-1 min-w-0">
+        <span dir={language.direction} className="text-xl shrink-0">
+          {language.nativeName}
+        </span>
 
-        <span className="text-sm font-medium text-(--color-text-heading)">
+        <span className="text-sm font-medium text-(--color-text-heading) truncate">
           {language.name}
         </span>
       </div>
@@ -431,7 +466,15 @@ function LanguageMenuItem({
         {language.capabilities.typing && (
           <Link
             href={`/typing/${language.slug}`}
-            className="rounded-lg px-2 py-1.5 text-xs text-(--color-text-muted) hover:bg-white hover:text-(--color-primary)"
+            onClick={onSelect}
+            className={`
+              rounded-lg px-2 py-1.5 text-xs
+              ${
+                isTyping
+                  ? "bg-orange-100 text-(--color-primary) font-semibold"
+                  : "text-(--color-text-muted) hover:bg-white hover:text-(--color-primary)"
+              }
+            `}
             role="menuitem"
           >
             Type
@@ -441,7 +484,15 @@ function LanguageMenuItem({
         {language.capabilities.learn && (
           <Link
             href={`/learn/${language.slug}`}
-            className="rounded-lg px-2 py-1.5 text-xs text-(--color-text-muted) hover:bg-white hover:text-(--color-secondary)"
+            onClick={onSelect}
+            className={`
+              rounded-lg px-2 py-1.5 text-xs
+              ${
+                isLearn
+                  ? "bg-green-100 text-(--color-secondary) font-semibold"
+                  : "text-(--color-text-muted) hover:bg-white hover:text-(--color-secondary)"
+              }
+            `}
             role="menuitem"
           >
             Learn
