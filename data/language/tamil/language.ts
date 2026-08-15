@@ -26,7 +26,7 @@ export const tamil: Language = {
       "Type in English and convert instantly to தமிழ்",
 
     intro:
-      "Write Tamil naturally using English letters with TypeBharat's Tamil typing tool. Simply type phonetically in English and instantly convert your words into the Tamil script. No keyboard installation, no login, and no tracking-just fast, accurate, and privacy-first Tamil transliteration directly in your browser.",
+      "Write Tamil naturally using English letters with TypeBharat's Tamil typing tool. Simply type phonetically in English and instantly convert your words into the Tamil script. No keyboard installation, no login - fast and accurate Tamil transliteration directly in your browser.",
 
     learnLink: {
       href: "/learn/tamil",

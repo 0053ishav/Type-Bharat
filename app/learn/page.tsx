@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { getLanguages } from "@/lib/languages/loader";
 
 export const metadata: Metadata = {
-  title: "Learn Indian Language Typing — TypeBharat",
+  title: "Learn Indian Languages: Scripts, Alphabets & Pronunciation | TypeBharat",
   description:
     "Learn Indian language typing with beginner-friendly guides covering scripts, alphabets, vowels, consonants, numerals, pronunciation, and phonetic typing.",
   alternates: {
@@ -385,23 +385,6 @@ export default function LearnIndexPage() {
         </div>
       </section>
 
-      {/* =========================================================
-          MORE LANGUAGES
-      ========================================================= */}
-      <section className="mt-28 text-center">
-        <span className="badge badge-gradient inline-block mb-5">
-          Growing library
-        </span>
-
-        <h2 className="text-3xl md:text-4xl font-bold text-(--color-text-heading)">
-          More languages are coming
-        </h2>
-
-        <p className="mt-4 text-lg text-(--color-text-muted) max-w-2xl mx-auto">
-          TypeBharat is being built as a growing collection of Indian language
-          typing and learning tools.
-        </p>
-      </section>
 
       {/* =========================================================
           FINAL CTA

@@ -5,7 +5,7 @@ import ScriptPreview from "@/components/ui/ScriptPreview";
 import { getLanguages } from "@/lib/languages/loader";
 
 export const metadata: Metadata = {
-  title: "Indian Language Typing Tools — TypeBharat",
+  title: "Indian Language Typing Tools | TypeBharat",
   description:
     "Free online typing tools for Indian languages. Type naturally in English and instantly write in Hindi, Panjabi, and more native scripts.",
   alternates: {

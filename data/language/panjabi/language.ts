@@ -27,7 +27,7 @@ export const panjabi: Language = {
       "Type in English and convert instantly to ਪੰਜਾਬੀ",
 
     intro:
-      "This Panjabi typing tool lets you write Panjabi (Punjabi) using English letters. Type naturally in English and get instant output in ਪੰਜਾਬੀ (Gurmukhi script). No downloads, no login, and no tracking — a fast, accurate, and privacy-first English to Panjabi transliteration tool.",
+      "This Panjabi typing tool lets you write Panjabi (Punjabi) using English letters. Type naturally in English and get instant output in ਪੰਜਾਬੀ (Gurmukhi script). No downloads, no login - a fast and accurate English to Panjabi transliteration tool.",
 
     learnLink: {
       href: "/learn/panjabi",
@@ -43,7 +43,7 @@ export const panjabi: Language = {
       title: "Panjabi Typing Tool (English to Panjabi)",
 
       description:
-        "Free English to Panjabi (Punjabi) typing tool. Type in English and instantly write in Panjabi (Punjabi) using the Gurmukhi script. No login. No tracking. Fast, accurate, and privacy-first transliteration.",
+        "Free English to Panjabi (Punjabi) typing tool. Type in English and instantly write in Panjabi (Punjabi) using the Gurmukhi script. No login. Fast, accurate, and privacy-first transliteration.",
 
       keywords: [
         "English to Panjabi typing",

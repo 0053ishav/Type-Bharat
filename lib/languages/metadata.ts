@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
 import type { Language } from "@/types/language";
 import { SITE_URL } from "@/lib/config/site";
-import { GLOBAL_KEYWORDS, mergeKeywords } from "@/lib/seo/keywords";
 
 export function createTypingMetadata(language: Language): Metadata {
   return {
     title: language.typing.seo.title,
     description: language.typing.seo.description,
 
-    keywords: mergeKeywords(
-      GLOBAL_KEYWORDS,
-      language.typing.seo.keywords),
+    keywords:
+      language.typing.seo.keywords,
 
     alternates: {
       canonical: `${SITE_URL}/typing/${language.slug}`,
@@ -46,9 +44,8 @@ export function createLearnMetadata(
     title: language.learn.meta.title,
     description: language.learn.meta.description,
 
-    keywords: mergeKeywords(
-      GLOBAL_KEYWORDS,
-      language.learn.seo.keywords),
+    keywords: 
+      language.learn.seo.keywords,
 
     alternates: {
       canonical: `${SITE_URL}/learn/${language.slug}`,

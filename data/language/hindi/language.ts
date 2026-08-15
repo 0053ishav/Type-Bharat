@@ -25,7 +25,7 @@ export const hindi: Language = {
     subtitle: "Type in English and convert instantly to हिन्दी",
 
     intro:
-      "This Hindi typing tool helps you write Hindi using English letters. Simply type words phonetically in English and they instantly convert into हिन्दी (Devanagari script). No keyboard installation, no login, and no tracking — fast, accurate, and privacy-first Hindi transliteration.",
+      "This Hindi typing tool helps you write Hindi using English letters. Simply type words phonetically in English and they instantly convert into हिन्दी (Devanagari script). No keyboard installation, no login - fast, accurate, and privacy-first Hindi transliteration.",
 
     learnLink: {
       href: "/learn/hindi",
@@ -38,7 +38,7 @@ export const hindi: Language = {
       title: "Hindi Typing Tool (English to Hindi)",
 
       description:
-        "Free English to Hindi typing tool. Type in English and instantly write in Hindi (Devanagari script). No login. No tracking. Accurate phonetic typing.",
+        "Free English to Hindi typing tool. Type in English and instantly write in Hindi (Devanagari script). No login. Accurate phonetic typing.",
 
       keywords: [
         "English to Hindi typing",
