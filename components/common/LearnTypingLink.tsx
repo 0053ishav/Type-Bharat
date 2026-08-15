@@ -16,16 +16,13 @@ export default function LearnTypingLink({
           <p className="text-sm text-[--color-text-muted]">
             {description ?? "New here?"}
           </p>
-          <p className="font-semibold text-[--color-text-heading]">
-            {label}
-          </p>
         </div>
 
         <Link
           href={href}
           className="btn-secondary whitespace-nowrap"
         >
-          Learn →
+          {label} →
         </Link>
       </div>
     </div>

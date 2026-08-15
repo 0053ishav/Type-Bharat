@@ -9,6 +9,7 @@ import { generateFAQSchema } from "@/lib/seo/faqSchema";
 
 import type { Language } from "@/types/language";
 import Breadcrumbs from "@/components/common/Breadcrumbs";
+import PageSchema from "@/components/common/PageSchema";
 
 type Props = {
   language: Language;
@@ -36,6 +37,11 @@ export default function TypingPage({ language }: Props) {
         ]}
       />
 
+      <PageSchema
+        name={`${language.name} Typing`}
+        description={language.typing.seo.description}
+        path={`/typing/${language.slug}`}
+      />
       <LearnTypingLink
         href={language.typing.learnLink.href}
         label={language.typing.learnLink.label}

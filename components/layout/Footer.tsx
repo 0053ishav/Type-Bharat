@@ -86,7 +86,7 @@ export default function Footer() {
                     href={`/learn/${language.slug}`}
                     className="group inline-flex items-center gap-2 text-(--color-text-muted) transition-colors hover:text-(--color-secondary)"
                   >
-                    <span>{language.name} Typing</span>
+                    <span>Learn {language.name}</span>
                     <span className="opacity-0 -translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-x-0">
                       →
                     </span>
@@ -136,7 +136,7 @@ export default function Footer() {
 
               <li>
                 <a
-                  href="#about"
+                  href="/about"
                   className="hover:text-(--color-text-heading)"
                 >
                   About
@@ -160,7 +160,7 @@ export default function Footer() {
             </div>
 
             <div className="flex flex-wrap gap-2">
-              {languages.map((language) => (
+              {typingLanguages.map((language) => (
                 <Link
                   key={language.id}
                   href={`/typing/${language.slug}`}

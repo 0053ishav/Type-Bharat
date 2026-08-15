@@ -8,6 +8,7 @@ import { generateFAQSchema } from "@/lib/seo/faqSchema";
 
 import type { Language } from "@/types/language";
 import Breadcrumbs from "@/components/common/Breadcrumbs";
+import PageSchema from "@/components/common/PageSchema";
 
 type Props = {
   language: Language;
@@ -34,6 +35,13 @@ export default function LearnPage({ language }: Props) {
           },
         ]}
       />
+
+      <PageSchema
+        name={`${language.name} Typing`}
+        description={language.typing.seo.description}
+        path={`/typing/${language.slug}`}
+      />
+
       <Script
         id={`${language.slug}-learn-faq`}
         type="application/ld+json"

@@ -7,6 +7,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { GLOBAL_KEYWORDS } from "@/lib/seo/keywords";
 import { Toaster } from "sonner";
 import { SITE_URL } from "@/lib/config/site";
+import SiteSchema from "@/components/common/SiteSchema";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -74,6 +75,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <SiteSchema />
         <Navbar />
         <main
           id="main-content"

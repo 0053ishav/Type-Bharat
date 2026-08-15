@@ -9,6 +9,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: SITE_URL,
     },
     {
+      url: `${SITE_URL}/about`,
+    },
+    {
       url: `${SITE_URL}/typing`,
     },
     {
