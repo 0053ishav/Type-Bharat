@@ -27,7 +27,7 @@ export const telugu: Language = {
       "Type in English and convert instantly to తెలుగు",
 
     intro:
-      "Write Telugu naturally using English letters with TypeBharat's Telugu typing tool. Simply type phonetically in English and instantly convert your words into the Telugu script. No keyboard installation, no login, and no tracking—fast, accurate, and privacy-first Telugu transliteration directly in your browser.",
+      "Write Telugu naturally using English letters with TypeBharat's Telugu typing tool. Simply type phonetically in English and instantly convert your words into the Telugu script. No keyboard installation, no login - fast and accurate Telugu transliteration directly in your browser.",
 
     learnLink: {
       href: "/learn/telugu",

@@ -27,7 +27,7 @@ export const assamese: Language = {
       "Type in English and convert instantly to অসমীয়া",
 
     intro:
-      "Write Assamese naturally using English letters with TypeBharat's Assamese typing tool. Simply type phonetically in English and instantly convert your words into the Assamese script. No keyboard installation, no login, and no tracking—fast, accurate, and privacy-first Assamese transliteration directly in your browser.",
+      "Write Assamese naturally using English letters with TypeBharat's Assamese typing tool. Simply type phonetically in English and instantly convert your words into the Assamese script. No keyboard installation, no login - fast, accurate, and privacy-first Assamese transliteration directly in your browser.",
 
     learnLink: {
       href: "/learn/assamese",

@@ -2,13 +2,16 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 import { getLanguages } from "@/lib/languages/loader";
+import PageSchema from "@/components/common/PageSchema";
+import { SITE_URL } from "@/lib/config/site";
 
 export const metadata: Metadata = {
-  title: "Learn Indian Language Typing — TypeBharat",
+  title:
+    "Learn Indian Languages: Scripts, Alphabets & Pronunciation | TypeBharat",
   description:
     "Learn Indian language typing with beginner-friendly guides covering scripts, alphabets, vowels, consonants, numerals, pronunciation, and phonetic typing.",
   alternates: {
-    canonical: "https://typebharat.ishav.space/learn",
+    canonical: `${SITE_URL}/learn`,
   },
 };
 
@@ -21,6 +24,12 @@ export default function LearnIndexPage() {
 
   return (
     <main className="max-w-6xl mx-auto px-6 py-16">
+      <PageSchema
+        name="Learn Indian Languages"
+        description="Learn Indian language typing with beginner-friendly guides covering scripts, alphabets, vowels, consonants, numerals, pronunciation, and phonetic typing."
+        path="/learn"
+        type="CollectionPage"
+      />
       {/* =========================================================
           HERO
       ========================================================= */}
@@ -35,9 +44,7 @@ export default function LearnIndexPage() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-(--color-text-heading) leading-tight">
             Learn the script.
             <br />
-            <span className="text-gradient">
-              Then type with confidence.
-            </span>
+            <span className="text-gradient">Then type with confidence.</span>
           </h1>
 
           <p className="mt-7 text-xl text-(--color-text-body) max-w-3xl mx-auto leading-relaxed">
@@ -47,21 +54,13 @@ export default function LearnIndexPage() {
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <span className="badge badge-success">
-              🔤 Alphabets
-            </span>
+            <span className="badge badge-success">🔤 Alphabets</span>
 
-            <span className="badge badge-success">
-              🔊 Pronunciation
-            </span>
+            <span className="badge badge-success">🔊 Pronunciation</span>
 
-            <span className="badge badge-success">
-              ⌨️ Typing
-            </span>
+            <span className="badge badge-success">⌨️ Typing</span>
 
-            <span className="badge badge-success">
-              📚 Beginner Friendly
-            </span>
+            <span className="badge badge-success">📚 Beginner Friendly</span>
           </div>
         </div>
       </section>
@@ -116,9 +115,7 @@ export default function LearnIndexPage() {
                 <div className="flex items-start justify-between gap-5">
                   <div>
                     <div className="flex items-center gap-2 text-xs uppercase tracking-[0.15em] text-(--color-text-muted)">
-                      <span>
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
+                      <span>{String(index + 1).padStart(2, "0")}</span>
 
                       <span className="h-px w-6 bg-gray-300" />
 
@@ -129,14 +126,10 @@ export default function LearnIndexPage() {
                       {language.name}
                     </h3>
 
-                    <p className="mt-1 text-3xl">
-                      {language.nativeName}
-                    </p>
+                    <p className="mt-1 text-3xl">{language.nativeName}</p>
                   </div>
 
-                  <span className="badge badge-success shrink-0">
-                    Guide
-                  </span>
+                  <span className="badge badge-success shrink-0">Guide</span>
                 </div>
 
                 {/* Script preview */}
@@ -174,25 +167,15 @@ export default function LearnIndexPage() {
 
                 {/* Topics */}
                 <div className="mt-5 flex flex-wrap gap-2">
-                  <span className="badge badge-gradient">
-                    🔤 Alphabet
-                  </span>
+                  <span className="badge badge-gradient">🔤 Alphabet</span>
 
-                  <span className="badge badge-gradient">
-                    🗣️ Sounds
-                  </span>
+                  <span className="badge badge-gradient">🗣️ Sounds</span>
 
-                  <span className="badge badge-gradient">
-                    ✍️ Script
-                  </span>
+                  <span className="badge badge-gradient">✍️ Script</span>
 
-                  <span className="badge badge-gradient">
-                    ⌨️ Typing
-                  </span>
+                  <span className="badge badge-gradient">⌨️ Typing</span>
 
-                  <span className="badge badge-gradient">
-                    🔢 Numerals
-                  </span>
+                  <span className="badge badge-gradient">🔢 Numerals</span>
                 </div>
 
                 {/* Actions */}
@@ -233,8 +216,8 @@ export default function LearnIndexPage() {
           </h2>
 
           <p className="mt-4 text-lg text-(--color-text-muted)">
-            You don&apos;t need to memorize everything at once. Learn the pieces,
-            understand how they work, and practice them immediately.
+            You don&apos;t need to memorize everything at once. Learn the
+            pieces, understand how they work, and practice them immediately.
           </p>
         </div>
 
@@ -244,9 +227,7 @@ export default function LearnIndexPage() {
               1
             </div>
 
-            <h3 className="font-bold text-lg mb-2">
-              Understand the script
-            </h3>
+            <h3 className="font-bold text-lg mb-2">Understand the script</h3>
 
             <p className="text-sm text-(--color-text-muted) leading-relaxed">
               Learn how the writing system works and how it differs from the
@@ -259,9 +240,7 @@ export default function LearnIndexPage() {
               2
             </div>
 
-            <h3 className="font-bold text-lg mb-2">
-              Learn the alphabet
-            </h3>
+            <h3 className="font-bold text-lg mb-2">Learn the alphabet</h3>
 
             <p className="text-sm text-(--color-text-muted) leading-relaxed">
               Explore vowels, consonants, vowel signs, extensions, and other
@@ -274,9 +253,7 @@ export default function LearnIndexPage() {
               3
             </div>
 
-            <h3 className="font-bold text-lg mb-2">
-              Learn the sounds
-            </h3>
+            <h3 className="font-bold text-lg mb-2">Learn the sounds</h3>
 
             <p className="text-sm text-(--color-text-muted) leading-relaxed">
               Connect native characters with their pronunciation and English
@@ -289,13 +266,11 @@ export default function LearnIndexPage() {
               4
             </div>
 
-            <h3 className="font-bold text-lg mb-2">
-              Start typing
-            </h3>
+            <h3 className="font-bold text-lg mb-2">Start typing</h3>
 
             <p className="text-sm text-(--color-text-muted) leading-relaxed">
-              Take what you learned directly into the TypeBharat typing tool
-              and start practicing.
+              Take what you learned directly into the TypeBharat typing tool and
+              start practicing.
             </p>
           </div>
         </div>
@@ -308,22 +283,18 @@ export default function LearnIndexPage() {
         <div className="card-gradient-orange rounded-3xl p-10 md:p-14">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="badge badge-primary mb-5">
-                Learn by doing
-              </span>
+              <span className="badge badge-primary mb-5">Learn by doing</span>
 
               <h2 className="text-3xl md:text-4xl font-bold text-(--color-text-heading)">
                 Don&apos;t just memorize characters.
                 <br />
-                <span className="text-gradient">
-                  Understand them.
-                </span>
+                <span className="text-gradient">Understand them.</span>
               </h2>
 
               <p className="mt-5 text-lg text-(--color-text-body) leading-relaxed">
-                The goal isn&apos;t to turn you into a keyboard expert. It&apos;s to
-                help you understand enough of the script that typing becomes
-                natural.
+                The goal isn&apos;t to turn you into a keyboard expert.
+                It&apos;s to help you understand enough of the script that
+                typing becomes natural.
               </p>
 
               <p className="mt-4 text-(--color-text-muted) leading-relaxed">
@@ -336,9 +307,7 @@ export default function LearnIndexPage() {
               <div className="card p-6">
                 <div className="text-3xl mb-3">🔤</div>
 
-                <h3 className="font-bold">
-                  Recognize
-                </h3>
+                <h3 className="font-bold">Recognize</h3>
 
                 <p className="mt-1 text-sm text-(--color-text-muted)">
                   Identify native characters
@@ -348,9 +317,7 @@ export default function LearnIndexPage() {
               <div className="card p-6">
                 <div className="text-3xl mb-3">🔊</div>
 
-                <h3 className="font-bold">
-                  Pronounce
-                </h3>
+                <h3 className="font-bold">Pronounce</h3>
 
                 <p className="mt-1 text-sm text-(--color-text-muted)">
                   Connect letters with sounds
@@ -360,9 +327,7 @@ export default function LearnIndexPage() {
               <div className="card p-6">
                 <div className="text-3xl mb-3">⌨️</div>
 
-                <h3 className="font-bold">
-                  Type
-                </h3>
+                <h3 className="font-bold">Type</h3>
 
                 <p className="mt-1 text-sm text-(--color-text-muted)">
                   Use English phonetics
@@ -372,9 +337,7 @@ export default function LearnIndexPage() {
               <div className="card p-6">
                 <div className="text-3xl mb-3">🚀</div>
 
-                <h3 className="font-bold">
-                  Practice
-                </h3>
+                <h3 className="font-bold">Practice</h3>
 
                 <p className="mt-1 text-sm text-(--color-text-muted)">
                   Build real typing confidence
@@ -383,24 +346,6 @@ export default function LearnIndexPage() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* =========================================================
-          MORE LANGUAGES
-      ========================================================= */}
-      <section className="mt-28 text-center">
-        <span className="badge badge-gradient inline-block mb-5">
-          Growing library
-        </span>
-
-        <h2 className="text-3xl md:text-4xl font-bold text-(--color-text-heading)">
-          More languages are coming
-        </h2>
-
-        <p className="mt-4 text-lg text-(--color-text-muted) max-w-2xl mx-auto">
-          TypeBharat is being built as a growing collection of Indian language
-          typing and learning tools.
-        </p>
       </section>
 
       {/* =========================================================

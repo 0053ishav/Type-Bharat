@@ -27,7 +27,7 @@ export const nepali: Language = {
       "Type in English and convert instantly to नेपाली",
 
     intro:
-      "Write Nepali naturally using English letters with TypeBharat's Nepali typing tool. Type words phonetically in English and instantly convert them into नेपाली using the Devanagari script. No keyboard installation, no login, and no tracking — a simple and privacy-first Nepali transliteration tool.",
+      "Write Nepali naturally using English letters with TypeBharat's Nepali typing tool. Type words phonetically in English and instantly convert them into नेपाली using the Devanagari script. No keyboard installation, no login - fast and simple  Nepali transliteration tool.",
 
     learnLink: {
       href: "/learn/nepali",

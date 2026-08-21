@@ -27,7 +27,7 @@ export const sanskrit: Language = {
       "Type in English and convert instantly to संस्कृतम्",
 
     intro:
-      "Write Sanskrit naturally using English letters with TypeBharat's Sanskrit typing tool. Type Sanskrit words phonetically in English and convert them into Devanagari instantly. No keyboard installation, no login, and no tracking — a simple and privacy-first Sanskrit transliteration tool.",
+      "Write Sanskrit naturally using English letters with TypeBharat's Sanskrit typing tool. Type Sanskrit words phonetically in English and convert them into Devanagari instantly. No keyboard installation, no login - fast and simple Sanskrit transliteration tool.",
 
     learnLink: {
       href: "/learn/sanskrit",

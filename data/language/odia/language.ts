@@ -27,7 +27,7 @@ export const odia: Language = {
       "Type in English and convert instantly to ଓଡ଼ିଆ",
 
     intro:
-      "Write Odia naturally using English letters with TypeBharat's Odia typing tool. Simply type phonetically in English and instantly convert your words into the Odia script. No keyboard installation, no login, and no tracking—fast, accurate, and privacy-first Odia transliteration directly in your browser.",
+      "Write Odia naturally using English letters with TypeBharat's Odia typing tool. Simply type phonetically in English and instantly convert your words into the Odia script. No keyboard installation, no login - fast and accurate Odia transliteration directly in your browser.",
 
     learnLink: {
       href: "/learn/odia",

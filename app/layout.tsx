@@ -6,6 +6,8 @@ import Footer from "@/components/layout/Footer";
 import { Analytics } from "@vercel/analytics/next"
 import { GLOBAL_KEYWORDS } from "@/lib/seo/keywords";
 import { Toaster } from "sonner";
+import { SITE_URL } from "@/lib/config/site";
+import SiteSchema from "@/components/common/SiteSchema";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,7 +24,7 @@ const geistMono = Geist_Mono({
 ========================= */
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://typebharat.ishav.space"),
+  metadataBase: new URL(SITE_URL),
 
   title: {
     default: "TypeBharat - English to Indian Language Typing Tool",
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "TypeBharat is a free English to Indian language typing tool. Type in English and instantly write in Panjabi, Hindi, and more Indian languages. No login. No tracking.",
+    "TypeBharat is a free English to Indian language typing tool. Type in English and instantly write in Panjabi, Hindi, and more Indian languages. No login.",
 
   keywords: GLOBAL_KEYWORDS,
 
@@ -44,7 +46,7 @@ export const metadata: Metadata = {
     title: "TypeBharat - English to Indian Language Typing Tool",
     description:
       "Type in English and write in Indian languages instantly. Free, fast, and privacy-first typing tool for Panjabi (Also known as Punjabi), Hindi, and more.",
-    url: "https://typebharat.ishav.space",
+    url: SITE_URL,
     siteName: "TypeBharat",
     locale: "en_IN",
     type: "website",
@@ -54,7 +56,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "TypeBharat - English to Indian Language Typing Tool",
     description:
-      "Type in English and write in Indian languages instantly. No login. No tracking. Free forever.",
+      "Type in English and write in Indian languages instantly. No login.  . Free forever.",
   },
 
   robots: {
@@ -73,6 +75,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <SiteSchema />
         <Navbar />
         <main
           id="main-content"

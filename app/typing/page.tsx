@@ -3,13 +3,15 @@ import type { Metadata } from "next";
 
 import ScriptPreview from "@/components/ui/ScriptPreview";
 import { getLanguages } from "@/lib/languages/loader";
+import PageSchema from "@/components/common/PageSchema";
+import { SITE_URL } from "@/lib/config/site";
 
 export const metadata: Metadata = {
-  title: "Indian Language Typing Tools — TypeBharat",
+  title: "Indian Language Typing Tools | TypeBharat",
   description:
     "Free online typing tools for Indian languages. Type naturally in English and instantly write in Hindi, Panjabi, and more native scripts.",
   alternates: {
-    canonical: "https://typebharat.ishav.space/typing",
+    canonical: `${SITE_URL}/typing`,
   },
 };
 
@@ -22,6 +24,12 @@ export default function TypingIndexPage() {
 
   return (
     <main className="max-w-6xl mx-auto px-6 py-16">
+      <PageSchema
+        name="Indian Language Typing Tools"
+        description="Free online typing tools for Indian languages. Type naturally in English and instantly write in Hindi, Panjabi, and more native scripts."
+        path="/typing"
+        type="CollectionPage"
+      />
       {/* =========================================================
           HERO
       ========================================================= */}
@@ -36,32 +44,22 @@ export default function TypingIndexPage() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-(--color-text-heading) leading-tight">
             Type in English.
             <br />
-            <span className="text-gradient">
-              Write in your language.
-            </span>
+            <span className="text-gradient">Write in your language.</span>
           </h1>
 
           <p className="mt-7 text-xl text-(--color-text-body) max-w-3xl mx-auto leading-relaxed">
-            Choose a language, type naturally using your English keyboard,
-            and instantly write in its native script.
+            Choose a language, type naturally using your English keyboard, and
+            instantly write in its native script.
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <span className="badge badge-success">
-              ⚡ Real-time
-            </span>
+            <span className="badge badge-success">⚡ Real-time</span>
 
-            <span className="badge badge-success">
-              🌐 Browser based
-            </span>
+            <span className="badge badge-success">🌐 Browser based</span>
 
-            <span className="badge badge-success">
-              🔒 Privacy first
-            </span>
+            <span className="badge badge-success">🔒 Privacy first</span>
 
-            <span className="badge badge-success">
-              ✨ Free
-            </span>
+            <span className="badge badge-success">✨ Free</span>
           </div>
         </div>
       </section>
@@ -106,7 +104,7 @@ export default function TypingIndexPage() {
                 hover-lift
               "
             >
-               {/* Decorative script background */}
+              {/* Decorative script background */}
               <div className="absolute -right-8 -top-8 text-[7rem] leading-none font-bold opacity-[0.035] select-none pointer-events-none transition-transform duration-700 group-hover:scale-110 group-hover:-rotate-6">
                 {language.nativeName}
               </div>
@@ -115,9 +113,7 @@ export default function TypingIndexPage() {
                 <div className="flex items-start justify-between gap-5 mb-6">
                   <div>
                     <div className="flex items-center gap-2 text-xs uppercase tracking-[0.15em] text-(--color-text-muted)">
-                      <span>
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
+                      <span>{String(index + 1).padStart(2, "0")}</span>
 
                       <span className="h-px w-6 bg-gray-300" />
 
@@ -128,14 +124,10 @@ export default function TypingIndexPage() {
                       {language.name}
                     </h3>
 
-                    <p className="mt-1 text-2xl">
-                      {language.nativeName}
-                    </p>
+                    <p className="mt-1 text-2xl">{language.nativeName}</p>
                   </div>
 
-                  <span className="badge badge-success shrink-0">
-                    Ready
-                  </span>
+                  <span className="badge badge-success shrink-0">Ready</span>
                 </div>
 
                 {/* Animated script */}
@@ -156,22 +148,16 @@ export default function TypingIndexPage() {
 
                 {/* Capabilities */}
                 <div className="mt-5 flex flex-wrap gap-2">
-                  <span className="badge badge-gradient">
-                    ⌨️ Typing
-                  </span>
+                  <span className="badge badge-gradient">⌨️ Typing</span>
 
-                  <span className="badge badge-gradient">
-                    ⚡ Real-time
-                  </span>
+                  <span className="badge badge-gradient">⚡ Real-time</span>
 
                   <span className="badge badge-gradient">
                     {language.script}
                   </span>
 
                   {language.capabilities.learn && (
-                    <span className="badge badge-gradient">
-                      📖 Learn
-                    </span>
+                    <span className="badge badge-gradient">📖 Learn</span>
                   )}
                 </div>
 
@@ -224,9 +210,7 @@ export default function TypingIndexPage() {
               1
             </div>
 
-            <h3 className="text-xl font-bold mb-3">
-              Think in your language
-            </h3>
+            <h3 className="text-xl font-bold mb-3">Think in your language</h3>
 
             <p className="text-(--color-text-muted) leading-relaxed">
               Think about what you want to say exactly as you normally would.
@@ -238,9 +222,7 @@ export default function TypingIndexPage() {
               2
             </div>
 
-            <h3 className="text-xl font-bold mb-3">
-              Type phonetically
-            </h3>
+            <h3 className="text-xl font-bold mb-3">Type phonetically</h3>
 
             <p className="text-(--color-text-muted) leading-relaxed">
               Use your regular English keyboard and type the pronunciation.
@@ -252,13 +234,11 @@ export default function TypingIndexPage() {
               3
             </div>
 
-            <h3 className="text-xl font-bold mb-3">
-              Get native script
-            </h3>
+            <h3 className="text-xl font-bold mb-3">Get native script</h3>
 
             <p className="text-(--color-text-muted) leading-relaxed">
-              Suggestions help you select the correct native-script word as
-              you type.
+              Suggestions help you select the correct native-script word as you
+              type.
             </p>
           </div>
         </div>
@@ -282,22 +262,18 @@ export default function TypingIndexPage() {
           <div className="card card-gradient-orange p-7">
             <div className="text-3xl mb-4">💬</div>
 
-            <h3 className="font-bold text-lg mb-2">
-              Messages
-            </h3>
+            <h3 className="font-bold text-lg mb-2">Messages</h3>
 
             <p className="text-sm text-(--color-text-muted)">
-              Write WhatsApp messages, family conversations, and personal
-              notes in your native script.
+              Write WhatsApp messages, family conversations, and personal notes
+              in your native script.
             </p>
           </div>
 
           <div className="card card-gradient-green p-7">
             <div className="text-3xl mb-4">📱</div>
 
-            <h3 className="font-bold text-lg mb-2">
-              Social Media
-            </h3>
+            <h3 className="font-bold text-lg mb-2">Social Media</h3>
 
             <p className="text-sm text-(--color-text-muted)">
               Create captions, posts, comments, and status updates without
@@ -308,9 +284,7 @@ export default function TypingIndexPage() {
           <div className="card card-gradient-blue p-7">
             <div className="text-3xl mb-4">🎵</div>
 
-            <h3 className="font-bold text-lg mb-2">
-              Lyrics & Poetry
-            </h3>
+            <h3 className="font-bold text-lg mb-2">Lyrics & Poetry</h3>
 
             <p className="text-sm text-(--color-text-muted)">
               Write lyrics, poems, quotes, and creative work using the script
@@ -321,9 +295,7 @@ export default function TypingIndexPage() {
           <div className="card p-7">
             <div className="text-3xl mb-4">💼</div>
 
-            <h3 className="font-bold text-lg mb-2">
-              Work
-            </h3>
+            <h3 className="font-bold text-lg mb-2">Work</h3>
 
             <p className="text-sm text-(--color-text-muted)">
               Prepare bilingual documents, emails, presentations, and notes.
@@ -333,26 +305,22 @@ export default function TypingIndexPage() {
           <div className="card p-7">
             <div className="text-3xl mb-4">📚</div>
 
-            <h3 className="font-bold text-lg mb-2">
-              Learning
-            </h3>
+            <h3 className="font-bold text-lg mb-2">Learning</h3>
 
             <p className="text-sm text-(--color-text-muted)">
-              Practice alphabets, sounds, and native scripts while learning
-              how the typing system works.
+              Practice alphabets, sounds, and native scripts while learning how
+              the typing system works.
             </p>
           </div>
 
           <div className="card p-7">
             <div className="text-3xl mb-4">🌏</div>
 
-            <h3 className="font-bold text-lg mb-2">
-              Your Language
-            </h3>
+            <h3 className="font-bold text-lg mb-2">Your Language</h3>
 
             <p className="text-sm text-(--color-text-muted)">
-              Type naturally in the language you grew up speaking, even if
-              you never learned its keyboard layout.
+              Type naturally in the language you grew up speaking, even if you
+              never learned its keyboard layout.
             </p>
           </div>
         </div>
@@ -363,9 +331,7 @@ export default function TypingIndexPage() {
       ========================================================= */}
       <section className="mt-28">
         <div className="card-gradient-orange rounded-3xl p-10 md:p-14 text-center">
-          <span className="badge badge-primary mb-5">
-            📖 Learn the script
-          </span>
+          <span className="badge badge-primary mb-5">📖 Learn the script</span>
 
           <h2 className="text-3xl md:text-4xl font-bold text-(--color-text-heading)">
             Want to understand what you&apos;re typing?

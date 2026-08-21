@@ -25,7 +25,7 @@ export const gujarati: Language = {
     subtitle: "Type in English and convert instantly to ગુજરાતી",
 
     intro:
-      "This Gujarati typing tool helps you write Gujarati using English letters. Simply type words phonetically in English and they instantly convert into ગુજરાતી (Gujarati script). No keyboard installation, no login, and no tracking — fast, accurate, and privacy-first Gujarati transliteration.",
+      "This Gujarati typing tool helps you write Gujarati using English letters. Simply type words phonetically in English and they instantly convert into ગુજરાતી (Gujarati script). No keyboard installation, no login - fast, accurate, and privacy-first Gujarati transliteration.",
 
     learnLink: {
       href: "/learn/gujarati",
@@ -38,7 +38,7 @@ export const gujarati: Language = {
       title: "Gujarati Typing Tool (English to Gujarati)",
 
       description:
-        "Free English to Gujarati typing tool. Type in English and instantly write in Gujarati (ગુજરાતી script). No login. No tracking. Accurate phonetic typing.",
+        "Free English to Gujarati typing tool. Type in English and instantly write in Gujarati (ગુજરાતી script). No login. Accurate phonetic typing.",
 
       keywords: [
         "English to Gujarati typing",

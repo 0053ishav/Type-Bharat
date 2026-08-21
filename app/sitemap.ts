@@ -1,188 +1,40 @@
-import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/config/site";
+import { getLanguages } from "@/lib/languages/loader";
+import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://typebharat.ishav.space";
-
-  return [
+  const languages = getLanguages();
+  const basePages: MetadataRoute.Sitemap = [
     {
-      url: `${baseUrl}/`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1,
+      url: SITE_URL,
     },
     {
-      url: `${baseUrl}/typing/panjabi`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
+      url: `${SITE_URL}/about`,
     },
     {
-      url: `${baseUrl}/typing/hindi`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
+      url: `${SITE_URL}/typing`,
     },
     {
-      url: `${baseUrl}/typing/gujarati`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/typing/tamil`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/typing/telugu`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/typing/bengali`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/typing/marathi`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/typing/kannada`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/typing/malayalam`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/typing/odia`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/typing/assamese`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/typing/urdu`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/typing/sanskrit`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/typing/nepali`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/learn`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/learn/panjabi`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/learn/hindi`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/learn/gujarati`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/learn/tamil`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/learn/telugu`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/learn/bengali`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/learn/marathi`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/learn/kannada`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/learn/malayalam`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/learn/odia`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/learn/assamese`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/learn/urdu`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/learn/sanskrit`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/learn/nepali`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
+      url: `${SITE_URL}/learn`,
     },
   ];
+
+  const languagePages = languages.flatMap((language) => {
+    const pages: MetadataRoute.Sitemap = [];
+
+    if (language.capabilities.typing) {
+      pages.push({
+        url: `${SITE_URL}/typing/${language.slug}`,
+      });
+    }
+
+    if (language.capabilities.learn) {
+      pages.push({
+        url: `${SITE_URL}/learn/${language.slug}`,
+      });
+    }
+    return pages;
+  });
+
+  return [...basePages, ...languagePages];
 }

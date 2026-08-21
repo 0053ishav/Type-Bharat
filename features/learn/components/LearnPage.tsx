@@ -7,6 +7,8 @@ import AlphabetGrid from "@/components/ui/AlphabetGrid";
 import { generateFAQSchema } from "@/lib/seo/faqSchema";
 
 import type { Language } from "@/types/language";
+import Breadcrumbs from "@/components/common/Breadcrumbs";
+import PageSchema from "@/components/common/PageSchema";
 
 type Props = {
   language: Language;
@@ -16,7 +18,30 @@ export default function LearnPage({ language }: Props) {
   const faqSchema = generateFAQSchema(language.learn.faq);
 
   return (
-    <main className="max-w-5xl mx-auto px-6 py-16 space-y-20">
+    <main className="max-w-5xl mx-auto px-6 space-y-20">
+      <Breadcrumbs
+        items={[
+          {
+            name: "Home",
+            path: "/",
+          },
+          {
+            name: "Learn",
+            path: "/learn",
+          },
+          {
+            name: `Learn ${language.name}`,
+            path: `/learn/${language.slug}`,
+          },
+        ]}
+      />
+
+      <PageSchema
+        name={`${language.name} Typing`}
+        description={language.typing.seo.description}
+        path={`/typing/${language.slug}`}
+      />
+
       <Script
         id={`${language.slug}-learn-faq`}
         type="application/ld+json"
@@ -77,10 +102,7 @@ export default function LearnPage({ language }: Props) {
         </div>
       </section>
 
-      <AlphabetGrid
-        language={language} 
-      />
-
+      <AlphabetGrid language={language} />
 
       {/* CTA */}
       <section className="text-center">
@@ -89,9 +111,7 @@ export default function LearnPage({ language }: Props) {
             {language.learn.cta.title}
           </h2>
 
-          <p className="text-lg mb-6">
-            {language.learn.cta.description}
-          </p>
+          <p className="text-lg mb-6">{language.learn.cta.description}</p>
 
           <Link
             href={`/typing/${language.slug}`}

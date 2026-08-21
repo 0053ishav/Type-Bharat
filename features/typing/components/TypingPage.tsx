@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Script from "next/script";
 
 import FAQ from "@/components/common/FAQ";
@@ -9,29 +8,40 @@ import TypingTool from "@/features/typing/components/TypingTool";
 import { generateFAQSchema } from "@/lib/seo/faqSchema";
 
 import type { Language } from "@/types/language";
+import Breadcrumbs from "@/components/common/Breadcrumbs";
+import PageSchema from "@/components/common/PageSchema";
 
 type Props = {
   language: Language;
 };
 
-export default function TypingPage({
-  language,
-}: Props) {
+export default function TypingPage({ language }: Props) {
   const faqSchema = generateFAQSchema(language.faq);
 
   return (
-    <main>
-      <div className="max-w-3xl mx-auto px-6 mt-6 flex justify-between text-sm">
-        <Link
-          href="/"
-          className="text-(--color-text-muted) hover:underline"
-        >
-          ← Home
-        </Link>
+    <main className="max-w-5xl mx-auto px-6">
+      <Breadcrumbs
+        items={[
+          {
+            name: "Home",
+            path: "/",
+          },
+          {
+            name: "Typing",
+            path: "/typing",
+          },
+          {
+            name: `${language.name} Typing`,
+            path: `/typing/${language.slug}`,
+          },
+        ]}
+      />
 
-        {/* TODO: replace with Language Switcher */}
-      </div>
-
+      <PageSchema
+        name={`${language.name} Typing`}
+        description={language.typing.seo.description}
+        path={`/typing/${language.slug}`}
+      />
       <LearnTypingLink
         href={language.typing.learnLink.href}
         label={language.typing.learnLink.label}
@@ -52,9 +62,7 @@ export default function TypingPage({
         </p>
       </section>
 
-      <TypingTool
-        language={language}
-      />
+      <TypingTool language={language} />
 
       <FAQ
         items={language.faq}
