@@ -12,6 +12,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${SITE_URL}/about`,
     },
     {
+      url: `${SITE_URL}/privacy`,
+    },
+    {
+      url: `${SITE_URL}/terms`,
+    },
+    {
+      url: `${SITE_URL}/contact`,
+    },
+    {
       url: `${SITE_URL}/typing`,
     },
     {

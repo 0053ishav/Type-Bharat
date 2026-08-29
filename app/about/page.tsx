@@ -467,6 +467,42 @@ export default function AboutPage() {
           )}
         </div>
       </section>
+       {/* Footer navigation */}
+      <nav
+        aria-label="Legal navigation"
+        className="mt-16 pt-8 border-t border-(--color-border)"
+      >
+        <div className="flex flex-wrap gap-5 text-sm">
+          <Link
+            href="/about"
+            aria-current="page"
+            className="font-medium text-(--color-text-heading) hover:text-(--color-text-heading)"
+          >
+            About
+          </Link>
+
+          <Link
+            href="/contact"
+            className="text-(--color-text-muted) hover:text-(--color-text-heading)"
+          >
+            Contact
+          </Link>
+
+          <Link
+            href="/privacy"
+            className="text-(--color-text-muted) hover:text-(--color-text-heading)"
+          >
+            Privacy Policy
+          </Link>
+
+          <Link
+            href="/terms"
+            className="text-(--color-text-muted) hover:text-(--color-text-heading)"
+          >
+            Terms of Service
+          </Link>
+        </div>
+      </nav>
     </main>
   );
 }
