@@ -142,6 +142,30 @@ export default function Footer() {
                   About
                 </a>
               </li>
+              <li>
+                <a
+                  href="/privacy"
+                  className="hover:text-(--color-text-heading)"
+                >
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/terms"
+                  className="hover:text-(--color-text-heading)"
+                >
+                  Terms of Service
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/contact"
+                  className="hover:text-(--color-text-heading)"
+                >
+                  Contact
+                </a>
+              </li>
             </ul>
           </div>
         </div>
