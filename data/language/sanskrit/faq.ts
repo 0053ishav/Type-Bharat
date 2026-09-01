@@ -9,17 +9,17 @@ export const SANSKRIT_FAQ: FAQItem[] = [
   {
     question: "Which script does the Sanskrit typing tool use?",
     answer:
-      "TypeBharat's Sanskrit typing tool uses Devanagari (देवनागरी), one of the principal modern scripts used for writing Sanskrit.",
+      "TypeIndian's Sanskrit typing tool uses Devanagari (देवनागरी), one of the principal modern scripts used for writing Sanskrit.",
   },
   {
     question: "Do I need to learn a Sanskrit keyboard layout?",
     answer:
-      "No. You can type Sanskrit phonetically using familiar English keyboard keys. TypeBharat converts your Roman input into Devanagari suggestions.",
+      "No. You can type Sanskrit phonetically using familiar English keyboard keys. TypeIndian converts your Roman input into Devanagari suggestions.",
   },
   {
     question: "Is the Sanskrit typing tool free?",
     answer:
-      "Yes. TypeBharat's Sanskrit typing tool is free to use without requiring an account or a separate keyboard installation.",
+      "Yes. TypeIndian's Sanskrit typing tool is free to use without requiring an account or a separate keyboard installation.",
   },
   {
     question: "Is this a Sanskrit translation tool?",
@@ -37,9 +37,9 @@ export const SANSKRIT_FAQ: FAQItem[] = [
       "Yes. Sanskrit uses sounds and letters that are important for accurate Sanskrit writing, including ऋ, ष, ण, श, and conjunct forms such as क्ष, त्र, ज्ञ, and श्र.",
   },
   {
-    question: "Does TypeBharat save my Sanskrit text?",
+    question: "Does TypeIndian save my Sanskrit text?",
     answer:
-      "No. Your typed text remains in your browser. TypeBharat does not store, track, or log the Sanskrit text you enter.",
+      "No. Your typed text remains in your browser. TypeIndian does not store, track, or log the Sanskrit text you enter.",
   },
   {
     question: "Can I use the Sanskrit text for educational or professional work?",
@@ -49,7 +49,7 @@ export const SANSKRIT_FAQ: FAQItem[] = [
   {
     question: "Can I type long Sanskrit passages?",
     answer:
-      "Yes. The TypeBharat editor can be used for longer Sanskrit passages, verses, articles, notes, and documents.",
+      "Yes. The TypeIndian editor can be used for longer Sanskrit passages, verses, articles, notes, and documents.",
   },
 ];
 
@@ -97,7 +97,7 @@ export const LEARN_SANSKRIT_FAQ: FAQItem[] = [
   {
     question: "Can Sanskrit be written in scripts other than Devanagari?",
     answer:
-      "Yes. Sanskrit has historically been written in many regional Indian scripts, including Bengali, Gujarati, Kannada, Telugu, Malayalam, and Grantha. TypeBharat uses Devanagari for its Sanskrit typing experience.",
+      "Yes. Sanskrit has historically been written in many regional Indian scripts, including Bengali, Gujarati, Kannada, Telugu, Malayalam, and Grantha. TypeIndian uses Devanagari for its Sanskrit typing experience.",
   },
   {
     question: "Why is Sanskrit important in Indian linguistic history?",

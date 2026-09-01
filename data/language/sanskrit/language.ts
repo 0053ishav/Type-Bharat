@@ -27,7 +27,7 @@ export const sanskrit: Language = {
       "Type in English and convert instantly to संस्कृतम्",
 
     intro:
-      "Write Sanskrit naturally using English letters with TypeBharat's Sanskrit typing tool. Type Sanskrit words phonetically in English and convert them into Devanagari instantly. No keyboard installation, no login - fast and simple Sanskrit transliteration tool.",
+      "Write Sanskrit naturally using English letters with TypeIndian's Sanskrit typing tool. Type Sanskrit words phonetically in English and convert them into Devanagari instantly. No keyboard installation, no login - fast and simple Sanskrit transliteration tool.",
 
     learnLink: {
       href: "/learn/sanskrit",
@@ -54,11 +54,11 @@ export const sanskrit: Language = {
         "Roman to Sanskrit",
         "English to Sanskrit converter",
         "Devanagari Sanskrit typing",
-        "TypeBharat Sanskrit",
+        "TypeIndian Sanskrit",
       ],
 
       openGraph: {
-        title: "Sanskrit Typing Tool — TypeBharat",
+        title: "Sanskrit Typing Tool - TypeIndian",
 
         description:
           "Type Sanskrit using English letters and instantly convert your phonetic input into Devanagari.",
@@ -67,7 +67,7 @@ export const sanskrit: Language = {
       },
 
       twitter: {
-        title: "Sanskrit Typing Tool — TypeBharat",
+        title: "Sanskrit Typing Tool - TypeIndian",
 
         description:
           "Free and simple English to Sanskrit phonetic typing with Devanagari output.",
@@ -105,12 +105,12 @@ export const sanskrit: Language = {
         "Sanskrit typing guide",
         "English to Sanskrit typing",
         "Sanskrit typing for beginners",
-        "TypeBharat Sanskrit",
+        "TypeIndian Sanskrit",
       ],
 
       openGraph: {
         title:
-          "Learn Sanskrit Typing — Beginner Guide | TypeBharat",
+          "Learn Sanskrit Typing - Beginner Guide | TypeIndian",
 
         description:
           "Learn Sanskrit typing with a beginner-friendly guide covering Devanagari, the Sanskrit alphabet, pronunciation, and phonetic typing.",
@@ -119,7 +119,7 @@ export const sanskrit: Language = {
       },
 
       twitter: {
-        title: "Learn Sanskrit Typing — TypeBharat",
+        title: "Learn Sanskrit Typing - TypeIndian",
 
         description:
           "Learn Sanskrit typing using English letters with our beginner-friendly guide.",
@@ -140,7 +140,7 @@ export const sanskrit: Language = {
       title: "Devanagari Script for Sanskrit",
 
       paragraphs: [
-        "Sanskrit can historically be written in several Indian scripts. TypeBharat uses Devanagari, the most widely used modern script for Sanskrit publications and digital text.",
+        "Sanskrit can historically be written in several Indian scripts. TypeIndian uses Devanagari, the most widely used modern script for Sanskrit publications and digital text.",
         "Devanagari is written from left to right and uses independent vowels, consonants, vowel signs, the virama, and conjunct consonants to represent Sanskrit words and sounds.",
       ],
 
@@ -187,7 +187,7 @@ export const sanskrit: Language = {
       title: "Ready to start typing in Sanskrit?",
 
       description:
-        "You don't need to learn a Sanskrit keyboard layout. Type Sanskrit phonetically using English letters and TypeBharat converts your input into Devanagari.",
+        "You don't need to learn a Sanskrit keyboard layout. Type Sanskrit phonetically using English letters and TypeIndian converts your input into Devanagari.",
 
       button: "Open Sanskrit Typing Tool →",
     },

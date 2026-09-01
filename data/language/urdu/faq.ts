@@ -9,27 +9,27 @@ export const URDU_FAQ: FAQItem[] = [
   {
     question: "Which script does the Urdu typing tool use?",
     answer:
-      "TypeBharat's Urdu typing tool uses the Perso-Arabic script traditionally used for Urdu, commonly rendered in Nastaliq-style typography.",
+      "TypeIndian's Urdu typing tool uses the Perso-Arabic script traditionally used for Urdu, commonly rendered in Nastaliq-style typography.",
   },
   {
     question: "Does the Urdu typing tool work from right to left?",
     answer:
-      "Yes. Urdu is written from right to left. TypeBharat's Urdu page is designed to support RTL text direction while you type and edit Urdu text.",
+      "Yes. Urdu is written from right to left. TypeIndian's Urdu page is designed to support RTL text direction while you type and edit Urdu text.",
   },
   {
     question: "Do I need to install an Urdu keyboard?",
     answer:
-      "No. You can type Urdu phonetically using ordinary English keyboard keys. TypeBharat converts your Roman input into Urdu script without requiring a separate keyboard layout.",
+      "No. You can type Urdu phonetically using ordinary English keyboard keys. TypeIndian converts your Roman input into Urdu script without requiring a separate keyboard layout.",
   },
   {
     question: "Is the Urdu typing tool free?",
     answer:
-      "Yes. TypeBharat's Urdu typing tool is free to use without requiring an account or keyboard installation.",
+      "Yes. TypeIndian's Urdu typing tool is free to use without requiring an account or keyboard installation.",
   },
   {
     question: "Is this an Urdu translation tool?",
     answer:
-      "No. TypeBharat provides transliteration rather than translation. It converts phonetic Roman input into Urdu script; it does not translate the meaning into another language.",
+      "No. TypeIndian provides transliteration rather than translation. It converts phonetic Roman input into Urdu script; it does not translate the meaning into another language.",
   },
   {
     question: "Can I paste Urdu or Roman Urdu text?",
@@ -42,12 +42,12 @@ export const URDU_FAQ: FAQItem[] = [
       "Yes. The editor can be used for longer Urdu writing such as messages, articles, notes, assignments, and other documents.",
   },
   {
-    question: "Does TypeBharat store my Urdu text?",
+    question: "Does TypeIndian store my Urdu text?",
     answer:
-      "No. TypeBharat is designed so that the text you type remains in your browser and is not stored as personal typing content.",
+      "No. TypeIndian is designed so that the text you type remains in your browser and is not stored as personal typing content.",
   },
   {
-    question: "Can I use the Urdu text created with TypeBharat commercially?",
+    question: "Can I use the Urdu text created with TypeIndian commercially?",
     answer:
       "Yes. You can use the Urdu text you create for personal, educational, professional, and commercial writing.",
   },

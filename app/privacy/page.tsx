@@ -9,30 +9,30 @@ import { EMAIL } from "@/lib/config/email";
 const LAST_UPDATED = "August 21, 2026";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | TypeBharat",
+  title: "Privacy Policy | TypeIndian",
 
   description:
-    "Learn how TypeBharat handles information, browser storage, analytics, third-party transliteration services, and advertising technologies.",
+    "Learn how TypeIndian handles information, browser storage, analytics, third-party transliteration services, and advertising technologies.",
 
   alternates: {
     canonical: `${SITE_URL}/privacy`,
   },
 
   openGraph: {
-    title: "Privacy Policy | TypeBharat",
+    title: "Privacy Policy | TypeIndian",
     description:
-      "Learn how TypeBharat handles information, browser storage, analytics, third-party transliteration services, and advertising technologies.",
+      "Learn how TypeIndian handles information, browser storage, analytics, third-party transliteration services, and advertising technologies.",
     url: `${SITE_URL}/privacy`,
-    siteName: "TypeBharat",
+    siteName: "TypeIndian",
     locale: "en_IN",
     type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Privacy Policy | TypeBharat",
+    title: "Privacy Policy | TypeIndian",
     description:
-      "Learn how TypeBharat handles information, browser storage, analytics, third-party transliteration services, and advertising technologies.",
+      "Learn how TypeIndian handles information, browser storage, analytics, third-party transliteration services, and advertising technologies.",
   },
 };
 
@@ -54,8 +54,8 @@ export default function PrivacyPage() {
       />
 
       <PageSchema
-        name="Privacy Policy | TypeBharat"
-        description="Learn how TypeBharat handles information, browser storage, analytics, third-party transliteration services, and advertising technologies."
+        name="Privacy Policy | TypeIndian"
+        description="Learn how TypeIndian handles information, browser storage, analytics, third-party transliteration services, and advertising technologies."
         path="/privacy"
       />
 
@@ -70,7 +70,7 @@ export default function PrivacyPage() {
         </h1>
 
         <p className="mt-5 text-lg text-(--color-text-body) leading-relaxed">
-          This Privacy Policy explains how TypeBharat handles information in
+          This Privacy Policy explains how TypeIndian handles information in
           connection with its browser-based Indian language typing,
           transliteration, and learning tools.
         </p>
@@ -88,7 +88,7 @@ export default function PrivacyPage() {
           </h2>
 
           <p>
-            TypeBharat does not currently require users to create an account or
+            TypeIndian does not currently require users to create an account or
             log in to use its core typing and learning features. We do not
             currently operate a user profile, password, account, or cloud
             document system.
@@ -103,7 +103,7 @@ export default function PrivacyPage() {
           </p>
 
           <p className="mt-4">
-            TypeBharat does not currently operate a database of user accounts or
+            TypeIndian does not currently operate a database of user accounts or
             permanently store user typing sessions as part of a user account.
           </p>
         </section>
@@ -115,7 +115,7 @@ export default function PrivacyPage() {
           </h2>
 
           <p>
-            Information processed through TypeBharat is used to operate,
+            Information processed through TypeIndian is used to operate,
             maintain, improve, and understand the website and its features.
           </p>
 
@@ -133,13 +133,13 @@ export default function PrivacyPage() {
           </h2>
 
           <p>
-            TypeBharat provides browser-based typing tools that allow users to
+            TypeIndian provides browser-based typing tools that allow users to
             enter text using an English keyboard and receive output in supported
             Indian-language scripts.
           </p>
 
           <p className="mt-4">
-            To generate transliteration suggestions, TypeBharat may send text
+            To generate transliteration suggestions, TypeIndian may send text
             entered into the typing tool to a third-party transliteration
             service operated by Google. This service is accessed through the
             Google Input Tools request endpoint.
@@ -151,7 +151,7 @@ export default function PrivacyPage() {
           </p>
 
           <p className="mt-4">
-            TypeBharat does not control Google&apos;s handling or retention of
+            TypeIndian does not control Google&apos;s handling or retention of
             information submitted to Google&apos;s services. For information
             about Google&apos;s privacy practices, please review{" "}
             <a
@@ -173,13 +173,13 @@ export default function PrivacyPage() {
           </h2>
 
           <p>
-            TypeBharat may use browser-side storage, including localStorage, for
+            TypeIndian may use browser-side storage, including localStorage, for
             application and session-related functionality.
           </p>
 
           <p className="mt-4">
             Information stored in this way is stored by your browser on your
-            device rather than as a TypeBharat user account in a server-side
+            device rather than as a TypeIndian user account in a server-side
             profile database.
           </p>
 
@@ -196,7 +196,7 @@ export default function PrivacyPage() {
           </h2>
 
           <p>
-            TypeBharat currently uses Vercel Analytics to understand website
+            TypeIndian currently uses Vercel Analytics to understand website
             usage, traffic, and performance.
           </p>
 
@@ -231,7 +231,7 @@ export default function PrivacyPage() {
           </h2>
 
           <p>
-            TypeBharat is hosted and deployed using Vercel infrastructure.
+            TypeIndian is hosted and deployed using Vercel infrastructure.
             Information required by hosting and infrastructure providers to
             deliver and operate a website may be processed as part of serving
             requests.
@@ -243,7 +243,7 @@ export default function PrivacyPage() {
           </p>
 
           <p className="mt-4">
-            TypeBharat does not make claims about specific infrastructure logs,
+            TypeIndian does not make claims about specific infrastructure logs,
             retention periods, identifiers, or other provider-side processing
             unless those details are verified from the applicable provider
             documentation.
@@ -257,7 +257,7 @@ export default function PrivacyPage() {
           </h2>
 
           <p>
-            TypeBharat is preparing for advertising as part of the
+            TypeIndian is preparing for advertising as part of the
             platform&apos;s future production and monetization plans.
           </p>
 
@@ -286,7 +286,7 @@ export default function PrivacyPage() {
           </h2>
 
           <p>
-            TypeBharat currently relies on third-party services for certain
+            TypeIndian currently relies on third-party services for certain
             parts of the website.
           </p>
 
@@ -304,7 +304,7 @@ export default function PrivacyPage() {
 
           <p className="mt-5">
             Third-party services operate under their own privacy policies and
-            terms. TypeBharat does not control the privacy practices of those
+            terms. TypeIndian does not control the privacy practices of those
             providers.
           </p>
         </section>
@@ -316,7 +316,7 @@ export default function PrivacyPage() {
           </h2>
 
           <p>
-            TypeBharat does not currently operate a user-account database with a
+            TypeIndian does not currently operate a user-account database with a
             defined retention period for user profiles or saved documents.
           </p>
 
@@ -327,7 +327,7 @@ export default function PrivacyPage() {
           </p>
 
           <p className="mt-4">
-            TypeBharat does not control the retention practices of third-party
+            TypeIndian does not control the retention practices of third-party
             services used by the website. Their respective privacy policies
             describe their handling and retention practices.
           </p>
@@ -358,7 +358,7 @@ export default function PrivacyPage() {
           </h2>
 
           <p>
-            TypeBharat is a general-purpose website and does not currently
+            TypeIndian is a general-purpose website and does not currently
             operate an account-registration or age-verification system.
           </p>
 
@@ -375,7 +375,7 @@ export default function PrivacyPage() {
           </h2>
 
           <p>
-            You can choose whether to use TypeBharat&apos;s typing and learning
+            You can choose whether to use TypeIndian&apos;s typing and learning
             features. You can also clear browser or site storage through your
             browser settings.
           </p>
@@ -407,7 +407,7 @@ export default function PrivacyPage() {
           </h2>
 
           <p>
-            TypeBharat may link to external websites and third-party services.
+            TypeIndian may link to external websites and third-party services.
             Those websites operate independently and may have their own privacy
             policies, terms, cookies, and data practices.
           </p>
@@ -425,7 +425,7 @@ export default function PrivacyPage() {
           </h2>
 
           <p>
-            We may update this Privacy Policy when TypeBharat&apos;s features,
+            We may update this Privacy Policy when TypeIndian&apos;s features,
             third-party services, advertising configuration, or data practices
             change.
           </p>
@@ -443,23 +443,23 @@ export default function PrivacyPage() {
           </h2>
 
           <p>
-            TypeBharat uses browser-side storage for certain application and
+            TypeIndian uses browser-side storage for certain application and
             session functionality.
           </p>
 
           <p className="mt-4">
             Information stored in browser storage remains on the user&apos;s
-            device or browser and is not a TypeBharat user account or cloud
+            device or browser and is not a TypeIndian user account or cloud
             profile.
           </p>
 
           <p className="mt-4">
             Clearing the relevant browser or site data may remove information
-            stored locally by TypeBharat.
+            stored locally by TypeIndian.
           </p>
 
           <p className="mt-4">
-            TypeBharat does not represent browser storage as permanent cloud
+            TypeIndian does not represent browser storage as permanent cloud
             storage of typing sessions.
           </p>
         </section>
@@ -471,7 +471,7 @@ export default function PrivacyPage() {
           </h2>
 
           <p>
-            If you have questions about this Privacy Policy or TypeBharat&apos;s
+            If you have questions about this Privacy Policy or TypeIndian&apos;s
             information practices, you can contact us through our{" "}
             <Link
               href="/contact"
@@ -483,7 +483,7 @@ export default function PrivacyPage() {
           </p>
 
           <p className="mt-4">
-            You can also contact TypeBharat directly at{" "}
+            You can also contact TypeIndian directly at{" "}
             <a
               href={`mailto:${EMAIL}`}
               className="font-medium text-(--color-primary) hover:underline break-all"

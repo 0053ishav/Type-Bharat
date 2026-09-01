@@ -30,7 +30,7 @@ export const malayalam: Language = {
       "Type in English and convert instantly to മലയാളം",
 
     intro:
-      "Write Malayalam naturally using English letters with TypeBharat's Malayalam typing tool. Simply type phonetically in English and instantly convert your words into the Malayalam script. No keyboard installation, no login - fast, accurate, and privacy-first Malayalam transliteration directly in your browser.",
+      "Write Malayalam naturally using English letters with TypeIndian's Malayalam typing tool. Simply type phonetically in English and instantly convert your words into the Malayalam script. No keyboard installation, no login - fast, accurate, and privacy-first Malayalam transliteration directly in your browser.",
 
     learnLink: {
       href: "/learn/malayalam",
@@ -56,11 +56,11 @@ export const malayalam: Language = {
         "Malayalam keyboard",
         "Malayalam typing tool",
         "English to Malayalam converter",
-        "TypeBharat Malayalam",
+        "TypeIndian Malayalam",
       ],
 
       openGraph: {
-        title: "Malayalam Typing Tool — TypeBharat",
+        title: "Malayalam Typing Tool - TypeIndian",
 
         description:
           "Type in English and instantly write in Malayalam using accurate phonetic transliteration.",
@@ -69,7 +69,7 @@ export const malayalam: Language = {
       },
 
       twitter: {
-        title: "Malayalam Typing Tool — TypeBharat",
+        title: "Malayalam Typing Tool - TypeIndian",
 
         description:
           "Fast, free, and privacy-first English to Malayalam typing.",
@@ -103,12 +103,12 @@ export const malayalam: Language = {
         "Malayalam consonants",
         "English to Malayalam typing guide",
         "Malayalam typing for beginners",
-        "TypeBharat Malayalam",
+        "TypeIndian Malayalam",
       ],
 
       openGraph: {
         title:
-          "Learn Malayalam Typing — Beginner Guide | TypeBharat",
+          "Learn Malayalam Typing - Beginner Guide | TypeIndian",
 
         description:
           "Master Malayalam typing with a beginner-friendly guide covering the Malayalam script, pronunciation, alphabet, and phonetic typing.",
@@ -117,7 +117,7 @@ export const malayalam: Language = {
       },
 
       twitter: {
-        title: "Learn Malayalam Typing — TypeBharat",
+        title: "Learn Malayalam Typing - TypeIndian",
 
         description:
           "Learn to type Malayalam naturally using English letters with our complete beginner guide.",
@@ -184,7 +184,7 @@ export const malayalam: Language = {
       title: "Ready to start typing in Malayalam?",
 
       description:
-        "Skip complicated keyboard layouts. Type naturally in English and TypeBharat instantly converts your words into the Malayalam script.",
+        "Skip complicated keyboard layouts. Type naturally in English and TypeIndian instantly converts your words into the Malayalam script.",
 
       button: "Open Malayalam Typing Tool →",
     },

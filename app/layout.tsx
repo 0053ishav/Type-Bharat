@@ -27,36 +27,36 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
 
   title: {
-    default: "TypeBharat - English to Indian Language Typing Tool",
-    template: "%s | TypeBharat",
+    default: "TypeIndian - English to Indian Language Typing Tool",
+    template: "%s | TypeIndian",
   },
 
   description:
-    "TypeBharat is a free English to Indian language typing tool. Type in English and instantly write in Panjabi, Hindi, and more Indian languages. No login.",
+    "TypeIndian is a free English to Indian language typing tool. Type in English and instantly write in Panjabi, Hindi, and more Indian languages. No login.",
 
   keywords: GLOBAL_KEYWORDS,
 
-  authors: [{ name: "TypeBharat" }],
-  creator: "TypeBharat",
+  authors: [{ name: "TypeIndian" }],
+  creator: "TypeIndian",
   verification: {
     google: 'TenoyS5nmTIbgNrZ9uIRxNNCTbOgohZebisrGPFdRLM',
   },
 
   openGraph: {
-    title: "TypeBharat - English to Indian Language Typing Tool",
+    title: "TypeIndian - English to Indian Language Typing Tool",
     description:
       "Type in English and write in Indian languages instantly. Free, fast, and privacy-first typing tool for Panjabi (Also known as Punjabi), Hindi, and more.",
     url: SITE_URL,
-    siteName: "TypeBharat",
+    siteName: "TypeIndian",
     locale: "en_IN",
     type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "TypeBharat - English to Indian Language Typing Tool",
+    title: "TypeIndian - English to Indian Language Typing Tool",
     description:
-      "Type in English and write in Indian languages instantly. No login.  . Free forever.",
+      "Type in English and write in Indian languages instantly. No login.",
   },
 
   robots: {

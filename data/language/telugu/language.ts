@@ -27,7 +27,7 @@ export const telugu: Language = {
       "Type in English and convert instantly to తెలుగు",
 
     intro:
-      "Write Telugu naturally using English letters with TypeBharat's Telugu typing tool. Simply type phonetically in English and instantly convert your words into the Telugu script. No keyboard installation, no login - fast and accurate Telugu transliteration directly in your browser.",
+      "Write Telugu naturally using English letters with TypeIndian's Telugu typing tool. Simply type phonetically in English and instantly convert your words into the Telugu script. No keyboard installation, no login - fast and accurate Telugu transliteration directly in your browser.",
 
     learnLink: {
       href: "/learn/telugu",
@@ -54,11 +54,11 @@ export const telugu: Language = {
         "English to Telugu converter",
         "Telugu keyboard online",
         "Telugu script typing",
-        "TypeBharat Telugu",
+        "TypeIndian Telugu",
       ],
 
       openGraph: {
-        title: "Telugu Typing Tool — TypeBharat",
+        title: "Telugu Typing Tool - TypeIndian",
 
         description:
           "Type in English and instantly write in Telugu using accurate phonetic transliteration.",
@@ -67,7 +67,7 @@ export const telugu: Language = {
       },
 
       twitter: {
-        title: "Telugu Typing Tool — TypeBharat",
+        title: "Telugu Typing Tool - TypeIndian",
 
         description:
           "Fast, free, and privacy-first English to Telugu typing.",
@@ -100,12 +100,12 @@ export const telugu: Language = {
         "Telugu consonants",
         "English to Telugu typing guide",
         "Telugu typing for beginners",
-        "TypeBharat Telugu",
+        "TypeIndian Telugu",
       ],
 
       openGraph: {
         title:
-          "Learn Telugu Typing — Beginner Guide | TypeBharat",
+          "Learn Telugu Typing - Beginner Guide | TypeIndian",
 
         description:
           "Master Telugu typing with a beginner-friendly guide covering the Telugu script, pronunciation, alphabet, and phonetic typing.",
@@ -114,7 +114,7 @@ export const telugu: Language = {
       },
 
       twitter: {
-        title: "Learn Telugu Typing — TypeBharat",
+        title: "Learn Telugu Typing - TypeIndian",
 
         description:
           "Learn to type Telugu naturally using English letters with our complete beginner guide.",
@@ -181,7 +181,7 @@ export const telugu: Language = {
       title: "Ready to start typing in Telugu?",
 
       description:
-        "Skip complicated keyboard layouts. Type naturally in English and TypeBharat instantly converts your words into the Telugu script.",
+        "Skip complicated keyboard layouts. Type naturally in English and TypeIndian instantly converts your words into the Telugu script.",
 
       button: "Open Telugu Typing Tool →",
     },

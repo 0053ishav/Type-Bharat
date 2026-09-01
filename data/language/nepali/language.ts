@@ -27,7 +27,7 @@ export const nepali: Language = {
       "Type in English and convert instantly to नेपाली",
 
     intro:
-      "Write Nepali naturally using English letters with TypeBharat's Nepali typing tool. Type words phonetically in English and instantly convert them into नेपाली using the Devanagari script. No keyboard installation, no login - fast and simple  Nepali transliteration tool.",
+      "Write Nepali naturally using English letters with TypeIndian's Nepali typing tool. Type words phonetically in English and instantly convert them into नेपाली using the Devanagari script. No keyboard installation, no login - fast and simple  Nepali transliteration tool.",
 
     learnLink: {
       href: "/learn/nepali",
@@ -54,11 +54,11 @@ export const nepali: Language = {
         "Roman to Nepali",
         "English to Nepali converter",
         "Devanagari Nepali typing",
-        "TypeBharat Nepali",
+        "TypeIndian Nepali",
       ],
 
       openGraph: {
-        title: "Nepali Typing Tool — TypeBharat",
+        title: "Nepali Typing Tool - TypeIndian",
 
         description:
           "Type Nepali using English letters and instantly convert your phonetic input into Devanagari.",
@@ -67,7 +67,7 @@ export const nepali: Language = {
       },
 
       twitter: {
-        title: "Nepali Typing Tool — TypeBharat",
+        title: "Nepali Typing Tool - TypeIndian",
 
         description:
           "Free and simple English to Nepali phonetic typing with Devanagari output.",
@@ -104,12 +104,12 @@ export const nepali: Language = {
         "Nepali typing guide",
         "English to Nepali typing",
         "Nepali typing for beginners",
-        "TypeBharat Nepali",
+        "TypeIndian Nepali",
       ],
 
       openGraph: {
         title:
-          "Learn Nepali Typing — Beginner Guide | TypeBharat",
+          "Learn Nepali Typing - Beginner Guide | TypeIndian",
 
         description:
           "Learn Nepali typing with a beginner-friendly guide covering Devanagari, the Nepali alphabet, pronunciation, and phonetic typing.",
@@ -118,7 +118,7 @@ export const nepali: Language = {
       },
 
       twitter: {
-        title: "Learn Nepali Typing — TypeBharat",
+        title: "Learn Nepali Typing - TypeIndian",
 
         description:
           "Learn Nepali typing using English letters with our beginner-friendly guide.",
@@ -186,7 +186,7 @@ export const nepali: Language = {
       title: "Ready to start typing in Nepali?",
 
       description:
-        "You don't need to learn a Nepali keyboard layout. Type Nepali phonetically using English letters and TypeBharat converts your input into Devanagari.",
+        "You don't need to learn a Nepali keyboard layout. Type Nepali phonetically using English letters and TypeIndian converts your input into Devanagari.",
 
       button: "Open Nepali Typing Tool →",
     },

@@ -7,30 +7,30 @@ import Breadcrumbs from "@/components/common/Breadcrumbs";
 import { SITE_URL } from "@/lib/config/site";
 
 export const metadata: Metadata = {
-  title: "About TypeBharat | Indian Language Tools",
+  title: "About TypeIndian | Indian Language Tools",
 
   description:
-    "Learn about TypeBharat and our mission to make Indian language typing, learning, transliteration, and digital language tools easier to use.",
+    "Learn about TypeIndian and our mission to make Indian language typing, learning, transliteration, and digital language tools easier to use.",
 
   alternates: {
     canonical: `${SITE_URL}/about`,
   },
 
   openGraph: {
-    title: "About TypeBharat | Indian Language Tools",
+    title: "About TypeIndian | Indian Language Tools",
     description:
-      "Learn about TypeBharat and our mission to make Indian language typing, learning, transliteration, and digital language tools easier to use.",
+      "Learn about TypeIndian and our mission to make Indian language typing, learning, transliteration, and digital language tools easier to use.",
     url: `${SITE_URL}/about`,
-    siteName: "TypeBharat",
+    siteName: "TypeIndian",
     locale: "en_IN",
     type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "About TypeBharat | Indian Language Tools",
+    title: "About TypeIndian | Indian Language Tools",
     description:
-      "Learn about TypeBharat and our mission to make Indian language typing, learning, transliteration, and digital language tools easier to use.",
+      "Learn about TypeIndian and our mission to make Indian language typing, learning, transliteration, and digital language tools easier to use.",
   },
 };
 
@@ -69,15 +69,15 @@ export default function AboutPage() {
 
         <div className="relative">
           <span className="badge badge-gradient inline-block mb-6">
-            About TypeBharat
+            About TypeIndian
           </span>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-(--color-text-heading) leading-tight">
-            About TypeBharat
+            About TypeIndian
           </h1>
 
           <p className="mt-7 text-xl text-(--color-text-body) max-w-3xl mx-auto leading-relaxed">
-            TypeBharat is a platform built to make Indian languages easier to
+            TypeIndian is a platform built to make Indian languages easier to
             type, learn, and use on the web.
           </p>
 
@@ -89,7 +89,7 @@ export default function AboutPage() {
       </section>
 
       {/* =========================================================
-          WHY TYPEBHARAT EXISTS
+          WHY TypeIndian EXISTS
       ========================================================= */}
 
       <section className="max-w-4xl mx-auto">
@@ -99,7 +99,7 @@ export default function AboutPage() {
           </p>
 
           <h2 className="mt-2 text-3xl md:text-4xl font-bold text-(--color-text-heading)">
-            Why TypeBharat Exists
+            Why TypeIndian Exists
           </h2>
         </div>
 
@@ -122,7 +122,7 @@ export default function AboutPage() {
           </p>
 
           <p>
-            TypeBharat aims to make these workflows simpler by bringing
+            TypeIndian aims to make these workflows simpler by bringing
             practical Indian-language tools together in one place.
           </p>
         </div>
@@ -139,11 +139,11 @@ export default function AboutPage() {
           </p>
 
           <h2 className="mt-2 text-3xl md:text-4xl font-bold text-(--color-text-heading)">
-            What TypeBharat Offers Today
+            What TypeIndian Offers Today
           </h2>
 
           <p className="mt-4 text-lg text-(--color-text-muted)">
-            TypeBharat currently focuses on making Indian-language typing and
+            TypeIndian currently focuses on making Indian-language typing and
             learning easier to access from the browser.
           </p>
         </div>
@@ -215,7 +215,7 @@ export default function AboutPage() {
             </h2>
 
             <p className="mt-4 text-lg text-(--color-text-muted) max-w-2xl">
-              TypeBharat is expanding its language coverage through a shared
+              TypeIndian is expanding its language coverage through a shared
               architecture so new languages can be added without creating
               separate versions of the platform.
             </p>
@@ -293,7 +293,7 @@ export default function AboutPage() {
 
         <div className="card p-8 md:p-10 space-y-5 text-(--color-text-body) leading-relaxed">
           <p>
-            TypeBharat focuses on browser-based tools that make working with
+            TypeIndian focuses on browser-based tools that make working with
             Indian languages practical and accessible.
           </p>
 
@@ -408,7 +408,7 @@ export default function AboutPage() {
           </h2>
 
           <p className="mt-5 text-lg text-(--color-text-body) max-w-3xl mx-auto leading-relaxed">
-            TypeBharat aims to become a place where people can discover
+            TypeIndian aims to become a place where people can discover
             practical tools for typing, learning, translation, OCR, speech,
             AI, Unicode, keyboards, and other Indian-language utilities.
           </p>
@@ -442,7 +442,7 @@ export default function AboutPage() {
         </h2>
 
         <p className="mt-4 text-(--color-text-body) leading-relaxed">
-          Explore the languages currently available through TypeBharat&rsquo;s
+          Explore the languages currently available through TypeIndian&rsquo;s
           typing and learning tools. New languages can be added to the
           platform without changing the underlying page architecture.
         </p>

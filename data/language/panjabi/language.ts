@@ -59,11 +59,11 @@ export const panjabi: Language = {
         "Gurmukhi typing tool",
         "Punjabi keyboard",
         "Panjabi keyboard",
-        "TypeBharat Panjabi",
+        "TypeIndian Panjabi",
       ],
 
       openGraph: {
-        title: "Panjabi Typing Tool — TypeBharat",
+        title: "Panjabi Typing Tool - TypeIndian",
 
         description:
           "Type in English and write in Panjabi (Punjabi) instantly. Free Gurmukhi typing tool with real-time transliteration.",
@@ -72,7 +72,7 @@ export const panjabi: Language = {
       },
 
       twitter: {
-        title: "Panjabi Typing Tool — TypeBharat",
+        title: "Panjabi Typing Tool - TypeIndian",
 
         description:
           "English to Panjabi (Punjabi) typing made simple. Free, fast, and privacy-first.",
@@ -113,11 +113,11 @@ export const panjabi: Language = {
         "Punjabi consonants",
         "Panjabi typing for beginners",
         "Punjabi typing for beginners",
-        "TypeBharat Panjabi",
+        "TypeIndian Panjabi",
       ],
 
       openGraph: {
-        title: "Learn Panjabi Typing — Beginner Guide | TypeBharat",
+        title: "Learn Panjabi Typing - Beginner Guide | TypeIndian",
 
         description:
           "Learn Panjabi (Punjabi) typing with a beginner-friendly guide covering the Gurmukhi script, alphabet, pronunciation, and phonetic typing.",
@@ -126,7 +126,7 @@ export const panjabi: Language = {
       },
 
       twitter: {
-        title: "Learn Panjabi Typing — TypeBharat",
+        title: "Learn Panjabi Typing - TypeIndian",
 
         description:
           "Master Panjabi (Punjabi) typing using English letters with our complete beginner guide.",
@@ -189,7 +189,7 @@ export const panjabi: Language = {
     title: "Ready to start typing in Panjabi?",
 
     description:
-      "You don't need to memorize keyboard layouts. Simply type naturally in English and TypeBharat converts your words into Gurmukhi instantly.",
+      "You don't need to memorize keyboard layouts. Simply type naturally in English and TypeIndian converts your words into Gurmukhi instantly.",
 
     button: "Open Panjabi Typing Tool →",
   },

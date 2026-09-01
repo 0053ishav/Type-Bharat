@@ -27,7 +27,7 @@ export const marathi: Language = {
       "Type in English and convert instantly to मराठी",
 
     intro:
-      "Write Marathi naturally using English letters with TypeBharat's Marathi typing tool. Simply type phonetically in English and instantly convert your words into the Devanagari script. No keyboard installation, no login - fast, accurate, and privacy-first Marathi transliteration directly in your browser.",
+      "Write Marathi naturally using English letters with TypeIndian's Marathi typing tool. Simply type phonetically in English and instantly convert your words into the Devanagari script. No keyboard installation, no login - fast, accurate, and privacy-first Marathi transliteration directly in your browser.",
 
     learnLink: {
       href: "/learn/marathi",
@@ -54,11 +54,11 @@ export const marathi: Language = {
         "Marathi typing tool",
         "English to Marathi converter",
         "Devanagari Marathi typing",
-        "TypeBharat Marathi",
+        "TypeIndian Marathi",
       ],
 
       openGraph: {
-        title: "Marathi Typing Tool — TypeBharat",
+        title: "Marathi Typing Tool - TypeIndian",
 
         description:
           "Type in English and instantly write in Marathi using accurate phonetic transliteration.",
@@ -67,7 +67,7 @@ export const marathi: Language = {
       },
 
       twitter: {
-        title: "Marathi Typing Tool — TypeBharat",
+        title: "Marathi Typing Tool - TypeIndian",
 
         description:
           "Fast, free, and privacy-first English to Marathi typing.",
@@ -101,11 +101,11 @@ export const marathi: Language = {
         "Marathi consonants",
         "English to Marathi typing guide",
         "Marathi typing for beginners",
-        "TypeBharat Marathi",
+        "TypeIndian Marathi",
       ],
 
       openGraph: {
-        title: "Learn Marathi Typing — Beginner Guide | TypeBharat",
+        title: "Learn Marathi Typing - Beginner Guide | TypeIndian",
 
         description:
           "Master Marathi typing with a beginner-friendly guide covering the Devanagari script, pronunciation, alphabet, and phonetic typing.",
@@ -114,7 +114,7 @@ export const marathi: Language = {
       },
 
       twitter: {
-        title: "Learn Marathi Typing — TypeBharat",
+        title: "Learn Marathi Typing - TypeIndian",
 
         description:
           "Learn to type Marathi naturally using English letters with our complete beginner guide.",
@@ -181,7 +181,7 @@ export const marathi: Language = {
       title: "Ready to start typing in Marathi?",
 
       description:
-        "Skip complicated keyboard layouts. Type naturally in English and TypeBharat instantly converts your words into Marathi.",
+        "Skip complicated keyboard layouts. Type naturally in English and TypeIndian instantly converts your words into Marathi.",
 
       button: "Open Marathi Typing Tool →",
     },

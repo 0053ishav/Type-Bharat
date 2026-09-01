@@ -17,7 +17,7 @@ export default function TypingTool({ language }: { language: Language }) {
   const [boardLines, setBoardLines] = useState<string[]>([]);
   const [suggestions, setSuggestions] = useState<string[]>([]);
 
-  const STORAGE_KEY = `typebharat-session-board-${language.transliteration.languageCode}`;
+  const STORAGE_KEY = `typeindian-session-board-${language.transliteration.languageCode}`;
 
   /* ------------------------------------
      Load board from localStorage

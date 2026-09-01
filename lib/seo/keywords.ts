@@ -5,7 +5,7 @@ export const GLOBAL_KEYWORDS: string[] = [
   "phonetic typing",
   "transliteration tool",
   "online typing",
-  "TypeBharat",
+  "TypeIndian",
 ];
 
 export function mergeKeywords(...groups: readonly string[][]) {

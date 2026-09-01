@@ -1,4 +1,4 @@
-# Type Bharat Manual QA Checklist
+# Type Indian Manual QA Checklist
 
 This checklist must be completed before merging any feature or language into `main`.
 

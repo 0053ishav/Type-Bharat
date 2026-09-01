@@ -26,7 +26,7 @@ export const tamil: Language = {
       "Type in English and convert instantly to தமிழ்",
 
     intro:
-      "Write Tamil naturally using English letters with TypeBharat's Tamil typing tool. Simply type phonetically in English and instantly convert your words into the Tamil script. No keyboard installation, no login - fast and accurate Tamil transliteration directly in your browser.",
+      "Write Tamil naturally using English letters with TypeIndian's Tamil typing tool. Simply type phonetically in English and instantly convert your words into the Tamil script. No keyboard installation, no login - fast and accurate Tamil transliteration directly in your browser.",
 
     learnLink: {
       href: "/learn/tamil",
@@ -55,14 +55,14 @@ export const tamil: Language = {
         "Tamil keyboard online",
         "English to Tamil converter",
         "Tamil script typing",
-        "TypeBharat Tamil",
+        "TypeIndian Tamil",
         "Google Input Tools",
         "Englist to Tamil Learning",
         "Englist to Tamil Language",
       ],
 
       openGraph: {
-        title: "Tamil Typing Tool - TypeBharat",
+        title: "Tamil Typing Tool - TypeIndian",
 
         description:
           "Type in English and instantly write in Tamil using accurate phonetic transliteration.",
@@ -71,7 +71,7 @@ export const tamil: Language = {
       },
 
       twitter: {
-        title: "Tamil Typing Tool - TypeBharat",
+        title: "Tamil Typing Tool - TypeIndian",
 
         description:
           "Fast, free, and privacy-first English to Tamil typing.",
@@ -105,11 +105,11 @@ export const tamil: Language = {
         "English to Tamil typing guide",
         "Tamil typing for beginners",
         "Tamil letters",
-        "TypeBharat Tamil",
+        "TypeIndian Tamil",
       ],
 
       openGraph: {
-        title: "Learn Tamil Typing - Beginner Guide | TypeBharat",
+        title: "Learn Tamil Typing - Beginner Guide | TypeIndian",
 
         description:
           "Master Tamil typing with a beginner-friendly guide covering the Tamil script, pronunciation, alphabet, and phonetic typing.",
@@ -118,7 +118,7 @@ export const tamil: Language = {
       },
 
       twitter: {
-        title: "Learn Tamil Typing - TypeBharat",
+        title: "Learn Tamil Typing - TypeIndian",
 
         description:
           "Learn to type Tamil naturally using English letters with our complete beginner guide.",
@@ -185,7 +185,7 @@ export const tamil: Language = {
       title: "Ready to start typing in Tamil?",
 
       description:
-        "Skip complicated keyboard layouts. Type naturally in English and TypeBharat instantly converts your words into the Tamil script.",
+        "Skip complicated keyboard layouts. Type naturally in English and TypeIndian instantly converts your words into the Tamil script.",
 
       button: "Open Tamil Typing Tool →",
     },

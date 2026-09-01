@@ -7,7 +7,7 @@ import { SITE_URL } from "@/lib/config/site";
 
 export const metadata: Metadata = {
   title:
-    "Learn Indian Languages: Scripts, Alphabets & Pronunciation | TypeBharat",
+    "Learn Indian Languages: Scripts, Alphabets & Pronunciation | TypeIndian",
   description:
     "Learn Indian language typing with beginner-friendly guides covering scripts, alphabets, vowels, consonants, numerals, pronunciation, and phonetic typing.",
   alternates: {
@@ -38,7 +38,7 @@ export default function LearnIndexPage() {
 
         <div className="relative">
           <span className="badge badge-gradient inline-block mb-6">
-            📖 TypeBharat Learning Hub
+            📖 TypeIndian Learning Hub
           </span>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-(--color-text-heading) leading-tight">
@@ -269,7 +269,7 @@ export default function LearnIndexPage() {
             <h3 className="font-bold text-lg mb-2">Start typing</h3>
 
             <p className="text-sm text-(--color-text-muted) leading-relaxed">
-              Take what you learned directly into the TypeBharat typing tool and
+              Take what you learned directly into the TypeIndian typing tool and
               start practicing.
             </p>
           </div>

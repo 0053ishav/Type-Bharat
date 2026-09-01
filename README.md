@@ -1,6 +1,6 @@
-# TypeBharat
+# TypeIndian
 
-TypeBharat is a privacy-first English → Indian language typing tool.
+TypeIndian is a privacy-first English → Indian language typing tool.
 
 It allows users to type naturally in English and instantly convert text into Indian scripts using phonetic transliteration.
 
@@ -147,7 +147,7 @@ Planned improvements:
 
 ## 🧠 Product Vision
 
-TypeBharat aims to become:
+TypeIndian aims to become:
 
 > The simplest way to write Indian languages online without learning keyboard layouts.
 
@@ -194,4 +194,4 @@ MIT License
 
 ## 🔗 Live Site
 
-https://typebharat.ishav.space
+https://typeindian.com

@@ -19,7 +19,7 @@ export function createTypingMetadata(language: Language): Metadata {
       description: language.typing.seo.openGraph.description,
       url: `${SITE_URL}/typing/${language.slug}`,
 
-      siteName: "TypeBharat",
+      siteName: "TypeIndian",
 
       locale: language.typing.seo.openGraph.locale,
 
@@ -55,7 +55,7 @@ export function createLearnMetadata(
       title: language.learn.seo.openGraph.title,
       description: language.learn.seo.openGraph.description,
       url: `${SITE_URL}/learn/${language.slug}`,
-      siteName: "TypeBharat",
+      siteName: "TypeIndian",
       locale: language.learn.seo.openGraph.locale,
       type: "website",
     },

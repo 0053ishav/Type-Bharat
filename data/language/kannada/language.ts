@@ -27,7 +27,7 @@ export const kannada: Language = {
       "Type in English and convert instantly to ಕನ್ನಡ",
 
     intro:
-      "Write Kannada naturally using English letters with TypeBharat's Kannada typing tool. Simply type phonetically in English and instantly convert your words into the Kannada script. No keyboard installation, no login - fast, accurate, and privacy-first Kannada transliteration directly in your browser.",
+      "Write Kannada naturally using English letters with TypeIndian's Kannada typing tool. Simply type phonetically in English and instantly convert your words into the Kannada script. No keyboard installation, no login - fast, accurate, and privacy-first Kannada transliteration directly in your browser.",
 
     learnLink: {
       href: "/learn/kannada",
@@ -53,11 +53,11 @@ export const kannada: Language = {
         "Kannada keyboard",
         "Kannada typing tool",
         "English to Kannada converter",
-        "TypeBharat Kannada",
+        "TypeIndian Kannada",
       ],
 
       openGraph: {
-        title: "Kannada Typing Tool — TypeBharat",
+        title: "Kannada Typing Tool - TypeIndian",
 
         description:
           "Type in English and instantly write in Kannada using accurate phonetic transliteration.",
@@ -66,7 +66,7 @@ export const kannada: Language = {
       },
 
       twitter: {
-        title: "Kannada Typing Tool — TypeBharat",
+        title: "Kannada Typing Tool - TypeIndian",
 
         description:
           "Fast, free, and privacy-first English to Kannada typing.",
@@ -100,12 +100,12 @@ export const kannada: Language = {
         "Kannada consonants",
         "English to Kannada typing guide",
         "Kannada typing for beginners",
-        "TypeBharat Kannada",
+        "TypeIndian Kannada",
       ],
 
       openGraph: {
         title:
-          "Learn Kannada Typing — Beginner Guide | TypeBharat",
+          "Learn Kannada Typing - Beginner Guide | TypeIndian",
 
         description:
           "Master Kannada typing with a beginner-friendly guide covering the Kannada script, pronunciation, alphabet, and phonetic typing.",
@@ -114,7 +114,7 @@ export const kannada: Language = {
       },
 
       twitter: {
-        title: "Learn Kannada Typing — TypeBharat",
+        title: "Learn Kannada Typing - TypeIndian",
 
         description:
           "Learn to type Kannada naturally using English letters with our complete beginner guide.",
@@ -181,7 +181,7 @@ export const kannada: Language = {
       title: "Ready to start typing in Kannada?",
 
       description:
-        "Skip complicated keyboard layouts. Type naturally in English and TypeBharat instantly converts your words into the Kannada script.",
+        "Skip complicated keyboard layouts. Type naturally in English and TypeIndian instantly converts your words into the Kannada script.",
 
       button: "Open Kannada Typing Tool →",
     },

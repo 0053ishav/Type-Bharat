@@ -7,7 +7,7 @@ export default function SiteSchema() {
 
   return (
     <Script
-      id="typebharat-site-schema"
+      id="typeindian-site-schema"
       type="application/ld+json"
       dangerouslySetInnerHTML={{
         __html: JSON.stringify(schema),

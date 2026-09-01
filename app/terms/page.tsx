@@ -9,10 +9,10 @@ import { SITE_URL } from "@/lib/config/site";
 const LAST_UPDATED = "August 21, 2026";
 
 const DESCRIPTION =
-  "Read the Terms of Service governing use of TypeBharat's Indian-language typing, transliteration, learning, and related browser-based tools.";
+  "Read the Terms of Service governing use of TypeIndian's Indian-language typing, transliteration, learning, and related browser-based tools.";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | TypeBharat",
+  title: "Terms of Service | TypeIndian",
 
   description: DESCRIPTION,
 
@@ -21,17 +21,17 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Terms of Service | TypeBharat",
+    title: "Terms of Service | TypeIndian",
     description: DESCRIPTION,
     url: `${SITE_URL}/terms`,
-    siteName: "TypeBharat",
+    siteName: "TypeIndian",
     locale: "en_IN",
     type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Terms of Service | TypeBharat",
+    title: "Terms of Service | TypeIndian",
     description: DESCRIPTION,
   },
 };
@@ -53,7 +53,7 @@ export default function TermsPage() {
       />
 
       <PageSchema
-        name="Terms of Service | TypeBharat"
+        name="Terms of Service | TypeIndian"
         description={DESCRIPTION}
         path="/terms"
       />
@@ -70,7 +70,7 @@ export default function TermsPage() {
 
         <p className="mt-5 text-lg text-(--color-text-body) leading-relaxed">
           These Terms of Service explain the basic terms that apply when you
-          access or use TypeBharat and its browser-based Indian-language tools.
+          access or use TypeIndian and its browser-based Indian-language tools.
         </p>
 
         <p className="mt-4 text-sm text-(--color-text-muted)">
@@ -82,11 +82,11 @@ export default function TermsPage() {
         {/* 1 */}
         <section>
           <h2 className="text-2xl md:text-3xl font-bold text-(--color-text-heading) mb-5">
-            1. About TypeBharat
+            1. About TypeIndian
           </h2>
 
           <p>
-            TypeBharat is a browser-based platform focused on making Indian
+            TypeIndian is a browser-based platform focused on making Indian
             languages easier to type, learn, and use digitally.
           </p>
 
@@ -106,7 +106,7 @@ export default function TermsPage() {
           </h2>
 
           <p>
-            By accessing or using TypeBharat, you agree to use the service in
+            By accessing or using TypeIndian, you agree to use the service in
             accordance with these Terms of Service and applicable laws.
           </p>
 
@@ -123,12 +123,12 @@ export default function TermsPage() {
           </h2>
 
           <p>
-            You may use TypeBharat&apos;s publicly available typing and learning
+            You may use TypeIndian&apos;s publicly available typing and learning
             tools for lawful purposes.
           </p>
 
           <p className="mt-4">
-            You must not use TypeBharat to:
+            You must not use TypeIndian to:
           </p>
 
           <ul className="mt-5 list-disc pl-6 space-y-3">
@@ -153,7 +153,7 @@ export default function TermsPage() {
           </h2>
 
           <p>
-            TypeBharat allows users to enter text into browser-based typing
+            TypeIndian allows users to enter text into browser-based typing
             tools and receive transliteration or typing suggestions.
           </p>
 
@@ -164,7 +164,7 @@ export default function TermsPage() {
 
           <p className="mt-4">
             Transliteration suggestions and generated text may contain errors.
-            TypeBharat does not guarantee that generated text will always be
+            TypeIndian does not guarantee that generated text will always be
             grammatically, linguistically, or contextually correct.
           </p>
 
@@ -174,7 +174,7 @@ export default function TermsPage() {
           </p>
 
           <p className="mt-4">
-            TypeBharat does not claim ownership of text that you enter into the
+            TypeIndian does not claim ownership of text that you enter into the
             typing interface.
           </p>
         </section>
@@ -186,7 +186,7 @@ export default function TermsPage() {
           </h2>
 
           <p>
-            TypeBharat provides educational and informational material relating
+            TypeIndian provides educational and informational material relating
             to Indian languages, scripts, alphabets, pronunciation, typing,
             and related language information.
           </p>
@@ -211,7 +211,7 @@ export default function TermsPage() {
           </h2>
 
           <p>
-            Some TypeBharat typing functionality depends on third-party
+            Some TypeIndian typing functionality depends on third-party
             transliteration infrastructure, including Google Input Tools, to
             generate typing suggestions.
           </p>
@@ -222,12 +222,12 @@ export default function TermsPage() {
           </p>
 
           <p className="mt-4">
-            TypeBharat does not control third-party services and does not
+            TypeIndian does not control third-party services and does not
             guarantee their availability, accuracy, or continued operation.
           </p>
 
           <p className="mt-4">
-            TypeBharat is not an official Google product and does not imply
+            TypeIndian is not an official Google product and does not imply
             endorsement or sponsorship by Google.
           </p>
         </section>
@@ -239,7 +239,7 @@ export default function TermsPage() {
           </h2>
 
           <p>
-            TypeBharat uses certain third-party services as part of operating
+            TypeIndian uses certain third-party services as part of operating
             and improving the website. The current implementation includes
             Vercel Analytics.
           </p>
@@ -257,7 +257,7 @@ export default function TermsPage() {
           </p>
 
           <p className="mt-4">
-            Third-party services may change independently of TypeBharat.
+            Third-party services may change independently of TypeIndian.
           </p>
         </section>
 
@@ -268,15 +268,15 @@ export default function TermsPage() {
           </h2>
 
           <p>
-            TypeBharat&apos;s original branding, website design, software, original
+            TypeIndian&apos;s original branding, website design, software, original
             written content, graphics, and original educational materials are
-            owned by TypeBharat or their respective rights holders unless
+            owned by TypeIndian or their respective rights holders unless
             otherwise stated.
           </p>
 
           <p className="mt-4">
             You receive permission to access and use the service for its
-            intended purposes. This does not transfer ownership of TypeBharat&apos;s
+            intended purposes. This does not transfer ownership of TypeIndian&apos;s
             intellectual property to you.
           </p>
 
@@ -294,19 +294,19 @@ export default function TermsPage() {
           </h2>
 
           <p>
-            TypeBharat currently does not provide user accounts, public user
+            TypeIndian currently does not provide user accounts, public user
             profiles, public content publishing, document collaboration, or
             cloud document storage.
           </p>
 
           <p className="mt-4">
-            If you enter text into a TypeBharat typing tool, you remain
+            If you enter text into a TypeIndian typing tool, you remain
             responsible for that content and for how you use the resulting
             output.
           </p>
 
           <p className="mt-4">
-            TypeBharat does not obtain ownership of your entered text merely
+            TypeIndian does not obtain ownership of your entered text merely
             because you use the typing interface.
           </p>
         </section>
@@ -318,7 +318,7 @@ export default function TermsPage() {
           </h2>
 
           <p>
-            TypeBharat&apos;s typing tools, transliteration suggestions, and
+            TypeIndian&apos;s typing tools, transliteration suggestions, and
             educational information are provided for general informational and
             practical use.
           </p>
@@ -350,7 +350,7 @@ export default function TermsPage() {
           </h2>
 
           <p>
-            TypeBharat may modify features, improve the service, temporarily
+            TypeIndian may modify features, improve the service, temporarily
             suspend parts of the service, remove outdated functionality, add
             or remove supported languages, perform maintenance, or change how
             particular features operate.
@@ -370,16 +370,16 @@ export default function TermsPage() {
           </h2>
 
           <p>
-            TypeBharat is currently available without charge.
+            TypeIndian is currently available without charge.
           </p>
 
           <p className="mt-4">
-            This does not constitute a promise that all TypeBharat features
+            This does not constitute a promise that all TypeIndian features
             will remain free indefinitely.
           </p>
 
           <p className="mt-4">
-            TypeBharat may introduce advertising or other monetization
+            TypeIndian may introduce advertising or other monetization
             mechanisms in the future. Any such changes will be reflected in the
             applicable product experience and, where appropriate, updated
             policies.
@@ -393,13 +393,13 @@ export default function TermsPage() {
           </h2>
 
           <p>
-            TypeBharat may link to or use external services required for
+            TypeIndian may link to or use external services required for
             particular functionality.
           </p>
 
           <p className="mt-4">
             These services operate under their own terms and privacy policies.
-            TypeBharat does not control third-party services and is not
+            TypeIndian does not control third-party services and is not
             responsible for services or websites that it does not operate.
           </p>
         </section>
@@ -411,7 +411,7 @@ export default function TermsPage() {
           </h2>
 
           <p>
-            Your use of TypeBharat is also subject to our Privacy Policy. The
+            Your use of TypeIndian is also subject to our Privacy Policy. The
             Privacy Policy explains how information may be processed through
             the website, browser storage, analytics, transliteration services,
             and other third-party services.
@@ -434,7 +434,7 @@ export default function TermsPage() {
           </h2>
 
           <p>
-            TypeBharat is provided on an &quot;as available&quot; basis.
+            TypeIndian is provided on an &quot;as available&quot; basis.
           </p>
 
           <p className="mt-4">
@@ -456,7 +456,7 @@ export default function TermsPage() {
           </h2>
 
           <p>
-            To the extent permitted by applicable law, TypeBharat and its
+            To the extent permitted by applicable law, TypeIndian and its
             operators will not be responsible for losses arising from reliance
             on automated output, educational content, temporary service
             interruptions, third-party services, or use of the service.
@@ -470,7 +470,7 @@ export default function TermsPage() {
 
           <p className="mt-4 text-sm text-(--color-text-muted)">
             This provision should be reviewed for the jurisdiction and legal
-            structure applicable to TypeBharat before relying on it as a final
+            structure applicable to TypeIndian before relying on it as a final
             legal provision.
           </p>
         </section>
@@ -482,14 +482,14 @@ export default function TermsPage() {
           </h2>
 
           <p>
-            TypeBharat may restrict or suspend access to the service when
+            TypeIndian may restrict or suspend access to the service when
             reasonably necessary, including in response to abuse, security
             threats, attempts to disrupt the service, violations of these
             Terms, or legal requirements.
           </p>
 
           <p className="mt-4">
-            Because TypeBharat currently does not use user accounts, this does
+            Because TypeIndian currently does not use user accounts, this does
             not create an account-termination process.
           </p>
         </section>
@@ -501,7 +501,7 @@ export default function TermsPage() {
           </h2>
 
           <p>
-            We may update these Terms as TypeBharat develops and changes.
+            We may update these Terms as TypeIndian develops and changes.
           </p>
 
           <p className="mt-4">
@@ -517,7 +517,7 @@ export default function TermsPage() {
           </h2>
 
           <p>
-            Questions about these Terms can be directed to TypeBharat using
+            Questions about these Terms can be directed to TypeIndian using
             the official contact method published on our Contact page.
           </p>
 
@@ -526,7 +526,7 @@ export default function TermsPage() {
               href="/contact"
               className="btn-secondary inline-flex"
             >
-              Contact TypeBharat →
+              Contact TypeIndian →
             </Link>
           </div>
 
