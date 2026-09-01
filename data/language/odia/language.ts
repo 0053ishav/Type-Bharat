@@ -27,7 +27,7 @@ export const odia: Language = {
       "Type in English and convert instantly to ଓଡ଼ିଆ",
 
     intro:
-      "Write Odia naturally using English letters with TypeBharat's Odia typing tool. Simply type phonetically in English and instantly convert your words into the Odia script. No keyboard installation, no login - fast and accurate Odia transliteration directly in your browser.",
+      "Write Odia naturally using English letters with TypeIndian's Odia typing tool. Simply type phonetically in English and instantly convert your words into the Odia script. No keyboard installation, no login - fast and accurate Odia transliteration directly in your browser.",
 
     learnLink: {
       href: "/learn/odia",
@@ -52,11 +52,11 @@ export const odia: Language = {
         "phonetic Odia typing",
         "Odia keyboard",
         "English to Odia converter",
-        "TypeBharat Odia",
+        "TypeIndian Odia",
       ],
 
       openGraph: {
-        title: "Odia Typing Tool — TypeBharat",
+        title: "Odia Typing Tool - TypeIndian",
 
         description:
           "Type in English and instantly write in Odia using accurate phonetic transliteration.",
@@ -65,7 +65,7 @@ export const odia: Language = {
       },
 
       twitter: {
-        title: "Odia Typing Tool — TypeBharat",
+        title: "Odia Typing Tool - TypeIndian",
 
         description:
           "Fast, free, and privacy-first English to Odia typing.",
@@ -99,12 +99,12 @@ export const odia: Language = {
         "Odia consonants",
         "English to Odia typing guide",
         "Odia typing for beginners",
-        "TypeBharat Odia",
+        "TypeIndian Odia",
       ],
 
       openGraph: {
         title:
-          "Learn Odia Typing — Beginner Guide | TypeBharat",
+          "Learn Odia Typing - Beginner Guide | TypeIndian",
 
         description:
           "Master Odia typing with a beginner-friendly guide covering the Odia script, pronunciation, alphabet, and phonetic typing.",
@@ -113,7 +113,7 @@ export const odia: Language = {
       },
 
       twitter: {
-        title: "Learn Odia Typing — TypeBharat",
+        title: "Learn Odia Typing - TypeIndian",
 
         description:
           "Learn to type Odia naturally using English letters with our complete beginner guide.",
@@ -180,7 +180,7 @@ export const odia: Language = {
       title: "Ready to start typing in Odia?",
 
       description:
-        "Skip complicated keyboard layouts. Type naturally in English and TypeBharat instantly converts your words into the Odia script.",
+        "Skip complicated keyboard layouts. Type naturally in English and TypeIndian instantly converts your words into the Odia script.",
 
       button: "Open Odia Typing Tool →",
     },

@@ -45,13 +45,13 @@ export const gujarati: Language = {
         "Gujarati typing online",
         "Gujarati transliteration",
         "phonetic Gujarati typing",
-        "TypeBharat Gujarati",
+        "TypeIndian Gujarati",
         "Gujarati typing",
         "Gujarati typing tool",
       ],
 
       openGraph: {
-        title: "Gujarati Typing Tool — TypeBharat",
+        title: "Gujarati Typing Tool - TypeIndian",
 
         description:
           "Type in English and write in Gujarati instantly. Free Gujarati typing tool with real-time conversion.",
@@ -60,7 +60,7 @@ export const gujarati: Language = {
       },
 
       twitter: {
-        title: "Gujarati Typing Tool — TypeBharat",
+        title: "Gujarati Typing Tool - TypeIndian",
 
         description:
           "English to Gujarati typing made easy. Free, fast, and privacy-first.",
@@ -94,11 +94,11 @@ export const gujarati: Language = {
         "Gujarati script",
         "English to Gujarati typing guide",
         "Gujarati typing for beginners",
-        "TypeBharat Gujarati",
+        "TypeIndian Gujarati",
       ],
 
       openGraph: {
-        title: "Learn Gujarati Typing — Beginner Guide | TypeBharat",
+        title: "Learn Gujarati Typing - Beginner Guide | TypeIndian",
 
         description:
           "Learn Gujarati typing with a beginner-friendly guide covering the Gujarati script, alphabets, pronunciation, and phonetic typing.",
@@ -107,7 +107,7 @@ export const gujarati: Language = {
       },
 
       twitter: {
-        title: "Learn Gujarati Typing — TypeBharat",
+        title: "Learn Gujarati Typing - TypeIndian",
 
         description:
           "Master Gujarati typing using English letters with our complete beginner guide.",
@@ -174,7 +174,7 @@ export const gujarati: Language = {
       title: "Ready to start typing in Gujarati?",
 
       description:
-        "You don't need to learn keyboard layouts. Simply type naturally in English and TypeBharat instantly converts your words into Gujarati.",
+        "You don't need to learn keyboard layouts. Simply type naturally in English and TypeIndian instantly converts your words into Gujarati.",
 
       button: "Open Gujarati Typing Tool →",
     },

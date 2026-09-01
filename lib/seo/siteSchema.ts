@@ -7,13 +7,13 @@ export function generateSiteSchema() {
       {
         "@type": "Organization",
         "@id": `${SITE_URL}/#organization`,
-        name: "TypeBharat",
+        name: "TypeIndian",
         url: SITE_URL,
       },
       {
         "@type": "WebSite",
         "@id": `${SITE_URL}/#website`,
-        name: "TypeBharat",
+        name: "TypeIndian",
         url: SITE_URL,
         publisher: {
           "@id": `${SITE_URL}/#organization`,

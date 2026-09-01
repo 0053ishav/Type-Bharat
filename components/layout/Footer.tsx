@@ -25,7 +25,7 @@ export default function Footer() {
           <div>
             <Link href="/" className="inline-block">
               <span className="text-2xl font-bold text-gradient">
-                TypeBharat
+                TypeIndian
               </span>
             </Link>
 
@@ -106,7 +106,7 @@ export default function Footer() {
           {/* Product */}
           <div>
             <h3 className="font-semibold text-(--color-text-heading) mb-5">
-              TypeBharat
+              TypeIndian
             </h3>
 
             <ul className="space-y-3 text-(--color-text-muted)">
@@ -179,7 +179,7 @@ export default function Footer() {
               </p>
 
               <p className="mt-1 text-sm text-(--color-text-muted)">
-                More languages are being added to TypeBharat.
+                More languages are being added to TypeIndian.
               </p>
             </div>
 
@@ -200,7 +200,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="mt-10 pt-6 border-t border-(--color-border) flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-(--color-text-muted)">
           <p>
-            © {new Date().getFullYear()} TypeBharat. All rights reserved.
+            © {new Date().getFullYear()} TypeIndian. All rights reserved.
           </p>
 
           <p className="text-center">

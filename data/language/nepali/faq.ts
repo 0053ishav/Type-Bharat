@@ -9,17 +9,17 @@ export const NEPALI_FAQ: FAQItem[] = [
   {
     question: "Which script does the Nepali typing tool use?",
     answer:
-      "TypeBharat's Nepali typing tool uses the Devanagari (देवनागरी) script, the standard script used for writing Nepali.",
+      "TypeIndian's Nepali typing tool uses the Devanagari (देवनागरी) script, the standard script used for writing Nepali.",
   },
   {
     question: "Do I need to learn a Nepali keyboard layout?",
     answer:
-      "No. You can type Nepali phonetically using familiar English keyboard keys. TypeBharat converts your Roman input into Nepali Devanagari suggestions.",
+      "No. You can type Nepali phonetically using familiar English keyboard keys. TypeIndian converts your Roman input into Nepali Devanagari suggestions.",
   },
   {
     question: "Is the Nepali typing tool free?",
     answer:
-      "Yes. TypeBharat's Nepali typing tool is free to use without requiring an account or installing a separate Nepali keyboard.",
+      "Yes. TypeIndian's Nepali typing tool is free to use without requiring an account or installing a separate Nepali keyboard.",
   },
   {
     question: "Is this an English to Nepali translation tool?",
@@ -37,9 +37,9 @@ export const NEPALI_FAQ: FAQItem[] = [
       "Yes. Phonetic typing allows you to enter Nepali sounds using English letters, so you do not need to memorize a traditional Devanagari keyboard layout.",
   },
   {
-    question: "Does TypeBharat save my Nepali text?",
+    question: "Does TypeIndian save my Nepali text?",
     answer:
-      "No. Your typed text remains in your browser. TypeBharat does not store, track, or log the Nepali text you enter.",
+      "No. Your typed text remains in your browser. TypeIndian does not store, track, or log the Nepali text you enter.",
   },
   {
     question: "Can I use the Nepali text for professional or commercial work?",
@@ -49,7 +49,7 @@ export const NEPALI_FAQ: FAQItem[] = [
   {
     question: "Does Nepali typing support Devanagari numerals?",
     answer:
-      "Yes. Nepali uses Devanagari numerals such as ०, १, २, and ३, and TypeBharat includes the Nepali numeral set in its alphabet section.",
+      "Yes. Nepali uses Devanagari numerals such as ०, १, २, and ३, and TypeIndian includes the Nepali numeral set in its alphabet section.",
   },
 ];
 
@@ -102,6 +102,6 @@ export const LEARN_NEPALI_FAQ: FAQItem[] = [
   {
     question: "Can I learn Nepali typing without learning a Devanagari keyboard?",
     answer:
-      "Yes. TypeBharat's phonetic typing method lets beginners enter Nepali using English letters and select the appropriate Devanagari suggestions.",
+      "Yes. TypeIndian's phonetic typing method lets beginners enter Nepali using English letters and select the appropriate Devanagari suggestions.",
   },
 ];

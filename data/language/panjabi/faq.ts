@@ -4,7 +4,7 @@ export const PANJABI_FAQ: FAQItem[] = [
   {
     question: "Is Panjabi the same as Punjabi?",
     answer:
-      "Yes. Panjabi and Punjabi refer to the same language. 'Punjabi' is the more common English spelling, while 'Panjabi' is closer to the original pronunciation and the name 'Panjab'. TypeBharat uses 'Panjabi' throughout the site while also supporting users searching for 'Punjabi'.",
+      "Yes. Panjabi and Punjabi refer to the same language. 'Punjabi' is the more common English spelling, while 'Panjabi' is closer to the original pronunciation and the name 'Panjab'. TypeIndian uses 'Panjabi' throughout the site while also supporting users searching for 'Punjabi'.",
   },
   {
     question: "What is Panjabi (Punjabi) typing using English letters?",
@@ -20,32 +20,32 @@ export const PANJABI_FAQ: FAQItem[] = [
   {
     question: "What script does the Panjabi (Punjabi) typing tool use?",
     answer:
-      "TypeBharat’s Panjabi typing tool uses the Gurmukhi (ਗੁਰਮੁਖੀ) script, which is the standard writing system for Panjabi in India.",
+      "TypeIndian’s Panjabi typing tool uses the Gurmukhi (ਗੁਰਮੁਖੀ) script, which is the standard writing system for Panjabi in India.",
   },
   {
     question: "Do I need to learn the Panjabi (Punjabi) keyboard layout?",
     answer:
-      "No. You don’t need to learn any keyboard layout. Just type Panjabi words naturally using English letters and TypeBharat will convert them into correct Gurmukhi script in real time.",
+      "No. You don’t need to learn any keyboard layout. Just type Panjabi words naturally using English letters and TypeIndian will convert them into correct Gurmukhi script in real time.",
   },
   {
     question: "Is this Panjabi (Punjabi) typing tool free to use?",
     answer:
-      "Yes. The Panjabi typing tool on TypeBharat is completely free. There are no subscriptions, no daily limits, and no hidden charges.",
+      "Yes. The Panjabi typing tool on TypeIndian is completely free. There are no subscriptions, no daily limits, and no hidden charges.",
   },
   {
     question: "Can I paste English text and convert it to Panjabi (Punjabi)?",
     answer:
-      "Yes. You can paste full sentences or paragraphs written in English and TypeBharat will transliterate them into Panjabi (Gurmukhi) instantly.",
+      "Yes. You can paste full sentences or paragraphs written in English and TypeIndian will transliterate them into Panjabi (Gurmukhi) instantly.",
   },
   {
     question: "Does this tool translate English to Panjabi (Punjabi)?",
     answer:
-      "No. TypeBharat performs transliteration, not translation. It converts English letters into the Gurmukhi script based on pronunciation while preserving the original word. It does not translate English words into Panjabi.",
+      "No. TypeIndian performs transliteration, not translation. It converts English letters into the Gurmukhi script based on pronunciation while preserving the original word. It does not translate English words into Panjabi.",
   },
   {
     question: "How accurate is the English to Panjabi (Punjabi) transliteration?",
     answer:
-      "TypeBharat provides highly accurate phonetic transliteration for Panjabi. For words with multiple possible spellings, smart suggestions are shown so you can choose the correct one.",
+      "TypeIndian provides highly accurate phonetic transliteration for Panjabi. For words with multiple possible spellings, smart suggestions are shown so you can choose the correct one.",
   },
   {
     question: "Is my typed Panjabi (Punjabi) text stored anywhere?",
@@ -55,7 +55,7 @@ export const PANJABI_FAQ: FAQItem[] = [
   {
     question: "Can I use this Panjabi (Punjabi) typing tool for songs, lyrics, or captions?",
     answer:
-      "Yes. TypeBharat is ideal for writing Panjabi song lyrics, poetry, WhatsApp messages, Instagram captions, and any other content where correct Gurmukhi script is required.",
+      "Yes. TypeIndian is ideal for writing Panjabi song lyrics, poetry, WhatsApp messages, Instagram captions, and any other content where correct Gurmukhi script is required.",
   },
   {
     question: "Can I use the Panjabi (Punjabi) typing tool for commercial purposes?",
@@ -94,7 +94,7 @@ export const LEARN_PANJABI_FAQ: FAQItem[] = [
   {
     question: "Why is it called Panjabi instead of Punjabi?",
     answer:
-      "Both 'Panjabi' and 'Punjabi' refer to the same language. 'Panjabi' is closer to the original pronunciation and comes from the Persian words 'Panj' (five) and 'Aab' (water), meaning 'Land of Five Rivers'. 'Punjabi' became the more common English spelling over time. TypeBharat uses 'Panjabi' while also recognizing 'Punjabi' because both names are widely understood.",
+      "Both 'Panjabi' and 'Punjabi' refer to the same language. 'Panjabi' is closer to the original pronunciation and comes from the Persian words 'Panj' (five) and 'Aab' (water), meaning 'Land of Five Rivers'. 'Punjabi' became the more common English spelling over time. TypeIndian uses 'Panjabi' while also recognizing 'Punjabi' because both names are widely understood.",
   },
   {
     question: "Why is the region called Panjab?",

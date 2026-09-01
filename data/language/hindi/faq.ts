@@ -9,7 +9,7 @@ export const HINDI_FAQ: FAQItem[] = [
   {
     question: "Which script does the Hindi typing tool use?",
     answer:
-      "TypeBharat’s Hindi typing tool uses the Devanagari (देवनागरी) script, which is the standard script used for writing Hindi.",
+      "TypeIndian’s Hindi typing tool uses the Devanagari (देवनागरी) script, which is the standard script used for writing Hindi.",
   },
   {
     question: "Do I need to learn the Hindi keyboard layout?",
@@ -19,7 +19,7 @@ export const HINDI_FAQ: FAQItem[] = [
   {
     question: "Is the Hindi typing tool free?",
     answer:
-      "Yes. TypeBharat’s Hindi typing tool is completely free with no limits, subscriptions, or sign-ups required.",
+      "Yes. TypeIndian’s Hindi typing tool is completely free with no limits, subscriptions, or sign-ups required.",
   },
   {
     question: "Can I paste English text and convert it to Hindi?",
@@ -37,9 +37,9 @@ export const HINDI_FAQ: FAQItem[] = [
       "The Hindi transliteration is highly accurate for common words and phrases. For words with multiple spellings, suggestions are shown so you can choose the correct form.",
   },
   {
-    question: "Does TypeBharat save my Hindi text?",
+    question: "Does TypeIndian save my Hindi text?",
     answer:
-      "No. Everything you type stays in your browser. TypeBharat does not store, track, or log your text in any way.",
+      "No. Everything you type stays in your browser. TypeIndian does not store, track, or log your text in any way.",
   },
   {
     question: "Can I use this Hindi typing tool for professional or commercial work?",
@@ -49,7 +49,7 @@ export const HINDI_FAQ: FAQItem[] = [
   {
     question: "Can I type long paragraphs, lyrics, or documents in Hindi?",
     answer:
-      "Yes. TypeBharat supports typing and converting long paragraphs, lyrics, articles, and documents without any restrictions.",
+      "Yes. TypeIndian supports typing and converting long paragraphs, lyrics, articles, and documents without any restrictions.",
   },
 ];
 

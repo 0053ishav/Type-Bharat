@@ -27,7 +27,7 @@ export const assamese: Language = {
       "Type in English and convert instantly to অসমীয়া",
 
     intro:
-      "Write Assamese naturally using English letters with TypeBharat's Assamese typing tool. Simply type phonetically in English and instantly convert your words into the Assamese script. No keyboard installation, no login - fast, accurate, and privacy-first Assamese transliteration directly in your browser.",
+      "Write Assamese naturally using English letters with TypeIndian's Assamese typing tool. Simply type phonetically in English and instantly convert your words into the Assamese script. No keyboard installation, no login - fast, accurate, and privacy-first Assamese transliteration directly in your browser.",
 
     learnLink: {
       href: "/learn/assamese",
@@ -52,11 +52,11 @@ export const assamese: Language = {
         "phonetic Assamese typing",
         "Assamese keyboard",
         "English to Assamese converter",
-        "TypeBharat Assamese",
+        "TypeIndian Assamese",
       ],
 
       openGraph: {
-        title: "Assamese Typing Tool — TypeBharat",
+        title: "Assamese Typing Tool - TypeIndian",
 
         description:
           "Type in English and instantly write in Assamese using accurate phonetic transliteration.",
@@ -65,7 +65,7 @@ export const assamese: Language = {
       },
 
       twitter: {
-        title: "Assamese Typing Tool — TypeBharat",
+        title: "Assamese Typing Tool - TypeIndian",
 
         description:
           "Fast, free, and privacy-first English to Assamese typing.",
@@ -99,12 +99,12 @@ export const assamese: Language = {
         "Assamese consonants",
         "English to Assamese typing guide",
         "Assamese typing for beginners",
-        "TypeBharat Assamese",
+        "TypeIndian Assamese",
       ],
 
       openGraph: {
         title:
-          "Learn Assamese Typing — Beginner Guide | TypeBharat",
+          "Learn Assamese Typing - Beginner Guide | TypeIndian",
 
         description:
           "Master Assamese typing with a beginner-friendly guide covering the Assamese script, pronunciation, alphabet, and phonetic typing.",
@@ -113,7 +113,7 @@ export const assamese: Language = {
       },
 
       twitter: {
-        title: "Learn Assamese Typing — TypeBharat",
+        title: "Learn Assamese Typing - TypeIndian",
 
         description:
           "Learn to type Assamese naturally using English letters with our complete beginner guide.",
@@ -180,7 +180,7 @@ export const assamese: Language = {
       title: "Ready to start typing in Assamese?",
 
       description:
-        "Skip complicated keyboard layouts. Type naturally in English and TypeBharat instantly converts your words into the Assamese script.",
+        "Skip complicated keyboard layouts. Type naturally in English and TypeIndian instantly converts your words into the Assamese script.",
 
       button: "Open Assamese Typing Tool →",
     },

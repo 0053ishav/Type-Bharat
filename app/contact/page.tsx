@@ -9,26 +9,26 @@ import { EMAIL } from "@/lib/config/email";
 const LAST_UPDATED = "August 21, 2026";
 
 export const metadata: Metadata = {
-  title: "Contact TypeBharat | Indian Language Typing & Learning",
+  title: "Contact TypeIndian | Indian Language Typing & Learning",
   description:
-    "Contact TypeBharat for feedback, bug reports, language corrections, and questions about our Indian language typing and learning tools.",
+    "Contact TypeIndian for feedback, bug reports, language corrections, and questions about our Indian language typing and learning tools.",
   alternates: {
     canonical: `${SITE_URL}/contact`,
   },
   openGraph: {
-    title: "Contact TypeBharat | Indian Language Typing & Learning",
+    title: "Contact TypeIndian | Indian Language Typing & Learning",
     description:
-      "Contact TypeBharat for feedback, bug reports, language corrections, and questions about our Indian language typing and learning tools.",
+      "Contact TypeIndian for feedback, bug reports, language corrections, and questions about our Indian language typing and learning tools.",
     url: `${SITE_URL}/contact`,
-    siteName: "TypeBharat",
+    siteName: "TypeIndian",
     locale: "en_IN",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact TypeBharat | Indian Language Typing & Learning",
+    title: "Contact TypeIndian | Indian Language Typing & Learning",
     description:
-      "Contact TypeBharat for feedback, bug reports, language corrections, and questions about our Indian language typing and learning tools.",
+      "Contact TypeIndian for feedback, bug reports, language corrections, and questions about our Indian language typing and learning tools.",
   },
 };
 
@@ -49,8 +49,8 @@ export default function ContactPage() {
       />
 
       <PageSchema
-        name="Contact TypeBharat"
-        description="Contact TypeBharat for feedback, bug reports, language corrections, and questions about our Indian language typing and learning tools."
+        name="Contact TypeIndian"
+        description="Contact TypeIndian for feedback, bug reports, language corrections, and questions about our Indian language typing and learning tools."
         path="/contact"
       />
 
@@ -61,12 +61,12 @@ export default function ContactPage() {
         </p>
 
         <h1 className="mt-3 text-4xl md:text-5xl font-bold text-(--color-text-heading)">
-          Contact TypeBharat
+          Contact TypeIndian
         </h1>
 
         <p className="mt-5 text-lg text-(--color-text-body) leading-relaxed">
           Have feedback, found a bug, or noticed something that could be
-          improved? We welcome feedback about TypeBharat&apos;s typing tools,
+          improved? We welcome feedback about TypeIndian&apos;s typing tools,
           language content, and learning resources.
         </p>
       </header>
@@ -80,7 +80,7 @@ export default function ContactPage() {
 
           <p className="mt-4 text-(--color-text-body) leading-relaxed">
             For questions, feedback, bug reports, and other website-related
-            concerns, contact TypeBharat using the official contact method
+            concerns, contact TypeIndian using the official contact method
             below.
           </p>
 
@@ -109,7 +109,7 @@ export default function ContactPage() {
           </h2>
 
           <p className="mt-4 text-(--color-text-body) leading-relaxed">
-            Useful feedback helps improve TypeBharat. You can report issues or
+            Useful feedback helps improve TypeIndian. You can report issues or
             suggest improvements related to:
           </p>
 
@@ -131,7 +131,7 @@ export default function ContactPage() {
         </h2>
 
         <p className="mt-5 text-(--color-text-body) leading-relaxed">
-          TypeBharat publishes information about Indian languages, scripts,
+          TypeIndian publishes information about Indian languages, scripts,
           alphabets, and related learning material. If you notice incorrect
           information, missing content, pronunciation issues, or unexpected
           transliteration behavior, you can report it to us.
@@ -172,7 +172,7 @@ export default function ContactPage() {
       {/* Product links */}
       <section className="card-gradient-orange rounded-2xl p-8">
         <h2 className="text-2xl font-bold text-(--color-text-heading)">
-          Explore TypeBharat
+          Explore TypeIndian
         </h2>
 
         <p className="mt-3 text-(--color-text-body)">

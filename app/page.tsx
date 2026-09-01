@@ -32,7 +32,7 @@ const features = [
   {
     color: "blue",
     title: "Works everywhere",
-    desc: "Use TypeBharat on desktop, tablet, or mobile.",
+    desc: "Use TypeIndian on desktop, tablet, or mobile.",
     icon: DeviceIcon,
   },
   {
@@ -66,7 +66,7 @@ const steps = [
     number: "02",
     title: "Press space",
     description:
-      "TypeBharat recognizes the word and converts it into the native script.",
+      "TypeIndian recognizes the word and converts it into the native script.",
   },
   {
     number: "03",
@@ -274,7 +274,7 @@ export default function Home() {
               </div>
 
               <span className="text-xs font-medium text-(--color-text-muted)">
-                TypeBharat
+                TypeIndian
               </span>
             </div>
 
@@ -319,7 +319,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="How it works"
             title="Nothing complicated."
-            description="TypeBharat stays out of your way. You already know how to use a keyboard—we simply make it work for your language."
+            description="TypeIndian stays out of your way. You already know how to use a keyboard-we simply make it work for your language."
           />
 
           <div className="grid md:grid-cols-3 gap-px rounded-3xl overflow-hidden border border-gray-200 bg-gray-200">
@@ -398,7 +398,7 @@ export default function Home() {
               <div className="grid lg:grid-cols-[1.1fr_0.9fr]">
                 {/* Content */}
                 <div className="p-8 md:p-12 lg:p-14">
-                  <div className="badge badge-gradient">Why TypeBharat</div>
+                  <div className="badge badge-gradient">Why TypeIndian</div>
 
                   <h2 className="mt-6 text-3xl md:text-4xl font-bold tracking-tight text-(--color-text-heading)">
                     Your language shouldn&apos;t require
@@ -407,15 +407,15 @@ export default function Home() {
 
                   <div className="mt-7 space-y-5 text-lg leading-relaxed text-(--color-text-body)">
                     <p>
-                      TypeBharat makes writing Indian languages as natural as
+                      TypeIndian makes writing Indian languages as natural as
                       speaking them. Instead of learning a complicated keyboard
                       layout, simply type the words the way they sound using the
                       English keyboard you already know.
                     </p>
 
                     <p>
-                      TypeBharat handles the transliteration and gives you the
-                      native script instantly — so you can focus on what you
+                      TypeIndian handles the transliteration and gives you the
+                      native script instantly - so you can focus on what you
                       want to say, not how to type it.
                     </p>
                   </div>

@@ -102,7 +102,7 @@ export default function LanguageSelector() {
           </p>
 
           <p className="mt-2 text-sm text-(--color-text-muted)">
-            TypeBharat is expanding its language library so you can type,
+            TypeIndian is expanding its language library so you can type,
             learn, and explore more Indian scripts from one place.
           </p>
         </div>

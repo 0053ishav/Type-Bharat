@@ -16,7 +16,7 @@ export default function NotFound() {
 
         <p className="text-lg text-(--color-text-body) mb-8">
           The page you&apos;re looking for might have been moved, renamed,
-          or never existed. But don&apos;t worry — you can still type in Indian
+          or never existed. But don&apos;t worry - you can still type in Indian
           languages instantly.
         </p>
 

@@ -43,7 +43,7 @@ export default function Navbar() {
         {/* Brand */}
         <Link href="/" className="group flex flex-col leading-tight shrink-0">
           <span className="text-xl font-bold text-gradient-orange transition-transform duration-300 group-hover:scale-[1.02]">
-            TypeBharat
+            TypeIndian
           </span>
 
           <span className="text-[11px] text-(--color-text-muted)">

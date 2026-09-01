@@ -9,7 +9,7 @@ export const GUJARATI_FAQ: FAQItem[] = [
   {
     question: "Which script does the Gujarati typing tool use?",
     answer:
-      "TypeBharat’s Gujarati typing tool uses the Gujarati (ગુજરાતી) script, which is the standard script used for writing Gujarati.",
+      "TypeIndian’s Gujarati typing tool uses the Gujarati (ગુજરાતી) script, which is the standard script used for writing Gujarati.",
   },
   {
     question: "Do I need to learn the Gujarati keyboard layout?",
@@ -19,7 +19,7 @@ export const GUJARATI_FAQ: FAQItem[] = [
   {
     question: "Is the Gujarati typing tool free?",
     answer:
-      "Yes. TypeBharat’s Gujarati typing tool is completely free with no limits, subscriptions, or sign-ups required.",
+      "Yes. TypeIndian’s Gujarati typing tool is completely free with no limits, subscriptions, or sign-ups required.",
   },
   {
     question: "Can I paste English text and convert it to Gujarati?",
@@ -37,9 +37,9 @@ export const GUJARATI_FAQ: FAQItem[] = [
       "The Gujarati transliteration is highly accurate for common words and phrases. For words with multiple spellings, suggestions are shown so you can choose the correct form.",
   },
   {
-    question: "Does TypeBharat save my Gujarati text?",
+    question: "Does TypeIndian save my Gujarati text?",
     answer:
-      "No. Everything you type stays in your browser. TypeBharat does not store, track, or log your text in any way.",
+      "No. Everything you type stays in your browser. TypeIndian does not store, track, or log your text in any way.",
   },
   {
     question: "Can I use this Gujarati typing tool for professional or commercial work?",
@@ -49,7 +49,7 @@ export const GUJARATI_FAQ: FAQItem[] = [
   {
     question: "Can I type long paragraphs, lyrics, or documents in Gujarati?",
     answer:
-      "Yes. TypeBharat supports typing and converting long paragraphs, lyrics, articles, and documents without any restrictions.",
+      "Yes. TypeIndian supports typing and converting long paragraphs, lyrics, articles, and documents without any restrictions.",
   },
 ];
 

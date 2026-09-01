@@ -45,13 +45,13 @@ export const hindi: Language = {
         "Hindi typing online",
         "Hindi transliteration",
         "phonetic Hindi typing",
-        "TypeBharat Hindi",
+        "TypeIndian Hindi",
         "Hindi typing",
         "Devanagari typing tool",
       ],
 
       openGraph: {
-        title: "Hindi Typing Tool — TypeBharat",
+        title: "Hindi Typing Tool - TypeIndian",
 
         description:
           "Type in English and write in Hindi instantly. Free Hindi (Devanagari) typing tool with real-time conversion.",
@@ -60,7 +60,7 @@ export const hindi: Language = {
       },
 
       twitter: {
-        title: "Hindi Typing Tool — TypeBharat",
+        title: "Hindi Typing Tool - TypeIndian",
 
         description:
           "English to Hindi typing made easy. Free, fast, and privacy-first.",
@@ -94,11 +94,11 @@ export const hindi: Language = {
         "Hindi script",
         "English to Hindi typing guide",
         "Hindi typing for beginners",
-        "TypeBharat Hindi",
+        "TypeIndian Hindi",
       ],
 
       openGraph: {
-        title: "Learn Hindi Typing — Beginner Guide | TypeBharat",
+        title: "Learn Hindi Typing - Beginner Guide | TypeIndian",
 
         description:
           "Learn Hindi typing with a beginner-friendly guide covering the Devanagari script, alphabets, pronunciation, and phonetic typing.",
@@ -107,7 +107,7 @@ export const hindi: Language = {
       },
 
       twitter: {
-        title: "Learn Hindi Typing — TypeBharat",
+        title: "Learn Hindi Typing - TypeIndian",
 
         description:
           "Master Hindi typing using English letters with our complete beginner guide.",
@@ -175,7 +175,7 @@ export const hindi: Language = {
       title: "Ready to start typing in Hindi?",
 
       description:
-        "You don't need to learn keyboard layouts. Simply type naturally in English and TypeBharat instantly converts your words into Devanagari.",
+        "You don't need to learn keyboard layouts. Simply type naturally in English and TypeIndian instantly converts your words into Devanagari.",
 
       button: "Open Hindi Typing Tool →",
     },

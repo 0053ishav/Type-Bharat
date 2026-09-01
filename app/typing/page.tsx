@@ -7,7 +7,7 @@ import PageSchema from "@/components/common/PageSchema";
 import { SITE_URL } from "@/lib/config/site";
 
 export const metadata: Metadata = {
-  title: "Indian Language Typing Tools | TypeBharat",
+  title: "Indian Language Typing Tools | TypeIndian",
   description:
     "Free online typing tools for Indian languages. Type naturally in English and instantly write in Hindi, Panjabi, and more native scripts.",
   alternates: {
@@ -38,7 +38,7 @@ export default function TypingIndexPage() {
 
         <div className="relative">
           <span className="badge badge-gradient inline-block mb-6">
-            ⌨️ TypeBharat Typing Tools
+            ⌨️ TypeIndian Typing Tools
           </span>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-(--color-text-heading) leading-tight">
@@ -200,7 +200,7 @@ export default function TypingIndexPage() {
 
           <p className="mt-4 text-lg text-(--color-text-muted)">
             There is no new keyboard to memorize. Type the way your language
-            sounds and TypeBharat handles the script.
+            sounds and TypeIndian handles the script.
           </p>
         </div>
 

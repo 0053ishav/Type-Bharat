@@ -27,7 +27,7 @@ export const urdu: Language = {
       "Type in English and convert instantly to اردو",
 
     intro:
-      "Write Urdu naturally using English letters with TypeBharat's Urdu typing tool. Type words phonetically in Roman Urdu and convert them into اردو using the Perso-Arabic script. No keyboard installation, no login - a fast, convenient, and privacy-first Urdu transliteration tool.",
+      "Write Urdu naturally using English letters with TypeIndian's Urdu typing tool. Type words phonetically in Roman Urdu and convert them into اردو using the Perso-Arabic script. No keyboard installation, no login - a fast, convenient, and privacy-first Urdu transliteration tool.",
 
     learnLink: {
       href: "/learn/urdu",
@@ -55,11 +55,11 @@ export const urdu: Language = {
         "Urdu typing tool",
         "Nastaliq typing",
         "RTL Urdu typing",
-        "TypeBharat Urdu",
+        "TypeIndian Urdu",
       ],
 
       openGraph: {
-        title: "Urdu Typing Tool — TypeBharat",
+        title: "Urdu Typing Tool - TypeIndian",
 
         description:
           "Type Urdu using English letters and instantly convert your words into اردو with RTL support.",
@@ -68,7 +68,7 @@ export const urdu: Language = {
       },
 
       twitter: {
-        title: "Urdu Typing Tool — TypeBharat",
+        title: "Urdu Typing Tool - TypeIndian",
 
         description:
           "Free English to Urdu phonetic typing with right-to-left support.",
@@ -106,12 +106,12 @@ export const urdu: Language = {
         "English to Urdu typing guide",
         "Urdu typing for beginners",
         "RTL Urdu typing",
-        "TypeBharat Urdu",
+        "TypeIndian Urdu",
       ],
 
       openGraph: {
         title:
-          "Learn Urdu Typing — Beginner Guide | TypeBharat",
+          "Learn Urdu Typing - Beginner Guide | TypeIndian",
 
         description:
           "Learn Urdu typing with a beginner-friendly guide covering the Urdu script, Nastaliq, alphabet, pronunciation, and RTL phonetic typing.",
@@ -120,7 +120,7 @@ export const urdu: Language = {
       },
 
       twitter: {
-        title: "Learn Urdu Typing — TypeBharat",
+        title: "Learn Urdu Typing - TypeIndian",
 
         description:
           "Learn to type Urdu naturally using English letters with our beginner-friendly guide.",
@@ -188,7 +188,7 @@ export const urdu: Language = {
       title: "Ready to start typing in Urdu?",
 
       description:
-        "You don't need to memorize an Urdu keyboard layout. Type naturally using English letters and TypeBharat converts your phonetic input into Urdu script.",
+        "You don't need to memorize an Urdu keyboard layout. Type naturally using English letters and TypeIndian converts your phonetic input into Urdu script.",
 
       button: "Open Urdu Typing Tool →",
     },

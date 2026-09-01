@@ -27,7 +27,7 @@ export const bengali: Language = {
       "Type in English and convert instantly to বাংলা",
 
     intro:
-      "Write Bengali naturally using English letters with TypeBharat's Bengali typing tool. Simply type phonetically in English and instantly convert your words into the Bengali script. No keyboard installation, no login - fast, accurate, and privacy-first Bengali transliteration directly in your browser.",
+      "Write Bengali naturally using English letters with TypeIndian's Bengali typing tool. Simply type phonetically in English and instantly convert your words into the Bengali script. No keyboard installation, no login - fast, accurate, and privacy-first Bengali transliteration directly in your browser.",
 
     learnLink: {
       href: "/learn/bengali",
@@ -55,11 +55,11 @@ export const bengali: Language = {
         "phonetic Bengali typing",
         "Bengali keyboard",
         "Bangla keyboard",
-        "TypeBharat Bengali",
+        "TypeIndian Bengali",
       ],
 
       openGraph: {
-        title: "Bengali Typing Tool — TypeBharat",
+        title: "Bengali Typing Tool - TypeIndian",
 
         description:
           "Type in English and instantly write in Bengali using accurate phonetic transliteration.",
@@ -68,7 +68,7 @@ export const bengali: Language = {
       },
 
       twitter: {
-        title: "Bengali Typing Tool — TypeBharat",
+        title: "Bengali Typing Tool - TypeIndian",
 
         description:
           "Fast, free, and privacy-first English to Bengali typing.",
@@ -103,11 +103,11 @@ export const bengali: Language = {
         "Bengali vowels",
         "Bengali consonants",
         "Bengali typing for beginners",
-        "TypeBharat Bengali",
+        "TypeIndian Bengali",
       ],
 
       openGraph: {
-        title: "Learn Bengali Typing — Beginner Guide | TypeBharat",
+        title: "Learn Bengali Typing - Beginner Guide | TypeIndian",
 
         description:
           "Master Bengali typing with a beginner-friendly guide covering the Bengali script, pronunciation, alphabet, and phonetic typing.",
@@ -116,7 +116,7 @@ export const bengali: Language = {
       },
 
       twitter: {
-        title: "Learn Bengali Typing — TypeBharat",
+        title: "Learn Bengali Typing - TypeIndian",
 
         description:
           "Learn to type Bengali naturally using English letters with our complete beginner guide.",
@@ -183,7 +183,7 @@ export const bengali: Language = {
       title: "Ready to start typing in Bengali?",
 
       description:
-        "Skip complicated keyboard layouts. Type naturally in English and TypeBharat instantly converts your words into the Bengali script.",
+        "Skip complicated keyboard layouts. Type naturally in English and TypeIndian instantly converts your words into the Bengali script.",
 
       button: "Open Bengali Typing Tool →",
     },
