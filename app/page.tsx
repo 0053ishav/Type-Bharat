@@ -15,6 +15,34 @@ import {
 } from "@/components/icons/FeatureIcons";
 
 import { getLanguages } from "@/lib/languages/loader";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Indian Language Typing Tool | TypeIndian",
+  description:
+    "Type Indian languages naturally using your English keyboard. TypeIndian provides fast, browser-based phonetic typing and transliteration tools for Indian languages.",
+
+  alternates: {
+    canonical: "/",
+  },
+
+  openGraph: {
+    title: "Indian Language Typing Tool | TypeIndian",
+    description:
+      "Type Indian languages naturally using your English keyboard with TypeIndian's browser-based typing and transliteration tools.",
+    url: "/",
+    siteName: "TypeIndian",
+    locale: "en_IN",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Indian Language Typing Tool | TypeIndian",
+    description:
+      "Type Indian languages naturally using your English keyboard with TypeIndian.",
+  },
+};
 
 const features = [
   {
