@@ -3,11 +3,13 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 import { GLOBAL_KEYWORDS } from "@/lib/seo/keywords";
 import { Toaster } from "sonner";
 import { SITE_URL } from "@/lib/config/site";
 import SiteSchema from "@/components/common/SiteSchema";
+import Script from "next/script";
+import { ADSENSE_PUBLISHER_ID } from "@/lib/config/adsense";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,7 +41,7 @@ export const metadata: Metadata = {
   authors: [{ name: "TypeIndian" }],
   creator: "TypeIndian",
   verification: {
-    google: 'TenoyS5nmTIbgNrZ9uIRxNNCTbOgohZebisrGPFdRLM',
+    google: "TenoyS5nmTIbgNrZ9uIRxNNCTbOgohZebisrGPFdRLM",
   },
 
   openGraph: {
@@ -72,25 +74,32 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <meta name="google-adsense-account" content={ADSENSE_PUBLISHER_ID} />
+        <Script
+          id="adsense"
+          strategy="afterInteractive"
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_PUBLISHER_ID}`}
+          crossOrigin="anonymous"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <SiteSchema />
         <Navbar />
-        <main
-          id="main-content"
-          className="min-h-screen"
-        >
+        <main id="main-content" className="min-h-screen">
           {children}
         </main>
         <Footer />
-        <Toaster 
+        <Toaster
           position="bottom-center"
           richColors
           closeButton
           duration={2500}
         />
-      <Analytics />
+        <Analytics />
       </body>
     </html>
   );
