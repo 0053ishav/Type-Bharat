@@ -6,60 +6,48 @@ import Breadcrumbs from "@/components/common/Breadcrumbs";
 import PageSchema from "@/components/common/PageSchema";
 import { EMAIL } from "@/lib/config/email";
 
-const LAST_UPDATED = "August 21, 2026";
+const LAST_UPDATED = "September 2, 2026";
+
+const DESCRIPTION =
+  "Learn how TypeIndian handles information, browser storage, analytics, third-party transliteration services, and advertising technologies.";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | TypeIndian",
-
-  description:
-    "Learn how TypeIndian handles information, browser storage, analytics, third-party transliteration services, and advertising technologies.",
-
+  description: DESCRIPTION,
   alternates: {
     canonical: `${SITE_URL}/privacy`,
   },
-
   openGraph: {
     title: "Privacy Policy | TypeIndian",
-    description:
-      "Learn how TypeIndian handles information, browser storage, analytics, third-party transliteration services, and advertising technologies.",
+    description: DESCRIPTION,
     url: `${SITE_URL}/privacy`,
     siteName: "TypeIndian",
     locale: "en_IN",
     type: "website",
   },
-
   twitter: {
     card: "summary_large_image",
     title: "Privacy Policy | TypeIndian",
-    description:
-      "Learn how TypeIndian handles information, browser storage, analytics, third-party transliteration services, and advertising technologies.",
+    description: DESCRIPTION,
   },
 };
 
 export default function PrivacyPage() {
   return (
     <main className="max-w-6xl mx-auto px-6 space-y-24">
-      {/* Breadcrumb */}
       <Breadcrumbs
         items={[
-          {
-            name: "Home",
-            path: "/",
-          },
-          {
-            name: "Privacy Policy",
-            path: "/privacy",
-          },
+          { name: "Home", path: "/" },
+          { name: "Privacy Policy", path: "/privacy" },
         ]}
       />
 
       <PageSchema
         name="Privacy Policy | TypeIndian"
-        description="Learn how TypeIndian handles information, browser storage, analytics, third-party transliteration services, and advertising technologies."
+        description={DESCRIPTION}
         path="/privacy"
       />
 
-      {/* Header */}
       <header className="mb-14">
         <p className="text-sm font-semibold uppercase tracking-[0.18em] text-(--color-primary)">
           Legal
@@ -72,7 +60,7 @@ export default function PrivacyPage() {
         <p className="mt-5 text-lg text-(--color-text-body) leading-relaxed">
           This Privacy Policy explains how TypeIndian handles information in
           connection with its browser-based Indian language typing,
-          transliteration, and learning tools.
+          transliteration, learning, analytics, and advertising technologies.
         </p>
 
         <p className="mt-4 text-sm text-(--color-text-muted)">
@@ -88,23 +76,22 @@ export default function PrivacyPage() {
           </h2>
 
           <p>
-            TypeIndian does not currently require users to create an account or
-            log in to use its core typing and learning features. We do not
-            currently operate a user profile, password, account, or cloud
-            document system.
+            TypeIndian does not currently require user accounts, login,
+            signup, profiles, passwords, or cloud document storage.
           </p>
 
           <p className="mt-4">
-            Information may nevertheless be processed automatically when you use
-            the website. Depending on the feature and service involved, this can
-            include information associated with website usage, browser or device
-            activity, and text submitted to third-party services to provide
-            transliteration suggestions.
+            Depending on how you use the website, information may be processed
+            automatically as part of operating the service. This may include
+            information related to website usage, browser or device activity,
+            browser-side application state, analytics, and text that is sent
+            to third-party transliteration services when you use those
+            features.
           </p>
 
           <p className="mt-4">
-            TypeIndian does not currently operate a database of user accounts or
-            permanently store user typing sessions as part of a user account.
+            TypeIndian does not currently maintain a user-account database or
+            provide permanent cloud-based typing sessions.
           </p>
         </section>
 
@@ -115,14 +102,15 @@ export default function PrivacyPage() {
           </h2>
 
           <p>
-            Information processed through TypeIndian is used to operate,
+            Information processed through TypeIndian may be used to operate,
             maintain, improve, and understand the website and its features.
           </p>
 
           <p className="mt-4">
-            This includes providing typing and transliteration functionality,
-            maintaining browser-based application state, understanding website
-            usage and performance, and supporting the operation of the platform.
+            This may include providing typing and transliteration functionality,
+            maintaining browser-side application state, understanding website
+            usage and performance, supporting advertising, and helping protect
+            the service from abuse or security issues.
           </p>
         </section>
 
@@ -133,27 +121,41 @@ export default function PrivacyPage() {
           </h2>
 
           <p>
-            TypeIndian provides browser-based typing tools that allow users to
-            enter text using an English keyboard and receive output in supported
-            Indian-language scripts.
+            TypeIndian provides browser-based typing tools that allow you to
+            enter text and receive typing or transliteration suggestions.
           </p>
 
           <p className="mt-4">
-            To generate transliteration suggestions, TypeIndian may send text
-            entered into the typing tool to a third-party transliteration
-            service operated by Google. This service is accessed through the
-            Google Input Tools request endpoint.
+            Some transliteration functionality uses Google Input Tools. When
+            this functionality is used, entered text and the relevant language
+            configuration may be sent to Google&apos;s transliteration service
+            at{" "}
+            <a
+              href="https://inputtools.google.com/request"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-(--color-primary) hover:underline"
+            >
+              inputtools.google.com
+            </a>
+            to process the transliteration request.
           </p>
 
           <p className="mt-4">
-            This means we cannot accurately describe the typing experience as
-            one in which entered text is never transmitted to a third party.
+            Because third-party services are involved, TypeIndian cannot
+            describe all typing or transliteration activity as remaining
+            entirely within your browser.
           </p>
 
           <p className="mt-4">
-            TypeIndian does not control Google&apos;s handling or retention of
-            information submitted to Google&apos;s services. For information
-            about Google&apos;s privacy practices, please review{" "}
+            Please avoid entering passwords, financial information, or other
+            sensitive information into typing or transliteration features if
+            you do not want that information processed by a third-party
+            transliteration service.
+          </p>
+
+          <p className="mt-4">
+            For more information, please review{" "}
             <a
               href="https://policies.google.com/privacy"
               target="_blank"
@@ -169,23 +171,30 @@ export default function PrivacyPage() {
         {/* 4 */}
         <section>
           <h2 className="text-2xl md:text-3xl font-bold text-(--color-text-heading) mb-5">
-            4. Browser Storage
+            4. Browser Storage and Local Storage
           </h2>
 
           <p>
-            TypeIndian may use browser-side storage, including localStorage, for
-            application and session-related functionality.
+            TypeIndian may use browser-side storage, including localStorage,
+            to support application functionality and maintain certain
+            browser-side state.
           </p>
 
           <p className="mt-4">
-            Information stored in this way is stored by your browser on your
-            device rather than as a TypeIndian user account in a server-side
-            profile database.
+            This information is stored by your browser or device and is not
+            the same as a TypeIndian user account or cloud database.
           </p>
 
           <p className="mt-4">
-            Clearing the relevant browser or site data can remove information
-            stored locally by the application.
+            The information stored by the website may remain in your browser
+            until it is removed, overwritten, or cleared by the application,
+            browser, or user.
+          </p>
+
+          <p className="mt-4">
+            Clearing your browser or site data may remove information stored
+            by TypeIndian and can affect application functionality or saved
+            browser-side preferences.
           </p>
         </section>
 
@@ -196,29 +205,27 @@ export default function PrivacyPage() {
           </h2>
 
           <p>
-            TypeIndian currently uses Vercel Analytics to understand website
-            usage, traffic, and performance.
+            TypeIndian currently uses Vercel Analytics as part of operating
+            and understanding website usage and performance.
           </p>
 
           <p className="mt-4">
-            We do not make claims about specific analytics data fields,
-            identifiers, retention periods, or processing practices beyond what
-            is documented by the applicable provider.{" "}
+            Analytics information may be processed by Vercel in accordance
+            with its own policies and service configuration. TypeIndian does
+            not make specific claims in this policy about individual fields,
+            identifiers, or retention periods unless those details are
+            explicitly documented by the applicable service.
           </p>
 
           <p className="mt-4">
-            For additional information, users should review Vercel&apos;s
-            applicable privacy documentation.
-          </p>
-          <p className="mt-4">
-            For information about how Vercel handles information, please see the{" "}
+            For more information, please review{" "}
             <a
-              href="https://vercel.com/legal/privacy-notice"
+              href="https://vercel.com/legal/privacy-policy"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-(--color-primary) hover:underline"
             >
-              Vercel Privacy Notice
+              Vercel&apos;s Privacy Policy
             </a>
             .
           </p>
@@ -231,236 +238,311 @@ export default function PrivacyPage() {
           </h2>
 
           <p>
-            TypeIndian is hosted and deployed using Vercel infrastructure.
-            Information required by hosting and infrastructure providers to
-            deliver and operate a website may be processed as part of serving
-            requests.
+            TypeIndian is hosted and deployed using Vercel. Hosting and
+            infrastructure services may process information necessary to
+            deliver website requests, maintain service reliability, and
+            protect the infrastructure.
           </p>
 
           <p className="mt-4">
-            This hosting infrastructure is separate from Vercel Analytics, which
-            is used for website usage and performance analytics.
-          </p>
-
-          <p className="mt-4">
-            TypeIndian does not make claims about specific infrastructure logs,
-            retention periods, identifiers, or other provider-side processing
-            unless those details are verified from the applicable provider
-            documentation.
+            Hosting infrastructure is separate from the Vercel Analytics
+            functionality described above. This policy does not make specific
+            claims about infrastructure logs or retention periods unless those
+            details are documented by the applicable provider.
           </p>
         </section>
 
         {/* 7 */}
         <section>
           <h2 className="text-2xl md:text-3xl font-bold text-(--color-text-heading) mb-5">
-            7. Advertising
+            7. Advertising and Google AdSense
           </h2>
 
           <p>
-            TypeIndian is preparing for advertising as part of the
-            platform&apos;s future production and monetization plans.
+            TypeIndian uses Google advertising services, including Google
+            AdSense, as part of its monetization and advertising setup.
           </p>
 
           <p className="mt-4">
-            Advertising services are not described here as currently active
-            unless and until they are enabled on the website.
+            Google and other third-party advertising providers may use
+            cookies, local storage, web beacons, IP addresses, or similar
+            technologies in connection with advertising and measurement.
           </p>
 
           <p className="mt-4">
-            If advertising is enabled, this Privacy Policy will be reviewed and
-            updated to accurately describe the advertising provider, applicable
-            technologies, user choices, and relevant privacy information.
+            These technologies may be used to serve, measure, personalize,
+            limit, or improve advertising and to help prevent invalid or
+            fraudulent activity, depending on the applicable advertising
+            configuration and user settings.
           </p>
 
           <p className="mt-4">
-            This policy will be updated when advertising is actually enabled to
-            accurately describe the advertising configuration and available user
-            controls.
+            Google and its partners may use information about a user&apos;s
+            visits to TypeIndian and other websites to serve advertising,
+            including personalized advertising where applicable and permitted.
+          </p>
+
+          <p className="mt-4">
+            For information about how Google uses data when advertising
+            services are used on partner websites, please review{" "}
+            <a
+              href="https://policies.google.com/technologies/partner-sites"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-(--color-primary) hover:underline"
+            >
+              How Google uses information from sites or apps that use our
+              services
+            </a>
+            .
+          </p>
+
+          <p className="mt-4">
+            You can manage Google&apos;s personalized advertising settings through{" "}
+            <a
+              href="https://adssettings.google.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-(--color-primary) hover:underline"
+            >
+              Google Ads Settings
+            </a>
+            .
+          </p>
+
+          <p className="mt-4">
+            You may also learn more about third-party advertising choices
+            through{" "}
+            <a
+              href="https://optout.aboutads.info/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-(--color-primary) hover:underline"
+            >
+              AboutAds.info
+            </a>
+            .
+          </p>
+
+          <p className="mt-4">
+            Advertising providers and technologies may change over time.
+            Applicable advertising and consent settings may also depend on
+            your location, browser, device, and the advertising configuration
+            used by TypeIndian.
           </p>
         </section>
 
         {/* 8 */}
         <section>
           <h2 className="text-2xl md:text-3xl font-bold text-(--color-text-heading) mb-5">
-            8. Third-Party Services
+            8. Cookies and Similar Technologies
           </h2>
 
           <p>
-            TypeIndian currently relies on third-party services for certain
-            parts of the website.
+            TypeIndian may use or allow third parties to use cookies, local
+            storage, web beacons, or similar technologies for website
+            functionality, analytics, advertising, measurement, security, or
+            related purposes.
           </p>
 
-          <ul className="mt-5 list-disc pl-6 space-y-3">
-            <li>
-              <strong>Google Input Tools:</strong> used to provide
-              transliteration suggestions for supported languages.
-            </li>
+          <p className="mt-4">
+            Google advertising services may place or read cookies or use
+            similar technologies when advertising functionality is active.
+            These technologies can be used for purposes such as advertising,
+            frequency management, measurement, and personalization, depending
+            on the applicable configuration and user choices.
+          </p>
 
-            <li>
-              <strong>Vercel Analytics:</strong> used to understand website
-              usage and performance.
-            </li>
-          </ul>
+          <p className="mt-4">
+            You can control cookies and browser storage through your browser
+            settings. Some TypeIndian functionality may not work as intended
+            if relevant browser storage or technologies are disabled or
+            cleared.
+          </p>
 
-          <p className="mt-5">
-            Third-party services operate under their own privacy policies and
-            terms. TypeIndian does not control the privacy practices of those
-            providers.
+          <p className="mt-4">
+            Where legally required, advertising and consent mechanisms may
+            provide additional choices regarding cookies, local storage, and
+            personalized advertising.
           </p>
         </section>
 
         {/* 9 */}
         <section>
           <h2 className="text-2xl md:text-3xl font-bold text-(--color-text-heading) mb-5">
-            9. Data Retention
+            9. Third-Party Services
           </h2>
 
           <p>
-            TypeIndian does not currently operate a user-account database with a
-            defined retention period for user profiles or saved documents.
+            TypeIndian currently relies on certain third-party services as
+            part of operating the website and its functionality. These include:
           </p>
 
-          <p className="mt-4">
-            Information stored locally by the browser remains subject to the
-            browser&apos;s storage behavior and can generally be removed by
-            clearing the relevant site or browser data.
-          </p>
+          <ul className="mt-5 list-disc pl-6 space-y-3">
+            <li>
+              <strong>Google Input Tools</strong> for certain transliteration
+              functionality.
+            </li>
+            <li>
+              <strong>Vercel Analytics</strong> for website analytics and
+              performance insights.
+            </li>
+            <li>
+              <strong>Vercel</strong> for hosting and infrastructure.
+            </li>
+            <li>
+              <strong>Google advertising services, including AdSense</strong>{" "}
+              for advertising and related measurement technologies.
+            </li>
+          </ul>
 
-          <p className="mt-4">
-            TypeIndian does not control the retention practices of third-party
-            services used by the website. Their respective privacy policies
-            describe their handling and retention practices.
+          <p className="mt-5">
+            These third parties operate under their own privacy policies and
+            terms. TypeIndian does not control the independent privacy
+            practices of third-party providers.
           </p>
         </section>
 
         {/* 10 */}
         <section>
           <h2 className="text-2xl md:text-3xl font-bold text-(--color-text-heading) mb-5">
-            10. Data Security
+            10. Data Retention
           </h2>
 
           <p>
-            We take reasonable measures to protect information processed through
-            the service and to maintain the security and reliability of the
-            website.
+            TypeIndian does not currently maintain user accounts or a cloud
+            database containing users&apos; typing history.
           </p>
 
           <p className="mt-4">
-            However, no internet service or method of electronic transmission
-            can be guaranteed to be completely secure.
+            Browser-side information may remain in local storage or other
+            browser storage until it is cleared, removed, or overwritten.
+          </p>
+
+          <p className="mt-4">
+            Information processed by third-party providers, including
+            analytics, transliteration, hosting, and advertising providers, is
+            subject to the applicable provider&apos;s policies and retention
+            practices.
+          </p>
+
+          <p className="mt-4">
+            TypeIndian does not claim a specific retention period for
+            third-party processing where that period is controlled by the
+            provider.
           </p>
         </section>
 
         {/* 11 */}
         <section>
           <h2 className="text-2xl md:text-3xl font-bold text-(--color-text-heading) mb-5">
-            11. Children&apos;s Privacy
+            11. Data Security
           </h2>
 
           <p>
-            TypeIndian is a general-purpose website and does not currently
-            operate an account-registration or age-verification system.
+            TypeIndian takes reasonable measures intended to support the
+            security and reliability of the website and its infrastructure.
           </p>
 
           <p className="mt-4">
-            We do not knowingly request personal information from children
-            through an account-registration process.
+            However, no website, internet transmission, browser storage
+            mechanism, or third-party service can be guaranteed to be
+            completely secure.
           </p>
         </section>
 
         {/* 12 */}
         <section>
           <h2 className="text-2xl md:text-3xl font-bold text-(--color-text-heading) mb-5">
-            12. Your Choices
+            12. Children&apos;s Privacy
           </h2>
 
           <p>
-            You can choose whether to use TypeIndian&apos;s typing and learning
-            features. You can also clear browser or site storage through your
-            browser settings.
+            TypeIndian is a general-purpose website and does not currently use
+            an account-registration or age-verification system.
           </p>
 
           <p className="mt-4">
-            Where third-party services are involved, privacy and advertising
-            controls provided by those services may also apply.
+            We do not knowingly request personal information from children
+            through an account-registration process.
           </p>
 
           <p className="mt-4">
-            Google provides privacy controls through its own services, including
-            controls for certain advertising and personalization settings. See{" "}
-            <a
-              href="https://policies.google.com/privacy"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-(--color-primary) hover:underline"
-            >
-              Google&apos;s Privacy Policy
-            </a>
-            .
+            Parents or guardians who have concerns about information submitted
+            through the website may contact us using the information provided
+            below.
           </p>
         </section>
 
         {/* 13 */}
         <section>
           <h2 className="text-2xl md:text-3xl font-bold text-(--color-text-heading) mb-5">
-            13. External Links
+            13. Your Choices
           </h2>
 
           <p>
-            TypeIndian may link to external websites and third-party services.
-            Those websites operate independently and may have their own privacy
-            policies, terms, cookies, and data practices.
+            You can choose whether to use TypeIndian&apos;s typing and
+            transliteration tools and what information you enter into them.
           </p>
 
           <p className="mt-4">
-            We recommend reviewing the privacy policy of an external service
-            before providing information to it.
+            You can also clear TypeIndian-related browser storage through your
+            browser or device settings.
+          </p>
+
+          <p className="mt-4">
+            You may manage advertising personalization through{" "}
+            <a
+              href="https://adssettings.google.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-(--color-primary) hover:underline"
+            >
+              Google Ads Settings
+            </a>
+            .
+          </p>
+
+          <p className="mt-4">
+            You may also use privacy and consent controls provided by your
+            browser, device, or applicable advertising services.
           </p>
         </section>
 
         {/* 14 */}
         <section>
           <h2 className="text-2xl md:text-3xl font-bold text-(--color-text-heading) mb-5">
-            14. Changes to This Privacy Policy
+            14. External Links
           </h2>
 
           <p>
-            We may update this Privacy Policy when TypeIndian&apos;s features,
-            third-party services, advertising configuration, or data practices
-            change.
+            TypeIndian may link to external websites and services, including
+            third-party privacy policies and service documentation.
           </p>
 
           <p className="mt-4">
-            When changes are made, the updated version will be published on this
-            page with a revised &quot;Last updated&quot; date.
+            External websites and services are operated independently and may
+            have their own privacy policies, terms, cookies, and data
+            practices. TypeIndian is not responsible for the privacy practices
+            of websites that it does not operate.
           </p>
         </section>
 
         {/* 15 */}
         <section>
           <h2 className="text-2xl md:text-3xl font-bold text-(--color-text-heading) mb-5">
-            15. Browser Storage
+            15. Changes to This Privacy Policy
           </h2>
 
           <p>
-            TypeIndian uses browser-side storage for certain application and
-            session functionality.
+            We may update this Privacy Policy when TypeIndian&apos;s features,
+            services, advertising configuration, or information practices
+            change.
           </p>
 
           <p className="mt-4">
-            Information stored in browser storage remains on the user&apos;s
-            device or browser and is not a TypeIndian user account or cloud
-            profile.
-          </p>
-
-          <p className="mt-4">
-            Clearing the relevant browser or site data may remove information
-            stored locally by TypeIndian.
-          </p>
-
-          <p className="mt-4">
-            TypeIndian does not represent browser storage as permanent cloud
-            storage of typing sessions.
+            When changes are made, the updated version will be published on
+            this page with a revised &quot;Last updated&quot; date.
           </p>
         </section>
 
@@ -471,39 +553,29 @@ export default function PrivacyPage() {
           </h2>
 
           <p>
-            If you have questions about this Privacy Policy or TypeIndian&apos;s
-            information practices, you can contact us through our{" "}
-            <Link
-              href="/contact"
-              className="font-medium text-(--color-primary) hover:underline"
-            >
-              Contact page
-            </Link>
-            .
+            If you have questions or concerns about this Privacy Policy or
+            TypeIndian&apos;s information practices, you can contact us at:
           </p>
 
-          <p className="mt-4">
-            You can also contact TypeIndian directly at{" "}
+          <p className="mt-5">
             <a
               href={`mailto:${EMAIL}`}
-              className="font-medium text-(--color-primary) hover:underline break-all"
+              className="font-medium text-(--color-primary) hover:underline"
             >
               {EMAIL}
             </a>
-            .
           </p>
 
-          <p className="mt-4 text-sm text-(--color-text-muted)">
-            When contacting us, please avoid sending passwords, financial
-            information, or other sensitive personal information unless it is
-            necessary for your request.
+          <p className="mt-5 text-sm text-(--color-text-muted)">
+            Please avoid sending passwords, financial information, or other
+            sensitive information by email unless it is necessary to address
+            your request.
           </p>
         </section>
       </div>
 
-      {/* Footer navigation */}
       <nav
-        aria-label="Legal and company navigation"
+        aria-label="Legal navigation"
         className="mt-16 pt-8 border-t border-(--color-border)"
       >
         <div className="flex flex-wrap gap-5 text-sm">

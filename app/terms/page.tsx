@@ -6,7 +6,7 @@ import PageSchema from "@/components/common/PageSchema";
 
 import { SITE_URL } from "@/lib/config/site";
 
-const LAST_UPDATED = "August 21, 2026";
+const LAST_UPDATED = "September 2, 2026";
 
 const DESCRIPTION =
   "Read the Terms of Service governing use of TypeIndian's Indian-language typing, transliteration, learning, and related browser-based tools.";
@@ -127,9 +127,7 @@ export default function TermsPage() {
             tools for lawful purposes.
           </p>
 
-          <p className="mt-4">
-            You must not use TypeIndian to:
-          </p>
+          <p className="mt-4">You must not use TypeIndian to:</p>
 
           <ul className="mt-5 list-disc pl-6 space-y-3">
             <li>violate applicable laws or regulations;</li>
@@ -241,7 +239,7 @@ export default function TermsPage() {
           <p>
             TypeIndian uses certain third-party services as part of operating
             and improving the website. The current implementation includes
-            Vercel Analytics.
+            Vercel Analytics and Google advertising services.
           </p>
 
           <p className="mt-4">
@@ -268,10 +266,10 @@ export default function TermsPage() {
           </h2>
 
           <p>
-            TypeIndian&apos;s original branding, website design, software, original
-            written content, graphics, and original educational materials are
-            owned by TypeIndian or their respective rights holders unless
-            otherwise stated.
+            TypeIndian&apos;s original branding, website design, software,
+            original written content, graphics, and original educational
+            materials are owned by TypeIndian or their respective rights
+            holders unless otherwise stated.
           </p>
 
           <p className="mt-4">
@@ -323,9 +321,7 @@ export default function TermsPage() {
             practical use.
           </p>
 
-          <p className="mt-4">
-            We do not guarantee:
-          </p>
+          <p className="mt-4">We do not guarantee:</p>
 
           <ul className="mt-5 list-disc pl-6 space-y-3">
             <li>perfect transliteration;</li>
@@ -369,9 +365,7 @@ export default function TermsPage() {
             12. Pricing and Advertising
           </h2>
 
-          <p>
-            TypeIndian is currently available without charge.
-          </p>
+          <p>TypeIndian is currently available without charge.</p>
 
           <p className="mt-4">
             This does not constitute a promise that all TypeIndian features
@@ -379,10 +373,21 @@ export default function TermsPage() {
           </p>
 
           <p className="mt-4">
-            TypeIndian may introduce advertising or other monetization
-            mechanisms in the future. Any such changes will be reflected in the
-            applicable product experience and, where appropriate, updated
-            policies.
+            TypeIndian may display advertising through third-party advertising
+            services, including Google advertising services. The availability,
+            format, and behavior of advertising may change over time.
+          </p>
+
+          <p className="mt-4">
+            Advertising-related technologies and information practices are
+            described in the{" "}
+            <Link
+              href="/privacy"
+              className="font-medium text-(--color-primary) hover:underline"
+            >
+              Privacy Policy
+            </Link>
+            .
           </p>
         </section>
 
@@ -414,14 +419,11 @@ export default function TermsPage() {
             Your use of TypeIndian is also subject to our Privacy Policy. The
             Privacy Policy explains how information may be processed through
             the website, browser storage, analytics, transliteration services,
-            and other third-party services.
+            advertising technologies, and other third-party services.
           </p>
 
           <div className="mt-6">
-            <Link
-              href="/privacy"
-              className="btn-secondary inline-flex"
-            >
+            <Link href="/privacy" className="btn-secondary inline-flex">
               Read the Privacy Policy →
             </Link>
           </div>
@@ -522,18 +524,10 @@ export default function TermsPage() {
           </p>
 
           <div className="mt-6">
-            <Link
-              href="/contact"
-              className="btn-secondary inline-flex"
-            >
+            <Link href="/contact" className="btn-secondary inline-flex">
               Contact TypeIndian →
             </Link>
           </div>
-
-          <p className="mt-5 text-sm text-(--color-text-muted)">
-            An official contact method must be confirmed before this page is
-            considered production-ready.
-          </p>
         </section>
       </div>
 
