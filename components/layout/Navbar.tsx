@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { getLanguages } from "@/lib/languages/loader";
+import Image from "next/image";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -41,12 +42,21 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 py-3.5 flex items-center justify-between gap-6">
         {/* Brand */}
-        <Link href="/" className="group flex flex-col leading-tight shrink-0">
-          <span className="text-xl font-bold text-gradient-orange transition-transform duration-300 group-hover:scale-[1.02]">
-            TypeIndian
-          </span>
+        <Link
+          href="/"
+          className="group flex flex-col leading-tight shrink-0"
+          aria-label="TypeIndian home"
+        >
+          <Image
+            src="/images/typeindian-logo.svg"
+            alt="TypeIndian"
+            width={180}
+            height={40}
+            className="h-10 w-auto transition-transform duration-300 group-hover:scale-[1.02]"
+            priority
+          />
 
-          <span className="text-[11px] text-(--color-text-muted)">
+          <span className="text-[10px] text-(--color-text-muted)">
             English → Indian languages
           </span>
         </Link>
