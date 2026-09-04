@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { getLanguages } from "@/lib/languages/loader";
+import Image from "next/image";
 
 export default function Footer() {
   const languages = getLanguages();
@@ -23,16 +24,23 @@ export default function Footer() {
         {/* Brand / positioning */}
         <div className="grid lg:grid-cols-[1.5fr_1fr_1fr_1fr] gap-12">
           <div>
-            <Link href="/" className="inline-block">
-              <span className="text-2xl font-bold text-gradient">
-                TypeIndian
-              </span>
+            <Link
+              href="/"
+              className="inline-block"
+              aria-label="TypeIndian home"
+            >
+              <Image
+                src="/images/typeindian-logo.svg"
+                alt="TypeIndian"
+                width={200}
+                height={60}
+                className="h-15 w-auto"
+              />
             </Link>
 
             <p className="mt-4 max-w-md text-base leading-relaxed text-(--color-text-body)">
               Type in English. Write in your language.
-              <br />
-              A simple, fast, browser-based typing platform for Indian
+              <br />A simple, fast, browser-based typing platform for Indian
               languages.
             </p>
 
@@ -135,10 +143,7 @@ export default function Footer() {
               </li>
 
               <li>
-                <a
-                  href="/about"
-                  className="hover:text-(--color-text-heading)"
-                >
+                <a href="/about" className="hover:text-(--color-text-heading)">
                   About
                 </a>
               </li>
@@ -151,10 +156,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a
-                  href="/terms"
-                  className="hover:text-(--color-text-heading)"
-                >
+                <a href="/terms" className="hover:text-(--color-text-heading)">
                   Terms of Service
                 </a>
               </li>
@@ -174,6 +176,19 @@ export default function Footer() {
         <div className="mt-16 card-gradient-orange rounded-2xl p-6">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-5">
             <div>
+              <Link
+                href="/"
+                className="inline-block"
+                aria-label="TypeIndian home"
+              >
+                <Image
+                  src="/images/typeindian-logo.svg"
+                  alt="TypeIndian"
+                  width={200}
+                  height={60}
+                  className="h-15 w-auto"
+                />
+              </Link>
               <p className="text-sm font-semibold text-(--color-text-heading)">
                 Growing with Indian languages
               </p>
@@ -199,9 +214,7 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="mt-10 pt-6 border-t border-(--color-border) flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-(--color-text-muted)">
-          <p>
-            © {new Date().getFullYear()} TypeIndian. All rights reserved.
-          </p>
+          <p>© {new Date().getFullYear()} TypeIndian. All rights reserved.</p>
 
           <p className="text-center">
             Built for people who think in one language and type in another.
